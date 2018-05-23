@@ -1,0 +1,132 @@
+<div class="discount-coupon-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;" ng-if="theme!='black'">
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a ng-click="dcc.goBack()">
+                            <img src="./assets/images/VK/fanhui.png" width="12px">
+                        </a>
+                        <span>优惠券</span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="weui-tab second">
+                <div class="weui-navbar second">
+                    <a class="weui-navbar__item" ng-class="{'active':dcc.active === 'one'}"
+                       ng-click="dcc.switchTab('one')">未使用</a>
+                    <a class="weui-navbar__item" ng-class="{'active':dcc.active === 'two'}"
+                       ng-click="dcc.switchTab('two')">已使用</a>
+                    <a class="weui-navbar__item" ng-class="{'active':dcc.active === 'three'}"
+                       ng-click="dcc.switchTab('three')">已过期</a>
+                </div>
+                <div class="weui-tab__panel" style="margin-top: -40px;">
+                    <ul class="items" style="outline: none">
+                        <li ng-repeat="li in dcc.list" style="outline: none">
+                            <a class="weui-media-box weui-media-box_appmsg" style="outline: none">
+                                <div class="weui-media-box__bd">
+                                    <!--<div class="item" ng-click="dcc.openTaste(li.remark||'不能与其他抵用券同时用')">-->
+                                    <!--<div class="item" ng-click="dcc.shareCode(li)">-->
+                                    <div class="item" ng-click="dcc.openTaste(li)">
+                                        <div class="title"
+                                             ng-class="{'other': li.type!==1,'unused':dcc.active == 'one'}">{{li.titleName }}
+                                        </div>
+                                        <div class="note">{{dcc.note(li.remark)  | limitTo : 10}}</div>
+                                        <div class="line"></div>
+
+                                        <div class="date" style="font-size: 10px;">{{li.dateStr}}
+                                        </div>
+                                        <div class="barcode" ng-if="li.templateType ===2 && (dcc.active == 'one'||dcc.active == 'two')"
+                                             ng-click="dcc.goBarCodePage(li.code)"></div>
+
+                                    </div>
+                                </div>
+                                <div class="weui-media-box__hd money"
+                                     ng-if="li.templateType ===0 && dcc.active == 'one'">&nbsp;</div>
+                                <div class="weui-media-box__hd discount-right"
+                                     ng-if="(li.templateType ===1 && dcc.active == 'one')">&nbsp;</div>
+                                <div class="weui-media-box__hd shangping"
+                                     ng-if="li.templateType ===2 && dcc.active == 'one'">&nbsp;</div>
+                                <div class="weui-media-box__hd song"
+                                     ng-if="li.templateType ===3 && dcc.active == 'one'">&nbsp;</div>
+                                <div class="weui-media-box__hd tequan"
+                                     ng-if="li.templateType ===4 && dcc.active == 'one'">&nbsp;</div>
+                                <div class="weui-media-box__hd used" ng-if="dcc.active === 'two'&& dcc.active != 'one'">
+                                    &nbsp;</div>
+                                <div class="weui-media-box__hd outdate"
+                                     ng-if="dcc.active === 'three'&& dcc.active != 'one'">&nbsp;</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page__bd" style="height: 100%;" ng-if="theme=='black'">
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a ng-click="dcc.goBack()">
+                            <img src="./assets/images/black/fanhui.png" width="9px">
+                        </a>
+                        <span>优惠券</span>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-tab second">
+                <div class="weui-navbar second">
+                    <a class="weui-navbar__item" ng-class="{'active':dcc.active === 'one'}"
+                       ng-click="dcc.switchTab('one')">
+                        <div>未使用</div>
+                    </a>
+                    <a class="weui-navbar__item" ng-class="{'active':dcc.active === 'two'}"
+                       ng-click="dcc.switchTab('two')">
+                        <div>已使用</div>
+                    </a>
+                    <a class="weui-navbar__item" ng-class="{'active':dcc.active === 'three'}"
+                       ng-click="dcc.switchTab('three')">
+                        <div>已过期</div>
+                    </a>
+                    <div class="bar-bottom-line animate" ng-class="dcc.active"></div>
+                </div>
+                <div class="weui-tab__panel" style="margin-top: -40px" >
+                    <ul class="items">
+                        <li ng-repeat="li in dcc.list">
+                            <a class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__bd">
+                                    <!--<div class="item" ng-click="dcc.openTaste(li.remark||'不能与其他抵用券同时用')">-->
+                                    <!--<div class="item" ng-click="dcc.shareCode(li)">-->
+                                    <div class="item" ng-click="dcc.openTaste(li)">
+                                        <div class="title"
+                                             ng-class="{'other': li.type!==1,'unused':dcc.active == 'one'}">{{li.titleName}}
+                                        </div>
+                                        <div class="note">{{dcc.note(li.remark) || '不能与其他抵用券同时用' | limitTo : 15}}</div>
+                                        <div class="line"></div>
+                                        <div class="date" style="font-size: 10px;">有效期:{{li.dateStr}}</div>
+                                        <div class="mark money"
+                                             ng-if="li.templateType ===0 && dcc.active == 'one'">&nbsp;</div>
+                                        <div class="mark discount-right"
+                                             ng-if="(li.templateType ===1 && dcc.active == 'one')">&nbsp;</div>
+                                        <div class="mark shangping"
+                                             ng-if="li.templateType ===2 && dcc.active == 'one'">&nbsp;</div>
+                                        <div class="mark song"
+                                             ng-if="li.templateType ===3 && dcc.active == 'one'">&nbsp;</div>
+                                        <div class="mark tequan"
+                                             ng-if="li.templateType ===4 && dcc.active == 'one'">&nbsp;</div>
+
+                                        <div class="mark used" ng-if="dcc.active === 'two'&& dcc.active != 'one'">
+                                            &nbsp;</div>
+                                        <div class="mark outdate"
+                                             ng-if="dcc.active === 'three'&& dcc.active != 'one'">&nbsp;</div>
+                                        <div class="barcode" ng-if="li.templateType ===2 && (dcc.active == 'one'||dcc.active=='two')"
+                                             ng-click="dcc.goBarCodePage(li.code)"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

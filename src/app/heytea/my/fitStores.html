@@ -1,0 +1,107 @@
+<div class="firstores-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="fsc.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">适用门店</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="top" style=" box-shadow: 0 10px 5px -2px #E5E5E5" >
+                    <img class="img" style="border:none;border-radius:0;height: 80px;width: 80px" src="./assets/images/snow/18.png">
+
+                </div>
+                <div class="weui-flex">
+                    <!--<div class="weui-flex__item">-->
+                        <!--<div class="weui-cells">-->
+                            <!--<div class="weui-cell area-name">-->
+                                <!--<div class="weui-cell__bd">深圳地区</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">COCOPAK店</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">东门1234店</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">换了海岸店</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">眉毛店</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">鸡毛店</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cells">-->
+                            <!--<div class="weui-cell area-name">-->
+                                <!--<div class="weui-cell__bd">深圳地区</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">COCOPAK店</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">东门1234店</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">换了海岸店</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">眉毛店</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">鸡毛店</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="weui-cells">-->
+                            <!--<div class="weui-cell area-name">-->
+                                <!--<div class="weui-cell__bd">广州地区</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">1电</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">123店</div>-->
+                            <!--</div>-->
+                            <!--<div class="weui-cell shop-name">-->
+                                <!--<div class="weui-cell__bd">电饭锅电饭锅点</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="weui-flex__item" style="border-right: 1px solid #E7E7E7">
+                        <div class="weui-cells" ng-repeat="each in fsc.fitShops" ng-if="$even">
+                            <div class="weui-cell area-name">
+                                <div class="weui-cell__bd">{{each.name}}</div>
+                            </div>
+                            <div class="weui-cell shop-name" ng-repeat="eachName in each.names.split(',')">
+                                <div class="weui-cell__bd">{{eachName}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-flex__item" ng-if="fsc.fitShops.length >=2" >
+                        <div class="weui-cells" ng-repeat="each in fsc.fitShops" ng-if="$odd">
+                            <div class="weui-cell area-name">
+                                <div class="weui-cell__bd">{{each.name}}</div>
+                            </div>
+                            <div class="weui-cell shop-name" ng-repeat="eachName in each.names.split(',')">
+                                <div class="weui-cell__bd">{{eachName}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

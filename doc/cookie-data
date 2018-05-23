@@ -1,0 +1,42 @@
+{
+  "activated": null,
+  "activationStore": null,
+  "attribute": 0,
+  "balance": 2189.83,           //帐户余额
+  "bindOpenId": 0,
+  "birthday": "",
+  "birthday2": "0",
+  "city": "上海市",
+  "created": "2015-08-25 21:19",
+  "discount": null,
+  "district": "嘉定区",
+  "experience": null,           //经验值
+  "id": 117395,                 //卡号
+  "idCard": "",
+  "lastConsumeTime": null,      //上次消费时间
+  "lastDay": null,
+  "latitude": 0,
+  "levelId": null,
+  "levelName": null,            //用户等级名称
+  "locked": 0,
+  "longitude": 0,
+  "mobile": "134",                  //主要电话号码
+  "name": "134",                    //会员名字
+  "openId": "oTUIst-fO5wpPhAjJqM_rc0JrGkU", //微信付款用的
+  "otherMobile": "17091317253",
+  "point": 3028,                //积分
+  "province": "上海市",
+  "rechargeCount": 1,           //充值次数
+  "sex": 0,
+  "storeId": 231,
+  "storeName": "小马快乐",
+  "ticketName": null,
+  "ticketsCount": null,         //优惠券数量
+  "totalAmount": 3143.78,
+  "totalRmb": 3003.8,           //总消费金额
+  "totalTimes": 268,            //总消费次数
+  "type": 1,
+  "userId": null,
+  "version": 759,
+  "wxCardCode": ""   //微信付款用的
+}

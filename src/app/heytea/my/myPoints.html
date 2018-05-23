@@ -1,0 +1,61 @@
+<div class="my-points-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="mpc.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">我的积分</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-panel top-panel">
+                    <div class="weui-cells">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">当前积分:</div>
+                        </div>
+                        <div class="weui-cell my-cell">
+                            <div class="my-border">
+                                <div class="weui-cell__bd ">{{mpc.currentPoints}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="no-border weui-panel" style="text-align: center; margin: 10px 10px">积分记录</div>
+
+                <div style="overflow: scroll; height: 90%;padding-bottom: 10px;">
+                    <div class="weui-panel" style="margin-top: 10px" ng-repeat="each in mpc.pointsRecords">
+                        <div class="weui-cells">
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label" style="width: 100%">{{each.created}}</label></div>
+                                <div class="weui-cell__ft" style="color: black">{{each.point}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--<div style="overflow: scroll; height: 90%;padding-bottom: 10px; margin: 0 20px; background-image: url(./assets/images/heytea/bg2.png) ">-->
+    <!--<div class="weui-panel" style="margin-top: 10px; background: red" ng-repeat="each in mpc.pointsRecords">-->
+        <!--<div class="weui-cells " style="background: transparent" >-->
+            <!--<div class="weui-cell">-->
+                <!--<div class="weui-cell__hd"><label class="weui-label" style="width: 100%">{{each.created}}</label></div>-->
+                <!--<div class="weui-cell__ft" style="color: black">{{each.point}}</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

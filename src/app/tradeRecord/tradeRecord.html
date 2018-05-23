@@ -1,0 +1,149 @@
+<div class="trade-record-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a class="" ng-click="tc.goBack()">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                            <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px" style="margin-top: 3px">
+                        </a>
+                        <span>交易记录</span>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-tab second">
+                <div class="weui-navbar second">
+                    <a class="weui-navbar__item" ng-class="{'active':tc.active === 'one'}" ng-click="tc.switchTab('one')">
+                        <div>充值记录</div>
+                    </a>
+                    <a class="weui-navbar__item" ng-class="{'active':tc.active === 'two'}" ng-click="tc.switchTab('two')">
+                        <div>消费记录</div>
+                    </a>
+                    <div class="bar-bottom-line animate" ng-class="tc.active"></div>
+                </div>
+                <div class="weui-tab__panel">
+                    <div class="weui-cells" ng-if="tc.active==='one'" ng-repeat="lt in tc.list | filter:{type:1}">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <label ng-if="lt.status==1">充值成功</label>
+                                <label ng-if="lt.status==2" style="color: red">已退单</label>
+                                <div class="recharge-value">+ {{lt.payTotal}}</div>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <div>
+                                    <label>卡内余额</label>
+                                    <span>{{lt.balance | currency: '￥'}}</span>
+                                </div>
+                                <div>
+                                    <label>卡内积分</label>
+                                    <span>{{lt.pointBalance}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <div>
+                                    <label>充值门店</label>
+                                    <span>{{lt.storeName}}</span>
+                                </div>
+                                <div>
+                                    <label>充值类型</label>
+                                    <span>{{lt.payType}}充值</span>
+                                </div>
+                                <div>
+                                    <label>充值时间</label>
+                                    <span>{{lt.createdDate}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui-cell bottom">
+                            <div class="weui-cell__bd">
+                                <div class="gifts">
+                                    <label>充值赠送</label>
+                                    <div class="gift-list">
+                                        <ul>
+                                            <li ng-repeat="gift in lt.gifts">
+                                                <span class="gift"></span>
+                                                <span>{{gift}}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-cells" ng-if="tc.active==='two'" ng-repeat="lt in tc.list | filter:{type:2}">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <label ng-if="lt.status==1">消费成功</label>
+                                <label ng-if="lt.status==2" style="color: red">已退单</label>
+                                <div class="recharge-value">- {{lt.total}}</div>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <div>
+                                    <label>卡内余额</label>
+                                    <span>{{lt.balance | currency: '￥'}}</span>
+                                </div>
+                                <div>
+                                    <label>卡内积分</label>
+                                    <span>{{lt.pointBalance}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <div>
+                                    <label>消费门店</label>
+                                    <span>{{lt.storeName}}</span>
+                                </div>
+                                <div>
+                                    <label class="trade-label">消费类型</label>
+                                    <span class="trade-type">
+                                        <div ng-if="lt.alipayAmount!=0">支付宝消费{{lt.alipayAmount | currency: '￥'}}</div>
+                                        <div ng-if="lt.amount!=0">会员卡消费{{lt.amount | currency: '￥'}}</div>
+                                        <div ng-if="lt.cashAmount!=0">现金消费{{lt.cashAmount | currency: '￥'}}</div>
+                                        <div ng-if="lt.creditAmount!=0">银联卡消费{{lt.creditAmount | currency: '￥'}}</div>
+                                        <div ng-if="lt.qqpayAmount!=0">QQ支付{{lt.qqpayAmount | currency: '￥'}}</div>
+                                        <div ng-if="lt.weixinAmount!=0">微信消费{{lt.weixinAmount | currency: '￥'}}</div>
+                                    </span>
+                                </div>
+                                <!--<div>-->
+                                    <!--<label class="trade-label">折扣详情</label>-->
+                                    <!--<span class="trade-type">-->
+                                        <!--<div ng-repeat="remark in lt.remarks">-->
+                                            <!--{{remark}}-->
+                                        <!--</div>-->
+                                    <!--</span>-->
+                                <!--</div>-->
+                                <div>
+                                    <label>消费时间</label>
+                                    <span>{{lt.createdDate}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui-cell bottom">
+                            <div class="weui-cell__bd">
+                                <div class="gifts">
+                                    <label>折扣详情</label>
+                                    <div class="gift-list">
+                                        <ul>
+                                            <li ng-repeat="gift in lt.gifts">
+                                                <!--<span class="gift">赠</span>-->
+                                                <span>{{gift}}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

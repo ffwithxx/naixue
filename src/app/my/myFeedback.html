@@ -1,0 +1,50 @@
+<div class="my-feedback-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="mfbc.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">意见反馈</div>
+                <div class="right_icon" ng-if="theme!='black'">
+                    <a class="weui-vcode-btn weui-btn_danger" ng-click="mfbc.onSubmit()" style="color:black">提交</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-panel">
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <textarea style="height: 120px" class="weui-textarea" ng-change="mfbc.onTextChange()"
+                                      ng-model="mfbc.feedback"
+                                      placeholder="输入反馈内容,不超过{{mfbc.memoMaxInput}}个字" rows="3"></textarea>
+                            <div class="weui-textarea-counter"><span>{{mfbc.memoInputCount}}</span>/{{mfbc.memoMaxInput}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="theme=='black'" class="weui-panel confirm-sm" style="margin-top: 35px;">
+                    <a class="weui-btn weui-btn_danger bottom-button" ng-click="mfbc.onSubmit()">提交</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="toast" ng-show="mfbc.showToast">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">{{mfbc.toastMsg}}</p>
+        </div>
+    </div>
+</div>

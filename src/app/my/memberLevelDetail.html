@@ -1,0 +1,82 @@
+<div class="meberlevel-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="mld.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">会员等级</div>
+                <div class="right_icon">
+                    <!--<a ng-click="mpcc.refresh()">-->
+                    <!--<img ng-if="theme!='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"-->
+                    <!--src="./assets/images/VK/shuaixin@2x.png">-->
+                    <!--<img ng-if="theme=='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"-->
+                    <!--src="./assets/images/black/shuaixin@2x.png">-->
+                    <!--</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:54px">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-panel" ng-repeat="eachLevel in mld.levels">
+                    <div class="weui-cells">
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__hd">
+                                <p>会员卡等级</p>
+                            </div>
+                            <div class="weui-cell__bd">{{eachLevel.levelName}}</div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__hd">
+                                <p>享受折扣值</p>
+                            </div>
+                            <div class="weui-cell__bd">{{mld.getdiscount(eachLevel.discount)}}</div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__hd">
+                                <p>经验值范围</p>
+                            </div>
+                            <div class="weui-cell__bd">{{eachLevel.lowerLimit}}-{{eachLevel.upperLimit}}</div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell" ng-if="theme=='black'" style="margin: 0 13px;padding: 0; border-bottom: 1px dashed #D9D9D9;">
+                        </div>
+                        <div class="my-style weui-cell" style="min-height:25px; height: {{25 * eachLevel.otherInfo.length}}px">
+                            <div class="weui-cell__hd">
+                                <!--手机上显示需要top:8px-->
+                                <p style="top: 8px; position: absolute;">等级升级奖</p>
+                            </div>
+                            <div class="weui-cell__bd">
+                                <div class="weui-cell no-cell-border thin-cell" style="padding: 0; margin-bottom: 3px;"
+                                     ng-repeat="eachTicket in eachLevel.otherInfo">
+                                    <div class="weui-cell__hd" style="display: flex">
+                                        <div style="margin-top: 2px;">
+                                            <img width="12px" ng-if="theme!='black'" src="./assets/images/VK/give.png" >
+                                            <img width="12px" ng-if="theme=='black'" src="./assets/images/black/give.png" >
+                                        </div>
+                                        <div style="margin-left: 5px">{{eachTicket}}</div>
+
+                                    </div>
+                                </div>
+                                <!--<div ng-repeat="eachTicket in eachLevel.ticketNames">{{eachTicket}}</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-bottom-bar">
+        <div class="weui-panel bottom_button_full">
+            <a class="weui-btn weui-btn_danger bottom-button" ng-click="mld.myExperience()">查看我的经验值</a>
+        </div>
+    </div>
+
+
+</div>

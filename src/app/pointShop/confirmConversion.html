@@ -1,0 +1,196 @@
+<div class="confirm-conversion-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab first" style="overflow-y: auto;height: calc(100% - 50px)">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a class="" ng-click="cc.goBack()">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                            <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                        </a>
+                        <span>确认信息</span>
+                    </div>
+                </div>
+                <div class="weui-tab__panel">
+
+                    <div class="one" ng-if="cc.detail.type!=0">
+                        <div style="background-color:#EEEEEE;color:#a0a0a0  " class="name">领取方式</div>
+                        <div class="self" ng-if="cc.selfShow" ng-click="cc.selfget()" style="">
+                            <div  class="my-box-txt" style="margin-left: 10px;height: 48px;font-size: 14px; line-height: 50px;width: 50px;background-color: white;display: inline-block">自提</div>
+                            <input class="selfinput"  disabled="no" style="" type="text" class="input-fix" placeholder="(需要到我们线下实体店提取物品)"/>
+
+                            <div ng-if="cc.getWay==1" class="right-arrow  oneself-right" style=" " ></div>
+
+                        </div>
+                        <div class="Courier" ng-click="cc.Courier()"style="width: 100%;height: 50px;border-bottom: 1px solid #EEEEEE;background-color: white;outline:none  ">
+                            <div  class="my-box-txt" style="margin-left: 10px;height: 50px;font-size: 14px; line-height: 50px;width: 50px;display: inline-block">快递</div>
+                            <input disabled="no" style="background-color: white;width:calc(100% - 110px);;height: 40px;font-size: 14px;outline:none;border: 0px" type="text" class="input-fix" placeholder="(我们帮您将物品快递到您的地址)"/>
+                            <div ng-if="cc.getWay==2" class="right-arrow  oneself-right"  ></div>
+                        </div>
+                    </div>
+                    <div ng-if="cc.getWay==1" class="two" >
+                        <div style="background-color:#EEEEEE;color:#a0a0a0  " class="name">自提门店</div>
+                        <div class="storeName" style="width: 100%;height: 50px;border-bottom: 1px solid #EEEEEE;background-color: white  " ng-click="cc.showStoreListDialog = true">
+                            <div  class="my-box-txt" style="margin-left: 10px;height: 50px;font-size: 14px; line-height: 50px;width: 70px;background-color: white;display: inline-block">门店名称</div>
+                            <input disabled="no" style="background-color: white;width: calc(100% - 90px);height: 40px;font-size: 14px;border: 0px" type="text" class="input-fix" ng-model = "cc.store.name" placeholder="--"/>
+
+                        </div>
+                        <div class="storeTel" style="width: 100%;height: 50px;border-bottom: 1px solid #EEEEEE;background-color: white  ">
+                            <div  class="my-box-txt" style="margin-left: 10px;height: 50px;font-size: 14px; line-height: 50px;width: 70px;background-color: white;display: inline-block">门店电话</div>
+                            <input disabled="no" style="background-color: white;width: calc(100% - 90px);height: 40px;font-size: 14px;border: 0px" type="text" ng-model="cc.store.tel" class="input-fix" placeholder="--"/>
+
+                        </div>
+                        <div class="storeAddress" style="width: 100%;height: 50px;border-bottom: 1px solid #EEEEEE;background-color: white  ">
+                            <div  class="my-box-txt" style="margin-left: 10px;height: 50px;font-size: 14px; line-height: 50px;width: 70px;display: inline-block">门店地址</div>
+                            <input disabled="no" style="background-color: white;width: calc(100% - 90px);height: 40px;font-size: 14px;border: 0px" type="text" ng-model="cc.store.address" class="input-fix" placeholder="--"/>
+
+                        </div>
+                    </div>
+                    <div ng-if="cc.getWay==2" class="three" >
+                        <div style="background-color:#EEEEEE;color:#a0a0a0  " class="name">快递地址</div>
+                        <div class="storeName" style="width: 100%;height: 50px;border-bottom: 1px solid #EEEEEE;background-color: white  ">
+                            <div  class="my-box-txt" style="margin-left: 10px;height: 50px;font-size: 14px; line-height: 50px;width: 70px;display: inline-block">收件人 </div>
+                            <input  style="background-color: white;width: calc(100% - 90px);;height: 40px;font-size: 14px;outline:none;border: 0px" type="text" class="input-fix" ng-model = "cc.name" placeholder="--"/>
+
+                        </div>
+                        <div class="storeTel" style="width: 100%;height: 50px;border-bottom: 1px solid #EEEEEE;background-color: white  ">
+                            <div  class="my-box-txt" style="margin-left: 10px;height: 50px;font-size: 14px; line-height: 50px;width: 70px;display: inline-block">联系电话</div>
+                            <input style="background-color: white;width: calc(100% - 90px);;height: 40px;font-size: 14px;outline:none;border: 0px" type="text" pattern="[0-9]*" ng-model="cc.mobile" class="input-fix" placeholder="--"/>
+
+                        </div>
+                        <div class="storeAddress" style="width: 100%;height: 50px;border-bottom: 1px solid #EEEEEE ;background-color: white ">
+                            <div  class="my-box-txt" style="margin-left: 10px;height: 50px;font-size: 14px; line-height: 50px;width: 70px;display: inline-block">快递地址</div>
+                            <input  style=";width: calc(100% - 90px);height: 40px;font-size: 14px;outline:none;border: 0px" type="text" ng-model="cc.address" class="input-fix" placeholder="--"/>
+
+                        </div>
+                    </div>
+                    <div style="background-color:#EEEEEE;color:#a0a0a0  " class="name">商品信息</div>
+                    <div class="detail">
+                        <div class="img">
+                            <img ng-src="{{cc.detail.productPic}}"/>
+                        </div>
+                        <div class="desc">
+                            <div class="first" style="display: flex">
+                                <div>{{cc.detail.productName | limitTo:11}}</div>
+
+                            </div>
+                            <div class="last">
+                                <span class="value">{{cc.getvalue(cc.detail)}}</span>
+                                <span ng-if="cc.detail.payType == 0" class="label" id="value1">&nbsp;积分</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="detailbottom" ng-if = "cc.detail.payType!=0">
+
+                        <div style="margin-left: 15px" >
+                            <div  class="my-box-txt" style="font-size: 14px; width: 80px;display: inline-block;height: 50px;line-height: 50px">商品数量</div>
+                            <div style="font-size: 16px;height: 50px;line-height: 50px;display: inline-block">1</div>
+                        </div>
+                        <div style="margin-left: 15px" ng-if="cc.getWay==2">
+                            <div  class="my-box-txt" style="font-size: 14px; width: 80px;display: inline-block;height: 50px;line-height: 50px;">快递运费</div>
+                            <div style="font-size: 16px;height: 50px;line-height: 50px;display: inline-block">{{cc.freight}}</div>
+                        </div>
+                        <div style="border-top: solid 1px #EEEEEE;height: 50px">
+                            <div  class="" style="  font-size: 18px;font-weight: bold;display: inline-block;height: 50px;line-height: 50px;float: right;padding-left: 10px;margin-right: 15px">{{cc.sumPrice}}</div>
+                            <div style="font-size: 14px;height: 50px;line-height: 50px;display: inline-block;float: right">共一件商品 合计:</div>
+                        </div>
+                        </div>
+
+
+                    <div class="four" ng-if="cc.detail.payType!=0">
+                        <div style="background-color:#EEEEEE;color:#a0a0a0;margin-left: 15px  " class="name">支付方式</div>
+                        <div class="self" ng-click = "cc.cardPay()" style="width: 100%;height: 50px;border-bottom: 1px solid #EEEEEE;background-color: white;outline:none ">
+                            <span  class="my-box-txt" style="margin-left: 10px;height: 50px;font-size: 14px; line-height: 50px;width: 50px;">会员卡支付</span>
+
+                            <div ng-if="cc.payType==2"  class="right-arrow  oneself-right" style="  ;" ></div>
+
+                        </div>
+                        <div class="Courier" ng-click = "cc.weChatPay()" style="width: 100%;height: 50px;border-bottom: 1px solid #EEEEEE;background-color: white ;outline:none ">
+                            <span  class="my-box-txt" style="margin-left: 10px;height: 50px;font-size: 14px; line-height: 50px;width: 50px;">微信支付</span>
+
+                            <div  ng-if="cc.payType==1" class="right-arrow  oneself-right" style=" " ></div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="weui-bottom-bar" style=" height: 60px">-->
+        <!--<div class="weui-cells" style="width: 100%;margin-top: 0px;height: 60px">-->
+            <!--<div class="weui-cell" ng-if="theme!='black'">-->
+                <!--<div class="current" style="color: transparent"  id="current"  >会员折扣: -{{cc.zhePrice}}</div>-->
+                <!--<button ng-click="cc.confirm()">立即兑换</button>-->
+            <!--</div>-->
+            <!--<div class="weui-cell" ng-if="theme=='black'" >-->
+                <!--<div class="current" id="one" style="margin-left: 10px;height: 100%;line-height: 60px; color: transparent"  >会员折扣:{{cc.zhePrice}}</div>-->
+                <!--<button id="current2" style=";float: right"   ng-click="cc.confirm()">立即兑换</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="weui-bottom-bar" >
+        <div class="weui-cells" style="width: 100%;margin-top: 0px;">
+            <div class="weui-cell" ng-if="theme!='black'">
+                <div class="current" style="color: transparent"  id="current"  >会员折扣: -{{cc.zhePrice}}</div>
+                <button ng-click="cc.confirm()">立即购买</button>
+            </div>
+            <div class="weui-cell" ng-if="theme=='black'" >
+                <div class="current" id="one" style="margin-left: 10px;height: 100%;line-height: 60px; color: transparent"  >会员折扣:{{cc.zhePrice}}</div>
+                <button id="current2" style=";float: right"   ng-click="cc.confirm()">立即购买</button>
+            </div>
+        </div>
+    </div>
+
+    <!--地址列表-->
+    <div class="star-dialog stores" ng-show="cc.showStoreListDialog">
+        <div class="my-address-container">
+            <div class="weui-top-bar">
+                <div class="weui-cells" style="width: 100%;margin-top: 0px">
+                    <div class="header">
+                        <div class="left_icon">
+                            <a ng-click="cc.showStoreListDialog = false">
+                                <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                                <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                            </a>
+                        </div>
+                        <div class="label" style="">选择门店</div>
+                        <div class="right_icon">
+                            <!--<a class="weui-vcode-btn weui-btn_danger button-clear" ng-click="malc.onManageClick()" style="color:black">{{malc.manage}}</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page osc-page">
+                <div class="page__bd" style="height: 100%;">
+                    <div class="weui-tab__panel">
+
+                        <div class="weui-panel">
+                            <a class="weui-cell" ng-repeat="eachStore in cc.stores" style="padding: 0 10px 0 0px;" ng-click="cc.onStoreClick(eachStore)">
+                                <div class="weui-cell__bd">
+                                    <div class="weui-media-box weui-media-box_text">
+                                        <h4 class="weui-media-box__title">
+                                            <span style="margin-right: 10px">{{eachStore.name}}</span>
+                                        </h4>
+                                        <p style="margin-bottom: 10px" class="weui-media-box__desc">{{eachStore.address}}</p>
+                                        <p class="weui-media-box__desc">{{eachStore.tel}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="weui-bottom-bar">-->
+                <!--<div class="weui-panel bottom_button_full">-->
+                    <!--<a class="weui-btn weui-btn_danger bottom-button" ng-click="osc.addAddress()">+ 新建地址</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+
+</div>

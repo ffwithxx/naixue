@@ -1,0 +1,32 @@
+<div class="privilege-detail-container-heytea">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="hpd.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">特权详情</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:44px;">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="first-content">
+                    <img src="{{hpd.img}}"/>
+                    <div>{{hpd.name}}特权</div>
+                </div>
+                <div class="second-content">
+                    <div style="margin: 10px 15px 0px 15px" ng-if="hpd.priv" class="desc" ng-bind-html="hpd.priv"></div>
+                    <ul ng-if="!hpd.priv">
+                        <li ng-repeat="item in hpd.list">{{item}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

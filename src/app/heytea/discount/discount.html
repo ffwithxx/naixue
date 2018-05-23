@@ -1,0 +1,79 @@
+<div class="discount-coupon-container-heytea">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="dcc.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">我的券</div>
+            </div>
+        </div>
+    </div>
+    <div class="page" style="overflow: hidden">
+        <div class="page__bd" style="height: 100%;" ng-if="theme=='heytea'">
+            <div class="top"  >
+
+                <img style="  border:none;border-radius:0;height: 80px;width: 80px" class="img" src="./assets/images/snow/8.png" />
+
+            </div>
+            <div class="weui-tab second">
+                <div class="weui-navbar second" style="box-shadow: 0 6px 10px #CECECE;">
+                    <a class="weui-navbar__item" ng-class="{'active':dcc.active === 'one'}"
+                       ng-click="dcc.switchTab('one')">
+                        <div>未使用</div>
+                    </a>
+
+
+                    <a class="weui-navbar__item" ng-class="{'active':dcc.active === 'three'}"
+                       ng-click="dcc.switchTab('three')">
+                        <div>已过期</div>
+                    </a>
+                    <a class="weui-navbar__item" ng-class="{'active':dcc.active === 'two'}"
+                       ng-click="dcc.switchTab('two')">
+                        <div>已使用</div>
+                    </a>
+                    <div class="bar-bottom-line animate" ng-class="dcc.active"></div>
+                </div>
+                <div class="weui-tab__panel" style="background-color: white;height: calc(100% - 200px)">
+                    <div class="no-data" ng-if="dcc.showEmptyMsg">
+                        <img src="./assets/images/heytea/no-data.png"/>
+                        <div>{{dcc.noDataMsg}}</div>
+                    </div>
+                    <!--<div class="items" ng-if="dcc.showBlack" " >-->
+                        <!--ng-click="dcc.openTaste(li)"-->
+                        <!--<div class="item"   >-->
+                            <!--<div class="left">-->
+                                <!--<div style="font-size: 11px; top: 30px">{{"消费进度:"}}</div>-->
+
+                                <!--<div style="font-size: 16px;top: 50px ">{{dcc.cardConsumptionCount}}/{{dcc.levelConsumptionCount}}</div>-->
+                            <!--</div>-->
+                            <!--<div class="right">-->
+                                <!--<div class="name">{{"黑金会员特权"}}</div>-->
+                                <!--<div class="desc">{{dcc.leveCount}}</div>-->
+                                <!--<div class="date">{{dcc.ticketNameStr}}</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="items" ng-class="dcc.active" style="margin-top: -80px;" ng-click = "dcc.openTaste(li)" >
+
+                        <div class="item"  ng-repeat="li in dcc.list"  >
+                            <div class="left">
+                                <div class="name">{{li.name}}</div>
+
+                                <div class="date">{{li.dateStr}}</div>
+                                <div class="detail" ng-click="dcc.openTaste(li)">查看详情</div>
+
+                            </div>
+                            <div class="right">
+                            <img style="width: 78px;height: 78px;margin-top: 10px" src={{li.url}}>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

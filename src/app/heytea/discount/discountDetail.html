@@ -1,0 +1,31 @@
+
+<div class="heytea-discount-detail-container-heytea">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="hddc.goBack()">
+                        <!--<img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">-->
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="font-size: 15px" ng-bind="hddc.title"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="weui-tab__panel">
+            <div class="img">
+                <!--<img src="./assets/images/heytea/quan.png"/>-->
+                <img id = "bagImg" src="{{hddc.bagImg}}">
+            </div>
+            <div class="description">
+
+                <div class="desc" ng-bind-html="hddc.detail"></div>
+
+            </div>
+            <div class="time" ng-bind="hddc.time" ></div>
+        </div>
+    </div>
+</div>

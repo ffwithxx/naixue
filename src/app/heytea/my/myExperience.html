@@ -1,0 +1,111 @@
+<div class="my-experience-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="mer.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="right_icon" ng-click="mer.goPoint()" style="right: 20px;top: 12px;font-size: 14px;border: 1px solid #e7e7e7;border-radius: 5px;width: 70px;text-align: center;height: 20px;line-height: 20px">
+                   积分历程
+                </div>
+                <div class="label" style="">成长历程</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-panel top-panel" id="headerImg" style="overflow: hidden">
+
+                    <!--<div class="weui-cells" style="background: transparent;bottom: 1vh">-->
+
+                        <!--<div class="weui-cell my-cell">-->
+                            <!--<div class="my-border">-->
+                                <!--<div class="weui-cell__bd " style="color: white">{{mer.experience}}</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                    <div class="lineBG" id="lineBG">
+                        <!--<div class="line" id="line" style="background-color: red"></div>-->
+                        <div class="oneqi" id="oneqi" ></div>
+                        <div class="oneLine" id="oneLine" style="background-color: white;width: calc((100% - 90px )/2);height: 4px;background-color: white;margin-top: 14px;float: left; box-shadow: 0 0 3px #5e5c5c;">
+                            <div class="oneLineSon" id="oneLineSon" style="height: 100%;width: 0px;background-color: #A28237"></div>
+                        </div>
+                        <div class="twoqi" id="twoqi"></div>
+                        <div class="oneLine"  style="background-color: white;width: calc((100% - 90px )/2);height: 4px;background-color: white;margin-top: 14px;float: left;box-shadow: 0 0 3px #5e5c5c;">
+                            <div class="twoLineSon" id="twoLineSon" style="height: 100%;width: 0px;background-color: #A28237"></div>
+                        </div>
+                        <div class="threeqi" id="threeqi"></div>
+
+                    </div>
+                    <div class="pointValue">
+                        <div class="oneValue" >{{0}}</div>
+                        <div class="oneLine"  style="background-color: white;width: calc((100% - 90px )/2  - 30px);height: 4px;background-color: white;margin-top: 14px;float: left;">
+
+                        </div>
+                        <div class="twoValue" >{{mer.TwoValue}}</div>
+                        <div class="oneLine"  style="background-color: white;width: calc((100% - 90px )/2  - 30px);height: 4px;background-color: white;margin-top: 14px;float: left">
+
+                        </div>
+                        <div class="threeValue" >{{mer.threeValue}}</div>
+                    </div>
+                    <div style="background-color: white;text-align: center;padding-top: 80px">{{mer.option}}</div>
+
+
+                    <!--<div style="margin-top: 1vh">-->
+                    <!--<img style="width: 24px;height: 18px" src="./assets/images/newHey/img02.png.png">-->
+                    <!--</div>-->
+
+
+                </div>
+
+                <!--<div  style="text-align: right; margin: 20px 20px 0px 10px">{{mer.timeStr}}</div>-->
+
+
+
+
+                <!--<div class="bottom-box" id = "bottom-box" style="overflow: scroll; height: 100%; margin: 0 20px; background-image: url(./assets/images/newHey/point4.jpg) ">-->
+
+                    <!--<div class="weui-panel bottom-panel" style="; background: transparent;height: 85px" ng-repeat="each in mer.pointsRecords">-->
+                        <!--<div style="height: 15px;background-color: white"></div>-->
+                        <!--<div class="weui-cells  " style="background: transparent;height: 70px" >-->
+
+                            <!--<div class="weui-cell" >-->
+                                <!--<div  style="height: 70px;margin-top: 0px">-->
+                                <!--<div class="weui-cell__hd"><label class="weui-label"  style="width: 100%;height: 25px;margin-top: 0px; color: white;">{{each.storeName}}</label></div>-->
+                                <!--<div class="weui-cell__hd"><label class="weui-label"  style="width: 100%;height: 35px;color: white">{{each.created}}</label></div>-->
+                                    <!--</div>-->
+                                <!--<div class="weui-cell__ft" style="color: white">{{each.point}}</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div style="overflow: scroll; height: 90%;padding-bottom: 10px;margin-top: 10px">
+                    <div class="weui-panel" style="margin-top: 10px" ng-repeat="each in mer.pointsRecords">
+                        <div class="weui-cells">
+                            <div class="weui-cell recordbg" style="height: 40px" >
+                                <div class="recordSon" >
+                                <div class="weui-cell__hd" style="height: 25px;line-height: 25px" ><label class="weui-label" style="width: 100%">{{each.storeName}}</label></div>
+                                <div class="weui-cell__hd" style="height: 25px;line-height: 25px"><label class="weui-label" style="width: 100%">{{each.created}}</label></div>
+                                    </div>
+                                <div class="weui-cell__ft" style="color: #A28237">{{each.point}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,194 @@
+<div class="order-list-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a class="" ng-click="ol.goBack()">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                            <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                        </a>
+                        <span>点单</span>
+                    </div>
+                </div>
+                <div class="weui-tab__panel">
+                    <div class="type" ng-class="{'fixed': ol.showAllotTaste || ol.showBottom}">
+                        <ul>
+                            <li ng-repeat="c in ol.categories" ng-class="{'active':c.id===ol.activeCategory.id}">
+                                <a ng-click="ol.setActive(c)">{{c.name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="list" ng-class="{'fixed': ol.showAllotTaste || ol.showBottom}">
+                        <div class="list-content" style="" >
+                            <div class="weui-flex list-container" ng-repeat="p in ol.products" style="border-bottom: 1px solid #aaaaaa">
+                                <div class="img">
+                            <img ng-src="{{p.iconUrl}}"/>
+                        </div>
+                        <div class="desc " style=";" >
+                            <div class="first" style="display: flex">
+                                <div>{{p.name}}</div>
+                                <!--<div class="type" ng-if="cc.detail.type==1">-->
+                                <!--<img ng-if="theme!='black'" src="./assets/images/VK/ziti@2x.png">-->
+                                <!--<img ng-if="theme=='black'" src="./assets/images/black/ziti.png">-->
+                                <!--</div>-->
+                            </div>
+                            <div class="last" style="display: inline-block; float: left;width: 100%; " >
+                                <div style="width: 60px;;float: left" >
+                                <span class="value">{{p.price | currency: '￥'}}</span>
+                                    </div>
+                                <div class="right" style="float: right;  ;margin-top: -5px ">
+                                <button class="reduce" ng-if="p.total>0" ng-click="ol.reduce(p, true)"></button>
+                                <span class="num" ng-if="p.total>0">{{p.total}}</span>
+                                <button class="plus" ng-click="ol.plus(p, true)"></button>
+                                </div>
+                                <!--<span class="label">积分</span>-->
+                            </div>
+
+                        </div>
+                                <!--<div class="weui-flex__item first">{{p.name}}</div>-->
+                                <!--<div class="weui-flex__item second">{{p.price | currency: '￥'}}</div>-->
+                                <!--<div class="right">-->
+                                <!--<button class="reduce" ng-if="p.total>0" ng-click="ol.reduce(p, true)"></button>-->
+                                <!--<span class="num" ng-if="p.total>0">{{p.total}}</span>-->
+                                <!--<button class="plus" ng-click="ol.plus(p, true)"></button>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="weui-tabbar vk-tabbar" style="position:fixed;" ng-if="theme!='black'">
+                    <img src="./assets/images/VK/shop_cart@2x.png" ng-click="ol.openTaste()" style="width:40px;height:40px;margin:3px;background-color:transparent;" />
+                    <a class="weui-tabbar__item second">
+                        <p class="weui-tabbar__price" ng-class="{'open':ol.showBottom||ol.showAllotTaste}">{{ol.totalPrice | currency: '￥'}}</p>
+                    </a>
+                    <span class="weui-tab__selcount">已选:{{ol.itemCount}}</span>
+                    <a class="third" ng-click="ol.goFinal()" ng-class="{'active':ol.actualItems.length==0}">
+                        <p class="weui-tabbar__label" ng-if="false">满40元配送</p>
+                        <p class="weui-tabbar__label">去结算</p>
+                    </a>
+                </div>
+                <!--<div class="total-num" ng-if="!ol.showBottom && !ol.showAllotTaste&&theme!='black'">
+                    <a ng-click="ol.openTaste()">
+                        <div class="yellow">{{ol.actualItems.length}}</div>
+                    </a>
+                </div>-->
+                <div class="weui-tabbar vk-tabbar" style="position:fixed;" ng-if="theme=='black'">
+                    <div class="left" ng-click="ol.openTaste()">
+                        <p class="weui-tabbar__label">{{ol.totalPrice | currency: '￥'}}</p>
+                        <span>已点{{ol.actualItems.length}}</span>
+                    </div>
+                    <div class="right">
+                        <button ng-click="ol.goFinal()" ng-class="{'active':ol.actualItems.length==0}">去结算</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- order bottom list -->
+    <div ng-show="ol.showBottom && ol.actualItems.length>0" class="num-list">
+        <div class="weui-mask" ng-click="ol.closeBottom()"></div>
+        <div class="weui-actionsheet" ng-class="{'weui-actionsheet_toggle':ol.showBottom}">
+            <div class="weui-actionsheet__menu list">
+                <div class="list-container" ng-repeat="p in ol.actualItems" ng-if="p.total>0">
+                    <div class="weui-flex">
+                        <div class="weui-flex__item first">{{p.name}}</div>
+                        <div class="weui-flex__item second">{{p.price | currency: '￥'}}</div>
+                        <div class="right">
+                            <button class="reduce" ng-if="p.total>0" ng-click="ol.reduce(p)"></button>
+                            <span class="num" ng-if="p.total>0">{{p.total}}</span>
+                            <button class="plus" ng-click="ol.plus(p)"></button>
+                        </div>
+                    </div>
+                    <div class="weui-flex" ng-repeat="t in p.tasteList">
+                        <div class="weui-flex__item first taste-label">{{t.name}}</div>
+                        <div class="weui-flex__item second taste-label">{{t.price | currency: '￥'}}</div>
+                        <div class="right">&nbsp;</div>
+                    </div>
+                    <!--<div class="weui-flex__item first">{{p.name}}</div>
+                    <div class="weui-flex__item second">{{p.price | currency: '￥'}}</div>
+                    <div class="right">
+                        <button class="reduce" ng-if="p.total>0" ng-click="ol.reduce(p)"></button>
+                        <span class="num" ng-if="p.total>0">{{p.total}}</span>
+                        <button class="plus" ng-click="ol.plus(p)"></button>
+                    </div>-->
+                </div>
+            </div>
+            <div class="top-button" ng-click="ol.closeBottom()">
+                <div class="close"></div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="ol.showAllotTaste">
+        <div class="weui-mask" ng-click="ol.closeAllotTaste()"></div>
+        <div class="weui-dialog">
+            <div class="weui-dialog__hd">
+              <a href="javascript:;" style="font-size:20px;color:#C4C4C4;" ng-click="ol.closeAllotTaste()">X</a>
+            </div>
+            <div class="weui-dialog__bd">
+              <div class="taste-group" ng-repeat="group in ol.activeProduct.attributeGroups">
+                  <div class="group-title">
+                    <span>{{group.name}}</span>
+                  </div>
+                  <div style="text-align:left;padding:0;">
+                    <a href="javascript:;" ng-repeat="t in group.productAttributeResponseList" ng-class="{true : 'weui-btn-new active', false : 'weui-btn-new'}[t.total>0]" ng-click="ol.selectedTaste(t)">
+                      {{t.name}}
+                    </a>
+                  </div>
+              </div>
+            </div>
+            <div class="weui-dialog__ft">
+                <span class="price-label">{{ol.activeProductPrice | currency: '￥'}}</span>
+                <a href="javascript:;" class="btn-shopcar" ng-click="ol.addCart(ol.activeProduct)">加入购物车</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- allot taste -->
+    <!--<div ng-show="ol.showAllotTaste && ol.actualItems.length>0" class="allot-taste">
+        <div class="weui-mask" ng-click="ol.closeAllotTaste()"></div>
+        <div class="weui-actionsheet" ng-class="{'weui-actionsheet_toggle':ol.showAllotTaste}">
+            <div class="weui-actionsheet__menu list">
+                <div class="left">
+                    <ul>
+                        <li ng-repeat="p in ol.actualItems track by p.xid" ng-class="{'active':ol.activeProduct.xid==p.xid}" ng-click="ol.setProductActive(p)">
+                            {{p.name}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li ng-repeat="t in ol.activeProduct.tasteList">
+                            <div class="taste-content">
+                                <div class="weui-flex__item first">{{t.name}}</div>
+                                <div class="weui-flex__item second">{{t.price | currency: '￥'}}</div>
+                                <div class="right-action">
+                                    <button class="reduce" ng-if="t.total>0" ng-click="ol.reduceTaste(t)"></button>
+                                    <span class="num" ng-if="t.total>0">{{t.total}}</span>
+                                    <button class="plus" ng-click="ol.plusTaste(t)"></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="top-button" ng-click="ol.closeAllotTaste()">
+                <div class="close"></div>
+            </div>
+        </div>
+    </div>-->
+</div>
+<!-- loading toast -->
+<div id="loadingToast" ng-show="ol.showLoading">
+   <div class="weui-mask_transparent"></div>
+   <div class="weui-toast">
+       <i class="weui-loading weui-icon_toast"></i>
+   </div>
+</div>
+<div ng-if="ol.showWarning">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <p class="weui-toast__content">{{ol.warningMsg}}</p>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+<div class="store-detail-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="sdc.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label">店铺详情</div>
+                <div class="right_icon">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-media-box weui-media-box_appmsg" style="background-color: white">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" width="70px" height="70px" ng-src="{{sdc.store.logo}}" src="{{sdc.store.logo}}">
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title" style="line-height: 1.2em">{{sdc.store.name}}</h4>
+                        <p class="weui-media-box__desc" style="margin-top: 5px;">
+                            <span style="vertical-align: sub;margin-right: -4px">
+                                        <img width="5%" ng-if="theme!='black'" src="./assets/images/VK/start@2x.png"
+                                             style="margin-right: 5px;"
+                                             ng-repeat="a in sdc.store.stars track by $index">
+                                 <img width="5%" ng-if="theme=='black'" src="./assets/images/black/xiaoxingxing-@2x.png"
+                                      style="margin-right: 5px;"
+                                      ng-repeat="a in sdc.store.stars track by $index">
+                            </span>
+                            <span style="vertical-align: sub;">
+                                        <img width="5%" ng-if="theme!='black'" src="./assets/images/VK/start-disable@2x.png"
+                                             style="margin-right: 5px; "
+                                             ng-repeat="b in sdc.store.unstars track by $index">
+                                        <img width="5%" ng-if="theme=='black'" src="./assets/images/black/xiaoxingxing02@2x.png"
+                                             style="margin-right: 5px; "
+                                             ng-repeat="b in sdc.store.unstars track by $index">
+                            </span>
+                            <span style="margin-left: 5px;">已售出 {{sdc.store.monthMake || 0}} 件</span>
+                        </p>
+                        <p class="weui-media-box__desc" style="line-height: 1em">&nbsp;</span>
+                        </p>
+                        <p class="weui-media-box__desc" style="margin-top: -5px;">
+                            <span>
+                                <span class="parking">P</span>
+                                <span style="margin-left: 3px"
+                                      ng-if="sdc.store.parkingSpace">有车位</span>
+                                <span style="margin-left: 3px"
+                                      ng-if="!sdc.store.parkingSpace">无车位</span>
+                            </span>
+                            <span class="splitter">
+                                <span class="wifi" style="margin-left: 20px; ">WIFI</span>
+                                <span style="margin-left: 3px" ng-if="sdc.store.wifi">支持WIFI</span>
+                                <span style="margin-left: 3px" ng-if="!sdc.store.wifi">不支持WIFI</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="weui-grids" style="border-top:0px;background-color: white">
+                    <a class="weui-grid" style="border-right: 0" ng-click="sdc.order('selfOrder')">
+                        <div class="weui-grid__icon">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/diandan@2x.png">
+                            <img ng-if="theme=='black'" src="./assets/images/black/diandan@2x.png">
+                        </div>
+                        <p class="weui-grid__label">自助点单</p>
+                    </a>
+                    <div class="weui-grid"  ng-click="sdc.order('takeOut')">
+                        <div class="weui-grid__icon">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/waimai@2x_63.png">
+                            <img ng-if="theme=='black'" src="./assets/images/black/waimai@2x_63.png">
+                        </div>
+                        <p class="weui-grid__label">外卖/自提</p>
+                    </div>
+                    <a class="weui-grid" ng-click="sdc.showCallDialog = true">
+                        <div class="weui-grid__icon">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/zixun@2x.png">
+                            <img ng-if="theme=='black'" src="./assets/images/black/zixun@2x.png">
+                        </div>
+                        <p class="weui-grid__label">咨询门店</p>
+                    </a>
+                </div>
+
+
+                <div class="weui-panel">
+                    <div class="weui-cells">
+                        <a class="weui-cell weui-cell_access has-bottom-border" ng-click="sdc.goAddressMap()">
+                            <div class="weui-cell__hd">
+                                <p>门店位置</p>
+                            </div>
+                            <div class="weui-cell__bd">{{sdc.store.address}}</div>
+                            <div class="weui-cell__ft">&nbsp;</div>
+                        </a>
+                        <div class="weui-cell has-bottom-border">
+                            <div class="weui-cell__hd">
+                                <p>营业时间</p>
+                            </div>
+                            <div class="weui-cell__bd">{{sdc.store.businessHourss}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--//以下是弹出框//-->
+    <!--拨打电话 弹出框-->
+    <div class="star-dialog call" ng-show="sdc.showCallDialog">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog weui-skin_android">
+            <div class="top" ng-if="theme!='black'" >
+                <img src="./assets/images/VK/dianhua@2x.png"/>
+            </div>
+
+            <a class=" my-cancel-btn" ng-click="sdc.showCallDialog=false" ng-if="theme == 'black'">×</a>
+            <div class="weui-dialog__bd my-bd"  style="min-height: 0">
+                <div class="weui-flex">
+                    <div class="weui-flex__item" style="text-align: center;color: black">{{sdc.store.tel}}</div>
+                </div>
+            </div>
+            <div class="weui-dialog__ft my-ft">
+                <div class="weui-flex">
+                    <div class="weui-flex__item" ng-if="theme!='black'" >
+                        <a class="weui-dialog__btn weui-dialog__btn_default" ng-click="sdc.showCallDialog = false">取消</a>
+                    </div>
+                    <div class="weui-flex__item">
+                        <a class="weui-dialog__btn weui-dialog__btn_primary my-dialog-btn" href="tel:{{sdc.store.tel}}">呼叫</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

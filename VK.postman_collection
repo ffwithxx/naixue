@@ -1,0 +1,631 @@
+{
+	"variables": [],
+	"info": {
+		"name": "VK",
+		"_postman_id": "8fe03b3e-4714-c107-e08b-a85a4975a060",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "注册 - 验证码",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/send/18980611603/identifyingCode/by/231",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"甘杨\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "注册 - 注册 ",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/card",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mobile\":\"18980611603\",\n\t\"password\":\"123456\",\n\t\"sms\":\"6756\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "注册 - 登录",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/card/activateToken",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mobile\":\"134\",\n\t\"password\":\"111111\",\n\t\"storeId\":\"231\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "找回密码 - 验证码",
+			"request": {
+				"url": "https://api.vi-ni.com/app/v1/sms_pasword/by/18980611603",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"甘杨\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "优惠 - 列表",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/couponInfo/231/0/99",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "77f97dabe5a32b4d66f110f37b492697",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"甘杨\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "优惠 - 列表详情",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/couponInfo/231/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "77f97dabe5a32b4d66f110f37b492697",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"甘杨\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "反馈 - post",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/webapi/v1/feedback",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "77f97dabe5a32b4d66f110f37b492697",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "商城 - 列表",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v2/store/getInfo/231",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "77f97dabe5a32b4d66f110f37b492697",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "地址管理 - 分页查询",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v2/address/by/117395/0/99",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "cf353527a78a36994a86faf70c93da11",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mobile\":\"134\",\n\t\"password\":\"111111\",\n\t\"storeId\":\"231\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "地址管理 - 查询 默认地址",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v2/address/getDefaultAddress/117395",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "cf353527a78a36994a86faf70c93da11",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mobile\":\"134\",\n\t\"password\":\"111111\",\n\t\"storeId\":\"231\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "地址管理 - 删除",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v2/address/{id}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "cf353527a78a36994a86faf70c93da11",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mobile\":\"134\",\n\t\"password\":\"111111\",\n\t\"storeId\":\"231\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "地址管理 - 修改",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v2/address",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "cf353527a78a36994a86faf70c93da11",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"31\",\n\t\"address\":\"la'la'la'l\",\n\t\"city\":\"月球\",\n\t\"mobile\":\"13999999999\",\n\t\"isDefault\":1,\n\t\"name\":\"李二娃\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "地址管理 - 添加",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v2/address",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "cf353527a78a36994a86faf70c93da11",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cardId\":\"117395\",\n\t\"address\":\"啦啦啦\",\n\t\"city\":\"月球\",\n\t\"mobile\":\"13999999999\",\n\t\"isDefault\":0,\n\t\"name\":\"李二12娃\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "获得支付码",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/card/paymentcode/117395",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "cf353527a78a36994a86faf70c93da11",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cardId\":\"117395\",\n\t\"address\":\"啦啦啦\",\n\t\"city\":\"月球\",\n\t\"mobile\":\"13999999999\",\n\t\"isDefault\":0,\n\t\"name\":\"李二12娃\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "我的 - 优惠券",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/ticket/getByOpenId/oTUIst-fO5wpPhAjJqM_rc0JrGkU",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "4c64f6e433c9fd60787427feb5e0440e",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "我的 - 充值记录",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/transaction/byType/117395/231/0/99",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "4c64f6e433c9fd60787427feb5e0440e",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "我的 - 消费记录",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/transaction/byList/117395/231/0/99",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "4c64f6e433c9fd60787427feb5e0440e",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "我的 - 订单查询",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v2/orders/getOrdersByOpenId/{openId}/{storeId}/{orderType}/{pageIndex}/{limit}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "4c64f6e433c9fd60787427feb5e0440e",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "我的 - 会员等级",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/card/levellist/{cardId}/{storeId}/{pageIndex}/{pageSize}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "77f97dabe5a32b4d66f110f37b492697",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "我的 - 经验值",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/card/explog/{cardId}/{storeId}/{pageIndex}/{pageSize}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "eddf0d9d22cb438c7ac19a9b66f68f91",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "积分商城 - 兑换记录",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/point_exchange_gifts/queryList/'+pageIndex+'/'+pageSize+'/'+storeId+'/'+ cardId",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "eddf0d9d22cb438c7ac19a9b66f68f91",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "积分商城 - 兑换记录 copy",
+			"request": {
+				"url": "https://api.vi-ni.com/webapi/v1/point_product/queryList/'+storeId+'/1/'+page +'/'+limit",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "cardId",
+						"value": "117395",
+						"description": ""
+					},
+					{
+						"key": "token",
+						"value": "eddf0d9d22cb438c7ac19a9b66f68f91",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"storeId\":\"231\",\n\t\"content\":\"77f97dabe5a32b4d66f110f37b492697\",\n\t\"source\":\"微商城v2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

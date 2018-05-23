@@ -1,0 +1,50 @@
+<div class="privilege-container-heytea">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="hrc.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">会员说明</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:44px;">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="top-content">
+                    <div class="img-content">
+                        <img src="./assets/images/snow/2.png"/>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-list">
+                            <span class="tab-item"
+                                  ng-click="hrc.setTabActive(tab)"
+                                  ng-class="{'active':tab.id==hrc.tabActiveList.id}" ng-repeat="tab in hrc.tabList">
+                                <span>{{tab.levelName}}</span>
+                            </span>
+                            <div class="active-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-detail ngIncludeItem" ng-swipe-left="hrc.setNextActive()" ng-swipe-right="hp.setPrevActive()"
+                     ng-class="{'moveToLeft':hrc.moveToLeft}"
+                     >
+                    <div class="description" style="margin: 0px 0px;background-color: white">
+
+                        <div class="desc" style="height: auto;background-color: white;margin: 15px 15px;" ng-bind-html="hrc.tabActiveList.detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+</script>

@@ -1,0 +1,182 @@
+<div class="register-container common-bg">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="re.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">会员激活</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel" style="background-color: white;opacity: 0.85;">
+
+                <div class="weui-panel">
+                    <div class="weui-cells weui-cells_form">
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">会员卡号<span
+                                class="my_start">*</span></label></div>
+                            <div class="weui-cell__bd pwd">
+                                <input class="weui-input" type="text" ng-model="re.vcardNum" placeholder="请输入账号(账号在会员卡背面)"/>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">密码<span
+                                class="my_start">*</span></label></div>
+                            <div class="weui-cell__bd pwd">
+                                <input class="weui-input" type="password" ng-model="re.vpwd" ng-change="re.onPwdChange(re.vpwd)" placeholder="请输入会员卡密码(初始密码在会员卡背面)"/>
+                            </div>
+                        </div>
+                        <div class="weui-cell adjust-phone-padding">
+                            <div class="weui-cell__hd">
+                                <label class="weui-label">手机号<span class="my_start">*</span></label></div>
+                            <div class="weui-cell__bd">
+                                <input class="weui-input" type="text" pattern="[0-9]*" ng-model="re.mobile"
+                                       placeholder="请输入手机号"/>
+                            </div>
+                            <div class="weui-cell__ft vcode">
+                                <a class="weui-btn" ng-class="re.vcodeCss" ng-bind="re.vcodeTitle" ng-click="re.getVcode()" ng-disabled="!re.mobile" style="font-size: 12px;margin-right: 10px;">获取验证码</a>
+                            </div>
+
+                        </div>
+
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">验证码<span
+                                class="my_start">*</span></label></div>
+                            <div class="weui-cell__bd pwd">
+                                <input class="weui-input" type="text" ng-model="re.vcode" placeholder="请输入验证码"/>
+                            </div>
+                        </div>
+
+                        <div id="_umfp" style="display:inline;width:1px;height:1px;overflow:hidden;"></div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">姓名<span
+                                class="my_start">*</span></label></div>
+                            <div class="weui-cell__bd">
+                                <input class="weui-input" type="text" ng-model="re.name" placeholder="请输入姓名"/>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">生日<span
+                                class="my_start">*</span></label></div>
+                            <div class="weui-cell__bd" id="date-input">
+                                <input placeholder="请选择生日信息" type="text" ng-model="re.birthday"  name="USER_AGE" id="USER_AGE" readonly class="weui-input" placeholder="请填写你的出生日期" />
+                            </div>
+                            <div class="weui-cell__ft">></div>
+
+                        </div>
+                        <div class="weui-cell "  id="sexChange">
+                        <!--<div class="weui-cell weui-cell_select weui-cell_select-after adjust-sex-padding">-->
+
+                        <div class="weui-cell__hd">
+
+                                <label class="weui-label">性别<span
+                                    class="my_start">*</span></label>
+                            </div>
+                            <div class="weui-cell__bd" id="sex-input">
+                                <input class="weui-input" readonly="" type="text" ng-model="re.gender" placeholder="请输入性别"/>
+                            </div>
+                            <div class="weui-cell__ft leftbg">&nbsp;</div>
+                            <!--<div class="weui-cell__bd">-->
+                                <!--<div></div>-->
+                                <!--<select class="weui-select sex" name="select2" ng-model="re.gender">-->
+                                    <!--<option value="0">-->
+                                        <!--<span>男</span></option>-->
+                                    <!--<option value="1">女</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class=" bottom-container" style="margin-top: 20px; left: 15px;float: left">
+                    *号为必填信息
+                    <!--<label class="weui-left" style="text-align: center; right:5%;"></label>-->
+                </div>
+
+                <!--<div class="no-bottom-border weui-panel" style="">-->
+                <!--</div>-->
+                <div class="no-bottom-border weui-panel login-btn"  style="margin-top: 50px;">
+                 <!--    <div style="text-align: center; color: #ec3b42">&nbsp;{{re.msg.message }}</div> -->
+                    <a style="margin-top: 20px;" class="weui-btn" ng-click="re.submit()" ng-disabled="!re.mobile||!re.vcode||!re.name||!re.birthday">激活</a>
+                </div>
+                <!--<div class="weui-footer">-->
+                <label class="weui-agree" style="text-align: center;">
+                    <input ng-model="re.checked" type="checkbox" class="weui-agree__checkbox">
+                    <span class="weui-agree__text">
+                阅读并同意<a ng-click="re.goBuy()" style="color: black">《相关条款》</a>
+            </span>
+                    <!--<span class="weui-agree__text">-->
+                <!--阅读并同意<a  style="color: black">《相关条款》</a>-->
+            <!--</span>-->
+                </label>
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <div class="register-dialog-sex" id="sex">
+        <div class="dialog-sex-close" id="sex-close">
+            <!--<i></i>-->
+        </div>
+        <div class="dialog-sex-box">
+            <div class="dialog-sex-box-list" id="boy">
+                <img src="./assets/images/newHey/boy.png">
+                <span>男</span>
+            </div>
+            <div class="dialog-sex-box-list" id="girl">
+                <img src="./assets/images/newHey/girl.png">
+                <span>女</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="star-dialog" id="star-dialog" style="display: none" >
+        <div class="weui-mask"></div>
+        <div class="weui-dialog weui-skin_android" style="width: 80%;max-width: 90%">
+
+            <div class="weui-dialog__bd my-bd" style="padding: 20px 0px 10px 0px;">
+                <div  >
+                    <p style="margin-left: 15px;font-size: 15px;color: #000000">滑动验证</p>
+                    <div class="ln" style=" padding: 10px 0;;width: 90%;margin: 0 auto">
+                        <div id="dom_id" style="background-color: #0d0d0d"></div>
+                    </div>
+
+                    <input type='hidden' id='csessionid' name='csessionid'/>
+                    <input type='hidden' id='sig' name='sig'/>
+                    <input type='hidden' id='token' name='token'/>
+                    <input type='hidden' id='scene' name='scene'/>
+                    <div style="color: #a0a0a0;margin-left: 15px;font-size: 12px;margin-bottom: 10px ">*请先滑动再点击获取验证码</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<div id="loadingToast" ng-if="re.msg.warning">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <p class="weui-toast__content">{{re.msg.message}}</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="app/datetime/css/normalize3.0.2.min.css">
+<link rel="stylesheet" href="app/datetime/css/style.css">
+<link rel="stylesheet" href="app/datetime/css/mobiscroll.css">
+<link rel="stylesheet" href="app/datetime/css/mobiscroll_date.css">
+<script src="app/datetime/js/jquery.min.js"></script>
+<script src="app/datetime/js/mobiscroll_date.js"></script>
+<script src="app/datetime/js/mobiscroll.js"></script>

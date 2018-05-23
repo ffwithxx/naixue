@@ -1,0 +1,30 @@
+<div class="my-buy-container">
+    <div class="page" style="background-color: white">
+        <div class="page__bd" style="height: 100%;" >
+
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a ng-click="myb.goBack()">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                            <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                        </a>
+                        <span>会员说明</span>
+
+                    </div>
+                </div>
+                <div class="weui-tab__panel" style="background-color: white">
+
+                    <div class="description" style="margin: 0px 0px;background-color: white">
+
+                        <div class="desc" style="height: auto;background-color: white;margin: 15px 15px;" ng-bind-html="myb.detail"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

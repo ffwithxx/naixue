@@ -1,0 +1,96 @@
+
+<div class="my-recharge-container">
+    <div class="weui-top-bar" style="color:#737373">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="mrc.goBack()">
+
+                        <img ng-if="theme=='heytea'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">微信充值</div>
+                <div class="right_icon">
+                </div>
+            </div>
+
+            <div class="weui-grids" style="border-top:0px;color:  #737373">
+                <div class="weui-grid">
+                    <div class="weui-grid__icon my-grid__icon">
+
+                        <img ng-if="theme=='heytea'" height="70%" width="70%" src="./assets/images/black/huiyuan@2x.png"
+                             alt="">
+                    </div>
+                    <p style="color: #737373" class="weui-grid__label my-text">会员: {{mrc.memberName}}</p>
+                </div>
+                <div class="weui-grid my-grid__border">
+                    <div class="weui-grid__icon my-grid__icon">
+
+                        <img ng-if="theme=='heytea'" src="./assets/images/black/yue@2x.png" alt="">
+                    </div>
+                    <p style="color: #737373" class="weui-grid__label my-text">余额: ¥{{mrc.balance}}</p>
+                </div>
+                <div class="weui-grid my-grid__border">
+                    <div class="weui-grid__icon my-grid__icon">
+
+                        <img ng-if="theme=='heytea'" src="./assets/images/black/jifen02@2x.png" alt="">
+                    </div>
+                    <p style="color: #737373" class="weui-grid__label my-text">积分: {{mrc.points}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:138px;bottom: 50px">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-cells weui-cells_radio">
+                    <label class="weui-cell weui-check__label" ng-repeat="eachItem in mrc.rechargeList">
+                        <div class="weui-cell__bd">
+                            <div class="weui-media-box weui-media-box_text">
+                                <h4 class="weui-media-box__title" style="color: #737373">
+                                    <span style="font-size: 18px;font-weight: bold;">{{eachItem.title}}</span>
+
+                                </h4>
+                                <p class="weui-media-box__desc give">
+                                    <span>
+
+                                        <img width="12px" ng-if="theme=='heytea'" src="./assets/images/black/give.png">
+                                    </span>
+                                    <span style="font-size: 12px; margin-left: 10px;">{{eachItem.otherInfo}}</span>
+                                </p>
+                                <!--<p class="weui-media-box__desc" ng-repeat="each in eachItem.otherInfo">-->
+                                <!--<img width="12px" ng-if="theme!='black'" src="./assets/images/VK/give.png" >-->
+                                <!--<img width="12px" ng-if="theme=='black'" src="./assets/images/black/give.png" >-->
+                                <!--<span style="font-size: 12px">{{each}}</span>-->
+                                <!--</p>-->
+                            </div>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <input type="radio" class="weui-check" value={{eachItem}} name="radio1"
+                                   ng-model="mrc.rechargeItem" ng-click="mrc.onCheck(eachItem)">
+                            <i class="weui-icon-checked"></i>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-bottom-bar" style="background-color: white;color: #737373">
+
+
+                    <a class="weui-vcode-btn weui-btn_danger bottom-button-lable" ng-click="mrc.recharge()"
+                       style="color: #737373; margin: 0px 5% 10px 5%; width:90%;border: 1px solid #E7E7E7;background-color: white;border-radius: 5px;box-shadow: 0 0 10px #E7E7E7;text-align: center;height: 40px">立即支付</a>
+
+
+    </div>
+
+    <div id="toast" ng-show="mrc.showToast">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">{{mrc.toastMsg}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="cheep-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="ps.goBack()">
+                        <!--<img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">-->
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="font-size: 15px">积分商城</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd">
+            <div class="first-line">
+                <div class="point">我的积分:{{ps.currentPoints}}</div>
+                <div class="btn-content">
+                    <button ng-click="ps.goConversionRecord()">兑换记录</button>
+                </div>
+            </div>
+            <div class="weui-tab__panel">
+                <div class="point-list">
+                    <div class="item" ng-repeat="item in ps.list" ng-click="ps.goItemDetail(item.id)">
+                        <div class="img">
+                            <img ng-src="{{item.iconUrl}}"/>
+                            <div class="residue">
+                                <div ng-if="item.type">剩余{{item.num}}</div>
+                            </div>
+                        </div>
+                        <div class="title">{{item.title | limitTo:19}}</div>
+                        <div class="point">
+                            <span class="value">{{item.point}}</span>
+                            <span class="label">&nbsp;积分</span>
+                            <span class="type" ng-if="item.type==0">虚拟礼品</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div ng-include="'app/components/tabbar/tabbar.html'"></div>-->
+        </div>
+    </div>
+</div>

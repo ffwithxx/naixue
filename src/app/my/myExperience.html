@@ -1,0 +1,58 @@
+<div class="my-exp-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="mec.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">我的经验值</div>
+                <div class="right_icon">
+                    <!--<a ng-click="mpcc.refresh()">-->
+                    <!--<img ng-if="theme!='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"-->
+                    <!--src="./assets/images/VK/shuaixin@2x.png">-->
+                    <!--<img ng-if="theme=='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"-->
+                    <!--src="./assets/images/black/shuaixin@2x.png">-->
+                    <!--</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:54px">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-panel" ng-repeat="eachExp in mec.myExperience">
+                    <div class="weui-cells">
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__hd">
+                                <p>获得分值</p>
+                            </div>
+                            <div class="weui-cell__bd">{{eachExp.experience}}</div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__hd">
+                                <p>获得方式</p>
+                            </div>
+                            <div class="weui-cell__bd ">{{eachExp.sourceDetails}}</div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__hd">
+                                <p>获得时间</p>
+                            </div>
+                            <div class="weui-cell__bd">{{eachExp.created}}</div>
+                        </div>
+                        <div class="weui-cell thin-cell">
+                            <div class="weui-cell__hd">
+                                <p>当前经验值</p>
+                            </div>
+                            <div class="weui-cell__bd weui-cell_warn">{{eachExp.balance}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

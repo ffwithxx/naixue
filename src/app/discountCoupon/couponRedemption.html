@@ -1,0 +1,88 @@
+<div class="coupon-redemption-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="crc.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">优惠券分享</div>
+            </div>
+        </div>
+    </div>
+
+    <div  class="page" style="top:44px;background-size: cover;background-image: url('./assets/images/VK/bg@2x.png');"  ng-show="crc.showPage" >
+        <div class="page__bd" style="height: 100%;" >
+
+            <div class="weui-tab__panel" style="position: relative;">
+                <!--<div style="float: right;margin-top: 50px;margin-right: 0px;background-image: url('./assets/images/VK/discountThree.png');;width: 50px;height: 30px;line-height: 30px;-->
+                <!--background-size: 100% 100%;text-align: center;color: white;outline: none" ng-click="crc.showRule()">规则</div>-->
+
+                <!--<div style="color: transparent">6</div>-->
+                <div class="weui-article" style="position:absolute;top:20px;left: 0px;width: 100%;padding: 0px;display: block;">
+                    <div style="">
+                        <div class="barcode" style="border: 0;background-color: rgba(255,255,255,0.8);margin-bottom: 0;">&nbsp;
+                            <div class="barcode"
+                                 style="border: 0px;background-color: transparent;margin-bottom: 0;margin-top: 0;padding-bottom: 10px;">
+                                <div style="font-size: 18px;" class="title"></div>
+                                <!--<div style="margin-top: 10px;color:#a0a0a0 ">满30元可用</div>-->
+                                <div style="color:#a0a0a0;margin-top: 10px;width: 100%" class="time"></div>
+                            </div>
+                        </div>
+                        <div class="barcode" style="border: 0;opacity: 0.9; margin-bottom: 0;margin-top:0px; background-image: url('./assets/images/VK/yuan@2x.png');background-size: 100% 100%;height: 25px">&nbsp;
+
+                        </div>
+
+                    </div>
+
+                    <div >
+                        <div class="barcode" style="border: 0;background-color: rgba(255,255,255,0.8);margin-bottom: 0;">&nbsp;
+
+
+                            <div class="barcode" style="border: 0;background-color: transparent;margin-bottom: 0;margin-top: 0;padding-bottom: 20px;border: none" >
+                                <div style="color:#a0a0a0;"  class="name">来自  <span style="color:black;"></span>  的分享</div>
+                            </div>
+
+                            <div style="margin-top: 0;margin-bottom: 0;border: 0px;">
+
+                                <div class="barcode"
+                                     style="border: 0;margin-top: 0;margin-bottom: 0;">
+                                    <img id="barcode"/>
+                                </div>
+
+
+                                <div style="margin-top: 0;margin-bottom: 10px;border: 0px;">
+
+                                    <div class="barcode"
+                                         style="border: 0;background-color: transparent;margin-top: 0;color: #a0a0a0;font-size: 14px;padding-bottom: 20px">
+                                        消费时，请将此码提供给商家直接抵扣现金
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div style="bottom: 10px;position: absolute;width: 90%;left: 5%;text-align: center;color: #a0a0a0">长按图片进行分享</div>
+
+        </div>
+
+    </div>
+    <div class="register-dialog-sex" id="sex" >
+
+
+        <div class="dialog-sex-box"   >
+            <div style="float: right;margin-top: 0px;margin-right: 0px;background-image: url('./assets/images/VK/discountTwo.png');;width: 30px;height: 30px;
+            line-height: 30px;background-size: 100% 100%;text-align: center;color: white" ng-click="crc.closeRule()"></div>
+            <div class="dialog-sex-son" >
+                <iframe style="width: 100%;height: 100% ;frameborder:no; border:0;scrolling:no;overflow-x:auto;"  name="show" src="{{}}"></iframe>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="weui-tabbar vk-tabbar" style="position:fixed;" ng-controller="TabbarController as t">
+    <a ng-if="t.showModuletwo()" class="weui-tabbar__item" ng-class="{'active':t.active === 'shopping'}" ng-click="t.go('shopping')">
+        <img ng-if="theme!='black'" src="./assets/images/VK/tab-shangcheng-@2x.png" class="weui-tabbar__icon">
+        <img ng-if="theme=='black'&&t.active!=='shopping'" src="./assets/images/black/shangcheng-@2x.png" class="weui-tabbar__icon">
+        <img ng-if="theme=='black'&&t.active==='shopping'" src="./assets/images/black/shangcheng-pre@2x.png" class="weui-tabbar__icon">
+        <p class="weui-tabbar__label">点单</p>
+    </a>
+
+
+    <!--<a ng-if="theme!='black'" class="weui-tabbar__item" ng-class="{'active':t.active === 'pointShop'}" ng-click="t.go('pointShop')">-->
+        <!--<img ng-if="theme!='black'" src="./assets/images/VK/tab-jifen@2x_81.png" class="weui-tabbar__icon">-->
+        <!--<p class="weui-tabbar__label">积分</p>-->
+    <!--</a>-->
+    <a ng-if="t.showModule()" class="weui-tabbar__item" ng-class="{'active':t.active === 'pointShop'}" ng-click="t.go('pointShop')">
+        <img ng-if="theme!='black'" src="./assets/images/VK/tab-jifen@2x_81.png" class="weui-tabbar__icon">
+        <img ng-if="theme=='black'&&t.active!=='pointShop'" src="./assets/images/black/jifen-pre@2x.png" class="weui-tabbar__icon">
+        <img ng-if="theme=='black'&&t.active==='pointShop'" src="./assets/images/black/jifen@2x.png" class="weui-tabbar__icon">
+        <p class="weui-tabbar__label">商城</p>
+    </a>
+
+    <a class="weui-tabbar__item" ng-class="{'active':t.active === 'my'}" ng-click="t.go('my')">
+        <img ng-if="theme!='black'" src="./assets/images/VK/tab-wode@2x.png" class="weui-tabbar__icon">
+        <img ng-if="theme=='black'&&t.active!=='my'" src="./assets/images/black/wode@2x.png" class="weui-tabbar__icon">
+        <img ng-if="theme=='black'&&t.active==='my'" src="./assets/images/black/wode-pre@2x.png" class="weui-tabbar__icon">
+        <p class="weui-tabbar__label">我的</p>
+    </a>
+</div>

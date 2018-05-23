@@ -1,0 +1,60 @@
+<div class="conversion-detail-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a class="" ng-click="cd.goBack()">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                            <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                        </a>
+                        <span>商品详情</span>
+                    </div>
+                </div>
+                <div class="weui-tab__panel">
+                    <div class="top-img">
+                        <img ng-src="{{cd.detail.productPic}}"/>
+                        <div class="residueone" ng-if="cd.detail.label == 2">
+                            <div class="imgbg"></div>
+                        </div>
+                    </div>
+                    <div class="middle-content">
+                        <div class="name"><div class="new" ng-if="cd.detail.label == 1">新品</div> <div class="jifen" ng-if=" item.label !=1 &&item.payType == 0">[积分]</div>{{cd.detail.productName}}</div>
+                        <div class="conditions" style="color: red">{{cd.getconditions(cd.detail)}}</div>
+                        <div class="point">
+                            <span class="value">{{cd.getvalue(cd.detail)}}</span>
+                            <span ng-if="cd.detail.payType == 0" class="label" id="value1">&nbsp;积分</span>
+                            <span style="text-decoration: line-through" ng-if="cd.detail.payType && cd.detail.originalPrice !=0 &&cd.detail.originalPrice " class="label" id="value2">&nbsp;{{"￥" + cd.detail.originalPrice}}</span>
+                            <span class="type" ng-if="cd.detail.type == 1" style="border: 1px solid transparent;">不含运费</span>
+                        </div>
+                    </div>
+                     <div class="description" style="margin: 0px;padding:0px 15px 25px 15px;background-color: white">
+                    <div class="description" style="padding: 0px 15px 80px 15px;background-color: white ">
+                        <div class="label">商品简介</div>
+                        <div class="desc" style=" overflow: hidden;" ng-bind-html="cd.detail.desc"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-bottom-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px; ">
+            <div class="weui-cell" ng-if="theme!='black'">
+                <div style="color: transparent" class="current" ng-if="cd.detail.point<=cd.point ">当前积分{{cd.point}}</div>
+                <div style="color: transparent" class="left" ng-if="cd.detail.point>cd.point ">还差{{cd.detail.point-cd.point}}积分</div>
+
+                <div class="current" ng-if="cd.detail.point<=cd.point && cd.detail.payType == 0"></div>
+                <div class="left" ng-if="cd.detail.point>cd.point && cd.detail.payType == 0"></div>
+                <button style="margin-top: 0px" ng-class="{'disabled': (cd.detail.point>cd.point  &&cd.detail.payType==0)|| cd.detail.canBuy ==0}" ng-disabled="(cd.detail.point>cd.point &&cd.detail.payType==0) || cd.detail.canBuy ==0 " ng-click="cd.goConversionFirst(cd.detail)">立即购买</button>
+            </div>
+            <div class="weui-cell" ng-if="theme=='black'">
+                <button ng-class="{'disabled': (cd.detail.point>cd.point &&cd.detail.payType==0)|| cd.detail.canBuy ==0}" ng-disabled="(cd.detail.point>cd.point  &&cd.detail.payType==0) ||cd.detail.canBuy ==0" ng-click="cd.goConversionFirst(cd.detail)">
+                    <span ng-if="(cd.detail.point<=cd.point &&cd.detail.payType==0) ||cd.detail.canBuy ==0 ">立即购买</span>
+                    <span ng-if=" cd.detail.canBuy ==1&&cd.detail.payType==1 ">立即购买</span>
+                    <span ng-if="cd.detail.point>cd.point &&cd.detail.payType==0">还差{{cd.detail.point-cd.point}}积分</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

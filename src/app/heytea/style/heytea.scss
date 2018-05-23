@@ -1,0 +1,2639 @@
+/* shared-bg */
+@import '../../shared-scss/color';
+@import '../../shared-scss/mixins';
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body.heytea {
+    font-size: 14px;
+    background-color: $white-bg;
+}
+
+body.heytea {
+
+    .star-dialog .star-content {
+        display: flex;
+    }
+
+    .star-dialog .star-content a.star {
+        flex: 1;
+        text-align: center;
+    }
+
+    .star-dialog a.star img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .star-dialog .weui-dialog {
+        background-color: transparent;
+        padding-top: 30px;
+        top: 45%;
+    }
+
+    .star-dialog .weui-dialog .weui-dialog__bd,
+    .star-dialog .weui-dialog .weui-dialog__ft {
+        background-color: $white-bg;
+    }
+
+    .star-dialog .weui-dialog .weui-dialog__bd {
+        position: relative;
+        padding-top: 40px;
+    }
+
+    .star-dialog .weui-dialog .weui-dialog__bd a + a {
+        margin-left: 5px;
+    }
+
+    @media only screen and (max-width: 367px) {
+        .star-dialog .weui-dialog .weui-dialog__bd a + a {
+            margin-left: 0;
+        }
+        .star-dialog a.star img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    .star-dialog .weui-dialog .top {
+        position: fixed;
+        //left: 50%;
+        left: 47%;
+        top: 2px;
+        margin-left: -20px;
+        z-index: 9999;
+    }
+
+    .star-dialog .weui-dialog .top img {
+        width: 40px;
+        height: 40px;
+        border: 8px solid $white-bg;
+        @include border-radius(50%);
+    }
+
+    .star-dialog .label {
+        font-size: 16px;
+        color: $font-color;
+        margin-bottom: 10px;
+    }
+
+    .star-dialog .weui-dialog .weui-dialog__ft {
+        padding: 0;
+    }
+
+    .star-dialog .weui-dialog .weui-dialog__ft .weui-flex__item {
+        text-align: center;
+    }
+
+    .star-dialog .weui-dialog .weui-dialog__ft .weui-flex__item:first-child {
+        background-color: $grey-bg;
+    }
+
+    .star-dialog .weui-dialog .weui-dialog__ft .weui-flex__item:last-child {
+        background-color: $danger-bg;
+    }
+
+    .star-dialog .weui-dialog .weui-dialog__ft .weui-flex__item a {
+        color: $font-color;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+
+
+    .left_icon{
+        top: 0!important;
+        left: 0!important;
+    }
+    .left_icon a{
+        display: inline-block;
+        padding: 13px 15px 8px 15px;
+    }
+    .weui-top-bar .weui-cells:after {
+        color: #737373;
+        border-bottom: 2px solid #ECEDEF;
+    }
+    .weui-navbar:after {
+        border-bottom: 2px solid #ECEDEF;
+    }
+    .vcode {
+        border-left: 1px solid grey;
+    }
+    .vcode .weui-btn {
+        color: #737373;
+        padding-right: 0;
+        line-height: 1;
+    }
+    .heycha_greyout {
+        color: grey !important;
+    }
+
+    .common-bg {
+        .weui-top-bar {
+            opacity: 0.85;
+        }
+        .page {
+            padding-top: 44px;
+            //background-image: url(../assets/images/heytea/bg.png);
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    .weui-agree__checkbox:checked:before {
+        color: #737373;
+    }
+   .my-buy-container-heytea{
+       .img {
+           width: 250px;
+           height: 250px;
+           background-image: url(../assets/images/heytea/hey.png);
+           background-position: 0 0;
+           background-repeat: no-repeat;
+           background-size: cover;
+       }
+
+   }
+    .login-container-heytea {
+        & > .page {
+            background-image: url(../assets/images/snow/login_bg.png);
+            background-position: center 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            position: fixed;
+
+        }
+
+        .notice{
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            a {
+                color: #D1BA87;
+            }
+
+
+        }
+        .login-form {
+            background-color:white;
+             color: #737373;
+            margin:37% 0 40% 0;
+            z-index: 1000;
+            @media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+                margin:30% 8% 40% 8%;
+
+            }
+            @media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 Plus */
+
+                margin:38% 8% 40% 8%;
+
+            }
+            @media (device-height:812px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 Plus */
+
+                margin:45% 8% 40% 8%;
+
+            }
+            p {
+                text-align: center;
+                font-size: 18px;
+                padding: 40px 0 0;
+            }
+
+            & > .weui-cells {
+                background-color: transparent;
+                margin-top: 0;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .weui-cell:before {
+                border: none;
+            }
+
+            .weui-cell {
+                //padding-bottom: 0;
+                padding: 10px 0 0 0;
+                margin: 0 5px;
+
+                border-bottom: 1px solid rgba(215, 204, 172, 1.0);
+                input.placeholder{
+
+                    color:#BBBBBB ;
+                }
+            }
+            .weui-cell__hd {
+                padding-right: 15px;
+                input.placeholder{
+
+                    color:#BBBBBB ;
+                }
+            }
+            .weui-cell__bd {
+                input {
+                    padding: 5px 0;
+                }
+            }
+            .weui-cell {
+                margin-bottom: 2px;
+                margin-top: 18px;
+            }
+                             .login-btn {
+                                 background-color: rgba(255, 255, 255, 0);
+                                 padding-top: 10px;
+                                 padding-bottom: 40px;
+
+
+
+                                 &:before {
+                                     border: none;
+                                 }
+                                 &:after{
+                                     border: none;
+
+                                 }
+                                 a {
+                                     font-size: 16px;
+                                     width: 45%;
+                                     //padding: 5px 0;
+                                     //background-color:#D1BA87;
+                                     border-radius: 5px;
+                                     //height: 50px;
+                                     color: #737373;
+                                     border:1px solid #BBBBBB;
+                                 }
+                                 a[disabled] {
+                                     //background-color: #D1BA87;
+                                 }
+                             }
+                             .bottom-container {
+                                 margin: 10px 15px 0 15px;
+                                 display: flex;
+
+                                 .left {
+                                     flex: 1;
+                                     color: #ec3b42;
+                                 }
+                                 .right {
+                                     width: 100px;
+                                     text-align: right;
+                                 }
+                             }
+                             input:-ms-input-placeholder{ color:#BBBBBB}
+
+                             input::-webkit-input-placeholder{ color:#BBBBBB}
+                             input::-moz-placeholder{ color:#BBBBBB}
+                         }
+
+        .weui-footer_fixed-bottom {
+            position: fixed;
+            bottom: 5%;
+            z-index:999;
+            //background-color: red;
+
+            a {
+                color: #737373;
+            }
+        }
+    }
+
+    .my-container-heytea {
+        .weui-grid:before {
+            //border-right: 1px dotted #DDD !important;
+        }
+        .weui-grid:after {
+            //border-bottom: 1px dotted #DDD!important;
+        }
+       .weui-cells {
+            background-color: transparent;
+        }
+
+        .top-content {
+            position: relative;
+            padding: 100px 0 0;
+            height: 110px;
+            margin-top: -5px;
+            background-color: transparent;
+            background-image: url(../assets/images/snow/bg.png);
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+        }
+
+         .top-line .juchi {
+            height: 20px;
+            background-image: url(../assets/images/VK/border.png);
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: repeat-x;
+        }
+
+        .top-bottom {
+            top: 20px;
+            left: 15px;
+            right: 15px;
+            position: absolute;
+            height: 190px;
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 12px $grey-bg-2;
+            @include border-radius(5px);
+
+        }
+
+        .space-line {
+            //height: 80px;
+            background-color:transparent;
+            z-index: 888;
+
+        }memberinfo-container
+
+         .weui-cells:after {
+            border-bottom: none;
+        }
+
+         .weui-flex,
+         .weui-grids {
+            background-color: $white-bg;
+             //margin-top: 20px;
+        }
+
+         .top {
+            //padding-left: 20px;
+            position: absolute;
+            bottom: 10px;
+        }
+
+         .top > div {
+            //background-color: $danger-bg-2;
+            margin-top: 10px;
+            padding-top: 2px;
+        }
+
+       .top > div:first-child {
+            padding: 2px 10px 0;
+
+            display: inline-block;
+        }
+
+         .top > div > span:first-child {
+            padding-left: 10px;
+        }
+
+         .top > div > span:last-child {
+            padding: 0 10px;
+        }
+
+
+        & > .page {
+            background-color: $white-bg-1;
+
+            .welcome {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                //background-image: url(../assets/images/snow/card.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+
+                .middle {
+                    margin: 0 auto;
+                    margin-top: 30%;
+                    padding-top: 130px;
+                    width: 80%;
+                    height: 35%;
+                    background-size: cover;
+                    box-shadow: 0 0 30px $grey-bg-4;
+                    background-image: url(../assets/images/heytea/welcomenew.png);
+                    background-repeat: no-repeat;
+
+                }
+
+                .text {
+                    width: 98px;
+                    height: 14px;
+                    margin: 0 auto;
+                    margin-top: 50px;
+                    background-image: url(../assets/images/heytea/welcome2.png);
+                    background-position: 0 0;
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                }
+            }
+
+        }
+
+        .dialog-sex-box{
+            position: absolute;
+            top: 40%;
+            z-index: 1000;
+            height: calc(77% - 50px);
+            //height: 77%;
+            width: 100%;
+            //margin-left: -13.5rem;
+            margin-top: -30%;
+            background: #fff;
+            overflow-y:auto;
+            overflow-x:auto;
+            //background-color: #0BB20C;
+
+        }
+
+        .dialog-sex-son {
+            overflow-y:auto;
+            overflow-x:auto;
+            margin-top: 30px;
+            width: calc(100% - 20px);
+            height: calc(100% - 30px);
+            margin-left: 10px;
+            margin-right: 10px;
+            overflow-y: scroll; ;
+            -webkit-overflow-scrolling: touch;
+
+            //background-color: rebeccapurple;
+
+        }
+        .dialog-sex-box-list{
+
+
+        }
+
+        .register-dialog-sex{
+            position: fixed;
+            left: 0;top:0;
+            z-index: 999;
+            right: 0;bottom: 0px;
+            background: rgba(0,0,0,.3);
+            display: none;
+            width: 100%;
+            height: 100%;
+            //background-color: #0f7595;
+
+
+
+        }
+
+
+        .dialog-sex-close{
+            //position: absolute;
+            //right: 2%;top: 42%;
+            //z-index: 1001;
+            //z-index: 1001;
+            //height: 18px;
+            //width: 18px;
+            ////margin-left: -13.5rem;
+            //margin-top: -30%;
+            //background-image: url(../assets/images/newHey/col.png);
+            //background-size:cover ;
+
+
+            //
+            //position: absolute;
+            //
+            ////right: 0;top:0;
+            //z-index: -1;
+            //width: 18px;;
+            //height: 18px;
+            ////display: inline-block;
+            ////margin-right: 10px;
+            //margin-top:-20%;
+            ////background: url(./assets/images/newHey/close1.png) center no-repeat;
+            //background-image: url(../assets/images/newHey/close1.png);
+            //background-size:cover ;
+            ////background-color: red;
+        }
+        .weui-grid__icon {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto;
+        }
+        .weui-grid_new{
+            margin-left: 20px;
+            width: 22px;
+            margin-top: -40px;
+            height: 20px;
+
+        }
+        .topIco {
+            position: relative;
+            margin-top: 40px;
+            //margin-bottom: 10px;
+            text-align: center;
+
+            .img {
+
+                width: 40px;
+                height: 40px;
+                padding: 2px;
+                border-radius: 50%;
+                border: 1px solid $grey-border;
+                //clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin: auto;
+
+            }
+//.newOne {
+//    margin-right: 15%;
+//
+//}
+            .ph08 {
+              opacity: 0;
+              z-index: 10;
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 60px;
+              width: 100%;
+            }
+        }
+        .weui-grids:before {
+            border: none;
+        }
+        .weui-grid {
+            padding: 10px 10px 10px;
+        }
+        .weui-grid:before {
+            border-right: 1px solid $grey-bg-3;
+        }
+        .weui-grid:after {
+            border-bottom: 1px solid $grey-bg-3;
+        }
+        .weui-grid.first-line {
+            //padding-top: 5px;
+            padding-bottom:15px;
+            .weui-grid__label{
+                font-size: 13px;
+            }
+            span {
+                color: $black-bg;
+            }
+        }
+        .no-active-bg:active {
+            background-color: transparent;
+        }
+        .weui-grid__icon + .weui-grid__label {
+            //margin-top: 5px;
+            //color: #707070;
+        }
+        .weui-grid__icon{
+           //margin-top: 10px;
+
+        }
+        .weui-grid__label {
+            color: $black-bg;
+            margin-bottom: 8px;
+
+        }
+        .newOne {
+            margin-right: 15%;
+
+        }
+    }
+
+.my-buy-container-heytea {
+
+    .dialog-sex-box{
+        position: absolute;
+
+        z-index: 1000;
+        height: 100%;
+        width: 100%;
+        //margin-left: -13.5rem;
+        margin-top: -30%;
+        background: #fff;
+        overflow-y:auto;
+        overflow-x:auto;
+        //background-color: red;
+    }
+
+    .dialog-sex-son {
+        overflow-y:auto;
+        overflow-x:auto;
+        margin-top: 30px;
+        width: calc(100% - 20px);
+        height: calc(100% - 30px);
+        margin-left: 10px;
+        margin-right: 10px;
+        overflow-y: scroll; ;
+        -webkit-overflow-scrolling: touch;
+        //background-color: rebeccapurple;
+
+    }
+    .dialog-sex-box-list{
+
+
+    }
+
+    .register-dialog-sex{
+        position: fixed;
+        left: 0;top:0;
+        z-index: 999;
+        right: 0;bottom: 0;
+        background: rgba(0,0,0,.3);
+
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+
+    .dialog-sex-close{
+        position: absolute;
+        right: 2%;top: 42%;
+        z-index: 1001;
+        height: 18px;
+        width: 18px;
+        //margin-left: -13.5rem;
+        margin-top: -30%;
+        background-image: url(../assets/images/newHey/col.png);
+        background-size:cover ;
+
+
+        //
+        //position: absolute;
+        //
+        ////right: 0;top:0;
+        //z-index: -1;
+        //width: 18px;;
+        //height: 18px;
+        ////display: inline-block;
+        ////margin-right: 10px;
+        //margin-top:-20%;
+        ////background: url(./assets/images/newHey/close1.png) center no-repeat;
+        //background-image: url(../assets/images/newHey/close1.png);
+        //background-size:cover ;
+        ////background-color: red;
+    }
+}
+    .integral-heytea {
+        .page {
+            .weui-tab__panel {
+                position: relative;
+                padding-bottom: 0;
+
+                .top {
+                    position: relative;
+                    margin-top: 50px;
+                    //bottom: -29px;
+                    text-align: center;
+
+                    .img {
+
+                        padding: 2px;
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        margin: auto;
+
+                    }
+                }
+                .middle-line{
+                    position: absolute;
+                    left: calc(50% - 40px);
+                    top: 60px;
+                    bottom: 0;
+                    //background-image: url(../assets/images/snow/shu1.png);
+                    //border-left: 3px solid #B59E6F;
+                }
+
+                .list {
+                    //border-top: 1px dotted $grey-bg-3;
+                    position: absolute;
+                    left:0;
+                    right: 0;
+                    bottom: 0;
+                    top: 180px;
+                    overflow-y: auto;
+                    color: #737373;
+
+                    .item {
+                        display: flex;
+                        margin: 0 20px;
+                        //border: 1px solid #E7E7E7;
+                        //border-radius: 8px;
+                        margin-bottom: 20px;
+
+                        .left {
+                            display: grid;
+                            //flex: 1;
+                            padding: 20px 0;
+                            text-align: center;
+                            width: 50%;
+                            //border-right: 1px dotted #333333;
+
+                            .position {
+
+                                //width: 20px;
+                                //height: 20px;
+                                margin-top: 5px;
+                                margin-right: 10px;
+                                //margin-left: 10px;
+
+
+                                .img{
+                                    width: 25px;
+                                    height: 25px;
+                                    //background-image: url(../assets/images/heytea/store.png);
+                                    background-position: 0 0;
+                                    //background-size: 100% 100%;
+                                }
+                            }
+
+                            .location {
+                                flex: 1;
+                                text-align: left;
+
+                                .date {
+                                    //color: $font-color-2;
+                                }
+                                .time {
+                                    //color: $font-color-2;
+                                }
+                            }
+                        }
+                        .right {
+                            flex: 1;
+                            text-align: center;
+                            position: relative;
+                            //margin-left: 10px;
+                            width: 50%;
+
+                            .line {
+                                position: absolute;
+                                top: 52px;
+                                left: 0;
+                                width: 25px;
+                                height: 3px;
+                                background-image: url(../assets/images/heytea/line_b.png);
+                                background-position: 0 0;
+                                background-size: 100% 100%;
+                                background-repeat: no-repeat;
+                            }
+
+                            //display: grid;
+                            //flex: 1;
+                            padding: 20px 0;
+                            text-align: center;
+                            //border-right: 1px dotted #333333;
+
+                            .position {
+
+                                //width: 20px;
+                                //height: 20px;
+                                margin-top: 5px;
+                                //margin-right: 10px;
+                                margin-left: 10px;
+
+
+                                .img{
+                                    width: 25px;
+                                    height: 25px;
+                                    //background-image: url(../assets/images/heytea/store.png);
+                                    background-position: 0 0;
+                                    //background-size: 100% 100%;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .trade-record-container-heytea {
+        .page {
+            .weui-tab__panel {
+                position: relative;
+                padding-bottom: 0;
+
+                .top {
+                    position: relative;
+                    margin-top: 50px;
+                    margin-bottom: 20px;
+                    text-align: center;
+
+                    .img {
+
+                        padding: 2px;
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        margin: auto;
+
+                    }
+                }
+                .middle-line{
+                    position: absolute;
+                    left: 50%;
+                    top: 180px;
+                    bottom: 0;
+                    //border-left: 1px dotted #333333;
+                }
+
+                .list {
+                    //border-top: 1px dotted $grey-bg-3;
+                    position: absolute;
+                    left:0;
+                    right: 0;
+                    bottom: 0;
+                    top: 160px;
+                    overflow-y: auto;
+                    color: #737373;
+
+                    .item {
+                        display: flex;
+                        margin: 0 20px;
+                        border: 1px solid #E7E7E7;
+                        border-radius: 8px;
+                        margin-bottom: 20px;
+
+                        .left {
+                            display: grid;
+                            //flex: 1;
+                            padding: 20px 0;
+                            text-align: center;
+                            width: 50%;
+                            //border-right: 1px dotted #333333;
+
+                            .position {
+
+                                //width: 20px;
+                                //height: 20px;
+                                margin-top: 5px;
+                                //margin-right: 10px;
+                                margin-left: 10px;
+
+
+                                .img{
+                                    width: 25px;
+                                    height: 25px;
+                                    //background-image: url(../assets/images/heytea/store.png);
+                                    background-position: 0 0;
+                                    //background-size: 100% 100%;
+                                }
+                            }
+
+                            .location {
+                                flex: 1;
+                                text-align: left;
+
+                                .date {
+                                    //color: $font-color-2;
+                                }
+                                .time {
+                                    //color: $font-color-2;
+                                }
+                            }
+                        }
+                        .right {
+                            flex: 1;
+                            text-align: center;
+                            position: relative;
+                            width: 50%;
+
+                            .line {
+                                position: absolute;
+                                top: 52px;
+                                left: 0;
+                                width: 25px;
+                                height: 3px;
+                                background-image: url(../assets/images/heytea/line_b.png);
+                                background-position: 0 0;
+                                background-size: 100% 100%;
+                                background-repeat: no-repeat;
+                            }
+
+                            .content {
+                                //color: #717171;
+                                padding: 20px 0;
+                                margin-left: 10px;
+                                text-align: left;
+
+                                .detail {
+                                    display: flex;
+
+                                    .type {
+                                        width: 73px;
+                                    }
+                                    .detail-list {
+                                        flex: 1;
+                                    }
+                                }
+
+                                .detail-last {
+                                    display: flex;
+
+                                    .type-d {
+                                        width: 73px;
+                                    }
+                                    .d-list {
+                                        flex: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .discount-coupon-container-heytea {
+       .page{
+           background-color: white;
+       }
+        .top {
+            position: relative;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+
+
+
+            .img {
+
+                padding: 2px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin: auto;
+
+
+            }
+
+
+        }
+
+        .weui-navbar:after {
+            border-bottom: none;
+        }
+        .weui-navbar__item {
+            padding-bottom: 0;
+        }
+        .weui-navbar__item > div {
+            padding-bottom: 10px;
+            width: 70px;
+            margin: 0 auto;
+            border-bottom: 2px solid #999999;
+        }
+        .weui-navbar__item.active {
+            background-color: transparent;
+        }
+
+        .weui-navbar.second + .weui-tab__panel {
+            background-color: white;
+        }
+        .weui-navbar.second .bar-bottom-line {
+            position: absolute;
+            width: 75px;
+            height: 2px;
+            bottom: 0;
+            background-color: #B59E6F;
+        }
+        .weui-navbar.second .bar-bottom-line.animate {
+            transition: left 0.5s ease-out;
+        }
+        .weui-navbar.second .bar-bottom-line.one {
+            left: 5%;
+        }
+        .weui-navbar.second .bar-bottom-line.two {
+            left: 34%;
+        }
+        .weui-navbar.second .bar-bottom-line.three {
+            left: 64%;
+        }
+        .weui-navbar.second{
+            top: 0px;
+        }
+        .weui-tab__panel {
+      background-color: white;
+            .no-data {
+                margin-top: 50%;
+                text-align: center;
+                color: #999999;
+
+                img {
+                    margin-bottom: 20px;
+                    width: 153px;
+                    height: 101px;
+                }
+            }
+            .items {
+                .item {
+                    display: flex;
+                    margin: 15px 20px;
+                    padding: 5px;
+                    background-color: $white-bg;
+                    border-radius: 8px;
+                    border: 1px solid #E5E5E5;
+                    color: #737373;
+                    .left {
+                        flex: 1;
+                        width: calc(100% - 90px);
+                        //background-color: red;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        .name {
+                            padding-left: 10px;
+                            font-size: 17px;
+
+                            font-weight: bold;
+                            height: 41px;
+                        }
+                        .desc {
+                            padding-left: 10px;
+                            color: $font-grey;
+                            font-size: 13px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+
+
+                        }
+                        .date {
+                            padding-left: 10px;
+
+                            color: $font-grey;
+                            font-size: 13px;
+                            height:41px;
+                        }
+                        .detail{
+                            margin-left: 10px;
+                            font-size: 15px;
+                            width: 70px;
+                            border: 1px solid #B59E6F;
+                            border-radius: 5px;
+                            height: 20px;
+                            line-height: 20px;
+                            text-align: center;
+                        }
+
+                    }
+                    .right {
+                        position: relative;
+                        width: 90px;
+                        text-align: center;
+                        margin-right: 5px;
+
+
+                        & > div {
+                            font-size: 22px;
+                            position: absolute;
+                            top: 50%;
+                            //left: 15px;
+                            margin-top: -17px;
+                            width: 100%;
+                            text-align: center;
+                            font-weight: bold;
+
+                        }
+                    }
+                }
+
+                &.three .item {
+                    color: #9c9b9b;
+                }
+                &.three.item.right {
+                    .name{
+                        color: #9c9b9b;
+                    }
+
+                }
+                &.two .item .left {
+                    color: #9c9b9b;
+                }
+                &.two .item .right {
+                    .desc {
+                        color: #9c9b9b;
+                    }
+                    .date {
+                        color: #9c9b9b;
+                    }
+                }
+                &.one.item.right{
+                    .desc{
+                        color: #9c9b9b;
+                    }
+                    .date{
+                        color: #9c9b9b;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .rules-heytea {
+        .page{
+            background-color: white;
+        }
+        .top {
+            position: relative;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+
+
+
+            .img {
+
+                padding: 2px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin: auto;
+
+
+            }
+
+
+        }
+
+        .weui-navbar:after {
+            border-bottom: none;
+        }
+        .weui-navbar__item {
+            padding-bottom: 0;
+        }
+        .weui-navbar__item > div {
+            padding-bottom: 10px;
+            width: 70px;
+            margin: 0 auto;
+            border-bottom: 2px solid #999999;
+        }
+        .weui-navbar__item.active {
+            background-color: transparent;
+        }
+
+        .weui-navbar.second + .weui-tab__panel {
+            background-color: white;
+        }
+        .weui-navbar.second .bar-bottom-line {
+            position: absolute;
+            width: 75px;
+            height: 2px;
+            bottom: 0;
+            background-color: #B59E6F;
+        }
+        .weui-navbar.second .bar-bottom-line.animate {
+            transition: left 0.5s ease-out;
+        }
+        .weui-navbar.second .bar-bottom-line.one {
+            left: 5%;
+        }
+        .weui-navbar.second .bar-bottom-line.two {
+            left: 29%;
+        }
+        .weui-navbar.second .bar-bottom-line.three {
+            left: 54%;
+        }
+        .weui-navbar.second .bar-bottom-line.three {
+            left: 79%;
+        }
+        .weui-navbar.second{
+            top: 0px;
+        }
+        .weui-tab__panel {
+            background-color: white;
+            .no-data {
+                margin-top: 50%;
+                text-align: center;
+                color: #999999;
+
+                img {
+                    margin-bottom: 20px;
+                    width: 153px;
+                    height: 101px;
+                }
+            }
+            .items {
+                .item {
+                    display: flex;
+                    margin: 15px 20px;
+                    padding: 5px;
+                    background-color: $white-bg;
+                    border-radius: 8px;
+                    border: 1px solid #E5E5E5;
+                    color: #737373;
+                    .left {
+                        flex: 1;
+                        width: calc(100% - 90px);
+                        //background-color: red;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        .name {
+                            padding-left: 10px;
+                            font-size: 17px;
+
+                            font-weight: bold;
+                            height: 41px;
+                        }
+                        .desc {
+                            padding-left: 10px;
+                            color: $font-grey;
+                            font-size: 13px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+
+
+                        }
+                        .date {
+                            padding-left: 10px;
+
+                            color: $font-grey;
+                            font-size: 13px;
+                            height:41px;
+                        }
+                        .detail{
+                            margin-left: 10px;
+                            font-size: 15px;
+                            width: 70px;
+                            border: 1px solid #B59E6F;
+                            border-radius: 5px;
+                            height: 20px;
+                            line-height: 20px;
+                            text-align: center;
+                        }
+
+                    }
+                    .right {
+                        position: relative;
+                        width: 90px;
+                        text-align: center;
+                        margin-right: 5px;
+
+
+                        & > div {
+                            font-size: 22px;
+                            position: absolute;
+                            top: 50%;
+                            //left: 15px;
+                            margin-top: -17px;
+                            width: 100%;
+                            text-align: center;
+                            font-weight: bold;
+
+                        }
+                    }
+                }
+
+                &.three .item {
+                    color: #9c9b9b;
+                }
+                &.three.item.right {
+                    .name{
+                        color: #9c9b9b;
+                    }
+
+                }
+                &.two .item .left {
+                    color: #9c9b9b;
+                }
+                &.two .item .right {
+                    .desc {
+                        color: #9c9b9b;
+                    }
+                    .date {
+                        color: #9c9b9b;
+                    }
+                }
+                &.one.item.right{
+                    .desc{
+                        color: #9c9b9b;
+                    }
+                    .date{
+                        color: #9c9b9b;
+                    }
+
+                }
+            }
+        }
+    }
+ .heytea-discount-detail-container-heytea{
+     .page {
+         background-color: $white-bg;
+         padding-top: 45px;
+         padding-left: 15px;
+         padding-right: 15px;
+         color: $font-color-2;
+          text-align: center;
+         .img {
+
+             text-align: center;
+             padding-top: 30px;
+             padding-left: 20px;
+             padding-right:20px;
+             padding-bottom: 30px;
+             margin-top: 20px;
+             //border-bottom: 1px dotted #D9D9D9;
+
+             img {
+                 width: 100%;
+                 height: 40%;
+                 box-shadow: 8px 8px 8px #EFEFEF;
+             }
+         }
+     }
+     .weui-tab__panel .description {
+         padding-top: 15px;
+         padding-left: 15px;
+         padding-right: 15px;
+         color: #737373;
+         font-size: 14px;
+         line-height: 2.2em;
+         .time {
+
+             padding-top: 80px;
+             padding-left: 15px;
+             padding-right: 15px;
+             color: #737373;
+             font-size: 14px;
+             line-height: 2.2em;
+         }
+         //}
+     }
+ }
+    .privilege-container-heytea {
+        .weui-tab__panel {
+            padding-bottom: 0;
+            background-color: white;
+        }
+        .top-content {
+            background-color: $white-bg;
+            box-shadow: 0 0 10px #5e5c5c;
+            .img-content {
+                text-align: center;
+                padding: 10px 0;
+                padding-top: 10px;
+                img {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+            .tab-content {
+                height: 31px;
+                .tab-list {
+                    position: relative;
+                    overflow-x: scroll;
+                    white-space: nowrap;
+                    padding: 0 30px;
+                    margin-bottom: -15px;
+
+                    .active-line {
+                        position: absolute;
+                        left: 48px;
+                        bottom: 0;
+                        width: 60px;
+                        height: 3px;
+                        background-color:#B59E6F;
+                    }
+                    .tab-item {
+                        display: inline-block;
+                        width: 100px;
+                        text-align: center;
+                        font-size: 16px;
+                        color: $font-grey;
+                        outline: none;
+                        span {
+                            display: inline-block;
+                            padding: 0 5px 6px 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .tab-detail {
+            display: flex;
+            position: absolute;
+            top: 150px;
+            right: 0;
+            bottom: 0;
+            left: 30px;
+            padding: 10px 0;
+
+            div.img {
+                flex: 1;
+                height: 100%;
+                border-radius: 5px;
+                box-shadow: 0 7px 10px #a9a8a8;
+                background-size: 100% 100%;
+            }
+            div.right {
+                display: block;
+                width: 30px;
+                margin-left: 30px;
+                border-radius: 5px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                box-shadow: 0 7px 10px #a9a8a8;
+                background-color: $white-bg;
+
+            }
+            div.right-last {
+                width: 60px;
+            }
+        }
+    }
+
+    .privilege-detail-container-heytea {
+        .weui-tab__panel {
+            background-color: $white-bg;
+
+            .first-content {
+                font-size: 18px;
+                font-weight: bold;
+                padding: 50px 0 5px 0;
+                text-align: center;
+                img {
+                    width: 140px;
+                    height: 90px;
+                }
+                border-bottom: 1px dotted $grey-bg-7;
+            }
+            .second-content {
+                padding-top: 30px;
+                li {
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                    color: $font-grey;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    //tab animation
+    .ngIncludeItem {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        animation-duration: 0.30s;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 0.30s;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    /* When the page enters, slide it from the right */
+    .ngIncludeItem.ng-enter {
+        animation-name: slideFromRight;
+        -webkit-animation-name: slideFromRight;
+    }
+    /* When the page enters and moveToLeft is true, slide it from the left(out of the user view) to the right (left corner) */
+    .ngIncludeItem.moveToLeft.ng-enter {
+        animation-name: slideFromLeft;
+        -webkit-animation-name: slideFromLeft;
+    }
+    /* When the page leaves, slide it to left(out of the user view) from the left corner,
+        in other words slide it from the left(out of the view) to the left corner but in reverse order */
+    .ngIncludeItem.ng-leave {
+        animation-name: slideFromLeft;
+        animation-direction: reverse;
+        -webkit-animation-name: slideFromLeft;
+        -webkit-animation-direction: reverse;
+    }
+    /* When the page leaves, slide it to the right(out of the user view) from the the left corner,
+        in other words, slide it from the right but in reverse order  */
+    .ngIncludeItem.moveToLeft.ng-leave {
+        animation-name: slideFromRight;
+        animation-direction: reverse;
+        -webkit-animation-name: slideFromRight;
+        -webkit-animation-direction: reverse;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slideFromRight {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slideFromLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@media only screen and (min-width: 380px) {
+    body.heytea {
+        .discount-coupon-container-heytea .weui-navbar.second .bar-bottom-line.one {
+            left: 7.5%;
+        }
+        .discount-coupon-container-heytea .weui-navbar.second .bar-bottom-line.two {
+            left: 74.5%;
+        }
+        .discount-coupon-container-heytea .weui-navbar.second .bar-bottom-line.three {
+            left: 40.5%;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    body.heytea {
+        .discount-coupon-container-heytea .weui-navbar.second .bar-bottom-line.one {
+            left: 6.5%;
+        }
+        .discount-coupon-container-heytea .weui-navbar.second .bar-bottom-line.two {
+            left: 73.5%;
+        }
+        .discount-coupon-container-heytea .weui-navbar.second .bar-bottom-line.three {
+            left: 39.5%;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    body.heytea {
+        .discount-coupon-container-heytea .weui-navbar.second .bar-bottom-line.one {
+            left: 5%;
+        }
+        .discount-coupon-container-heytea .weui-navbar.second .bar-bottom-line.two {
+            left: 72%;
+
+        }
+        .discount-coupon-container-heytea .weui-navbar.second .bar-bottom-line.three {
+            left: 38%;
+        }
+    }
+}
+
+//gary styles
+body.heytea {
+    .register-container {
+        select.sex{
+            -webkit-tap-highlight-color: rgba(255,255,255, 0);
+        }
+        .login-btn {
+            .weui-btn {
+               // background-color: black;
+              margin:0px 8%;
+                border-radius: 0;
+                height: 35px;
+                line-height: 35px;
+                color: #737373;
+                border:1px solid #BBBBBB;
+                border-radius:5px;
+            }
+            a[disabled] {
+              //  background-color: #999999;
+            }
+
+        }
+        .login-btn.weui-panel:before {
+            border-top: none;
+        }
+        .login-btn.weui-panel:after {
+            border-bottom: none;
+        }
+        .weui-cell:before {
+            border-top: 1px dotted #D9D9D9;
+        }
+        .weui-cell:before {
+            border-top: 1px dotted #D9D9D9;
+        }
+        .weui-panel:after {
+            border-bottom: 1px dotted #D9D9D9;
+        }
+        .weui-cell__hd .weui-label {
+           width: 88px;
+       }
+        .bottom-container {
+            margin: 10px 15px 0 15px;
+            display: flex;
+
+            .left {
+                flex: 1;
+
+            }
+            .right {
+                width: 100px;
+                text-align: right;
+            }
+        }
+
+        .dialog-sex-box{
+            position: absolute;
+            left: 10%;top: 50%;
+            z-index: 1000;
+            height: 160px;
+            width: 80%;
+            //margin-left: -13.5rem;
+            margin-top: -30%;
+            background: #fff;
+
+
+
+        }
+        .dialog-sex-box-list{
+            width:100%;
+            height: 80px;
+            float: left;
+            line-height: 80px;
+            //margin-left: 2rem;
+            font-size: 1.2rem;
+            //background-color: yellow;
+
+        }
+
+        .register-dialog-sex{
+            position: fixed;
+            left: 0;top:0;
+            z-index: 999;
+            right: 0;bottom: 0;
+            background: rgba(0,0,0,.3);
+            display: none;
+            width: 100%;
+            height: 100%;
+
+        }
+        .dialog-sex-box div:first-child {
+            //background: rebeccapurple;
+            border-bottom: 1px dotted #D9D9D9;
+
+        }
+        .dialog-sex-box-list img {
+            width: 32px;
+            height: 40px;
+            vertical-align:middle;
+            margin-left: 10px;
+        }
+        .dialog-sex-box-list span {
+            //height: 80px;
+            //line-height: 80px;
+            margin-left: 10px;
+            vertical-align:middle;
+
+        }
+        .dialog-sex-close{
+            position: absolute;
+            right: 15%;top: 45%;
+            z-index: 1001;
+            height: 18px;
+            width: 18px;
+            //margin-left: -13.5rem;
+            margin-top: -30%;
+            background-image: url(../assets/images/newHey/col.png);
+            background-size:cover ;
+
+
+
+            //
+            //position: absolute;
+            //
+            ////right: 0;top:0;
+            //z-index: -1;
+            //width: 18px;;
+            //height: 18px;
+            ////display: inline-block;
+            ////margin-right: 10px;
+            //margin-top:-20%;
+            ////background: url(./assets/images/newHey/close1.png) center no-repeat;
+            //background-image: url(../assets/images/newHey/close1.png);
+            //background-size:cover ;
+            ////background-color: red;
+        }
+    }
+.my-experience-container {
+    & > .page {
+        top: 44px;
+        color: $black-bg;
+        .top-panel {
+            //margin: 0 10px;
+            box-shadow: 0 10px 5px -2px  #E5E5E5;
+
+
+        }
+        .weui-panel:before {
+            border: none
+        }
+        .bottom-panel {
+            border: none;
+            box-shadow: 2px 10px 5px 5px  #ECECEC;
+        }
+        .no-border.weui-panel {
+            box-shadow: none
+        }
+        .no-border.weui-panel:before {
+            content: " ";
+            border-top: 1px dotted #333333;
+            position: absolute;
+            top: 1vh;
+            width: 30%;
+        }
+
+        .no-border.weui-panel:after {
+            content: " ";
+            border-bottom: 1px dotted #333333;
+            position: absolute;
+            top: 1vh;
+            left: inherit;
+            width: 30%;
+        }
+
+        .weui-cells {
+            margin-top: 0.5vh;
+            //border-left: 1px solid #E5E5E5;
+            //border-right: 1px solid #E5E5E5;
+        }
+        .weui-cell:before {
+            border: none
+        }
+        .weui-cell {
+        }
+        .bottom-box {
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .top-panel {
+            //background-image: url(../assets/images/newHey/point.png) ;
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            //background-size: cover;
+            margin:0 20px;
+            height: 28vh;
+            //background-color: #008AEB;
+        }
+        .lineBG {
+            //background-color: #423E3C;
+            //position: relative;
+            width: 100%;
+
+            //height: 4px;
+            margin-top: 50px;
+            //background-color: red;
+            //height: 100px;
+
+
+        }
+        .pointValue {
+            //background-color: #423E3C;
+            //position: relative;
+            width: 100%;
+
+
+            //height: 4px;
+            //margin-top: 50px;
+            //background-color: red;
+            //height: 100px;
+
+
+        }
+        .oneqi {
+              float: left;
+              width: 30px;
+              height:39px;
+              //position: relative;
+
+              background-image: url(../assets/images/snow/20.png) ;
+              background-position: 0 0;
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              background-size: cover;
+              left: 0px;
+              //margin-top: -24px;
+
+          }
+        .oneValue {
+            color: $black-bg;
+            float: left;
+            width: 50px;
+            height:39px;
+            //position: relative;
+
+          text-align: left;
+            left: 0px;
+
+            //margin-top: -24px;
+
+        }
+        .twoqi {
+              float: left;
+              width: 30px;
+              height: 39px;
+              //position: relative;
+              //margin-left:calc(100% - 90px )/2  ;
+              background-image: url(../assets/images/snow/20.png) ;
+              background-position: 0 0;
+              background-size: 100% 100%;
+              background-repeat: no-repeat;
+              background-size: cover;
+              //margin-top: -24px;
+
+          }
+        .twoValue {
+            float: left;
+            width: 50px;
+            height: 39px;
+           text-align: center;
+
+
+
+        }
+        .threeqi{
+            float: left;
+            width: 30px;
+            height: 39px;
+            //position: relative;
+            //margin-left:calc((100% - 90px )/2) ;
+            background-image: url(../assets/images/snow/20.png) ;
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            //margin-top: -24px;
+        }
+
+        .threeValue{
+            float: left;
+            width: 50px;
+            height: 39px;
+            text-align: right;
+            margin-left:calc(100% - 90px )/2  ;
+            //background-color: red;
+            //margin-right: 5px;
+
+        }
+
+        .top-panel .weui-cell:first-child {
+            background: transparent;
+        }
+        .top-panel .weui-cell:last-child {
+            padding: 0 15px 10px 15px;
+            text-align: -webkit-center;
+            font-size: 40px;
+            font-weight: 100;
+            margin-top: -20px;
+            display: block;
+            //background: red;
+
+
+        }
+        .my-cell {
+
+        }
+        .recordbg{
+            //height: 50px;
+
+        }
+        .recordSon {
+            //height: 50px;
+        }
+        .my-border {
+            height: 3vh;
+            width: 100%;
+            line-height: 3vh;
+            //background: red;
+            //border: 1px solid #eeeeee;
+            //border-radius: 100px;
+            //height: 100px;
+
+        }
+        .weui-cell__ft {
+            right: 20px;
+            position: absolute;
+            height: 40px;
+            //line-height: 70px;
+             line-height: 40px;
+            //background-color: red;
+            //margin-top: -10px;
+        }
+    }
+    .mcenter-info-bottom{
+        margin-top: 10px;
+
+        width:100%;
+        height:5vh;
+        display: inline-block;
+
+    }
+    .mcenter-info-bottom .mcenter-info-listone{
+        text-align: left;
+        width: 10px;
+        //margin-top: 2vh
+    ;
+
+
+    }
+    .mcenter-info-listone h2{
+        line-height: 2vh;
+        color: white;
+        //font-weight: 500;
+        font-size: 10px;
+
+
+    }
+    .mcenter-info-listone span{
+        line-height: 2vh;
+        color: white;
+        font-size: 8px;
+
+    }
+
+    .mcenter-info-bottom .mcenter-info-listtwo{
+        display: inline-block;
+        text-align: center;
+        width: 40px;
+        position: relative;
+        left:calc((100%/3 ) - 20px) ;
+        height: 4vh;
+        //background-color: rebeccapurple;
+        top: -2vh;
+
+    }
+    .mcenter-info-listtwo h2{
+        line-height: 2vh;
+        color: white;
+        //font-weight: 500;
+        font-size: 10px;
+
+
+    }
+    .mcenter-info-listtwo span{
+        line-height: 2vh;
+        color: white;
+        font-size: 8px;
+
+    }
+    .mcenter-info-bottom .mcenter-info-listthree{
+        display: inline-block;
+        text-align: center;
+        width: 40px;
+        position: relative;
+        left:calc((100%/3 )*2 - 60px);
+        height: 4vh;
+        top: -2vh;
+        //background-color: rebeccapurple;
+
+    }
+    .mcenter-info-listthree h2{
+        line-height: 2vh;
+        color: white;
+        //font-weight: 500;
+        font-size: 10px;
+
+
+    }
+    .mcenter-info-listthree span{
+        line-height: 2vh;
+        color: white;
+        font-size: 8px;
+
+    }
+    .mcenter-info-bottom .mcenter-info-listfour{
+        display: inline-block;
+        text-align: right;
+        width: 10px;
+        position: relative;
+        left:calc((100%/3 )*3 - 100px);
+        height: 4vh;
+        top: -5vh;
+        //background-color: rebeccapurple;
+
+    }
+    .mcenter-info-listfour h2{
+        line-height: 2vh;
+        height: 2vh;
+        color: white;
+        //font-weight: 500;
+        font-size: 10px;
+        margin-top: 0px;
+
+
+    }
+
+}
+    .my-points-container {
+        & > .page {
+            top: 44px;
+
+            .weui-panel {
+                margin: 0 10px;
+                box-shadow: 0 10px 5px -2px #E5E5E5;
+            }
+            .weui-panel:before {
+                border: none
+            }
+
+            .no-border.weui-panel {
+                box-shadow: none
+            }
+            .no-border.weui-panel:before {
+                content: " ";
+                border-top: 1px dotted #333333;
+                position: absolute;
+                top: 11px;
+                width: 38%;
+            }
+
+            .no-border.weui-panel:after {
+                content: " ";
+                border-bottom: 1px dotted #333333;
+                position: absolute;
+                top: 11px;
+                left: inherit;
+                width: 38%;
+            }
+
+            .weui-cells {
+                margin-top: 5px;
+                border-left: 1px solid #E5E5E5;
+                border-right: 1px solid #E5E5E5;
+            }
+            .weui-cell:before {
+                border: none
+            }
+            .weui-cell {
+            }
+            .top-panel .weui-cell:first-child {
+
+            }
+            .top-panel .weui-cell:last-child {
+                padding: 0 15px 20px 15px;
+                text-align: -webkit-center;
+                font-size: 50px;
+                font-weight: 100;
+                margin-top: -20px;
+                display: block;
+            }
+            .my-cell {
+
+            }
+            .my-border {
+                height: 135px;
+                width: 135px;
+                line-height: 133px;
+                border: 1px solid #eeeeee;
+                border-radius: 100px;
+                //height: 100px;
+
+            }
+            .weui-cell__ft {
+                right: 20px;
+                position: absolute;
+            }
+        }
+    }
+
+    .my-pay-code-container {
+        .page {
+            top: 44px;
+            background-color: #f2f2f2;
+        }
+        .weui-tab__panel {
+            padding-bottom: 0;
+            height: auto
+        }
+        .weui-top-bar {
+            .header {
+                background-color: #f2f2f2;
+            }
+        }
+        .weui-article {
+            height: 100%;
+            padding: 10px 0px;
+        }
+        .qr-code {
+            border: 0;
+            width: 200px;
+            height: 200px;
+            padding-top: 15px;
+            background-color: white
+        }
+        .heytea-bar-code {
+            border: 0;
+            background-color: white;
+            width: 99%;
+            height: 350px;
+            margin-top: -130px;
+            padding-top: 140px;
+            padding-bottom: 140px;
+        }
+    }
+
+    .login-container-heytea.my-change-pwd {
+        .login-form {
+            opacity: 1;
+            margin: 25% 10%;
+            border-left: 1px solid #D9D9D9;
+            border-right: 1px solid #D9D9D9;
+            //border-bottom: 1px dotted #D9D9D9;
+            box-shadow: 0 10px 5px -2px #E5E5E5;
+
+
+            & > .weui-cells {
+                background-color: transparent;
+                margin-top: 0;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .weui-cell:before {
+                border: none;
+            }
+
+            .weui-cell {
+                //padding-bottom: 0;
+                padding: 10px 0 0 0;
+                margin: 0 5px;
+                //border-bottom: 1px dotted #A68962;
+                border-bottom: 1px solid $grey-border;
+                input.placeholder{
+
+                    color:white ;
+                }
+            }
+            .weui-cell__hd {
+                padding-right: 15px;
+                input.placeholder{
+
+                    color:white ;
+                }
+            }
+            .weui-cell__bd {
+                input {
+                    padding: 5px 0;
+                }
+            }
+            .weui-cell {
+                margin-bottom: 2px;
+                margin-top: 18px;
+            }
+            .login-btn {
+                background-color: rgba(255, 255, 255, 0);
+                padding-top: 10px;
+                padding-bottom: 40px;
+
+
+
+                &:before {
+                    border: none;
+                }
+                &:after{
+                    border: none;
+
+                }
+                a {
+                    color: white;
+                border:1px solid #BBBBBB;
+                    font-size: 16px;
+                    margin:0px 27%;
+                    //padding: 5px 0;
+                    background-color:#464543;
+                    border-radius: 5px;
+                    //height: 50px;
+                }
+                a[disabled] {
+                   // background-color: #464543;
+                }
+            }
+            .bottom-container {
+                margin: 10px 15px 0 15px;
+                display: flex;
+
+                .left {
+                    flex: 1;
+                    color: #ec3b42;
+                }
+                .right {
+                    width: 100px;
+                    text-align: right;
+                }
+            }
+            input:-ms-input-placeholder{  color: #737373;}
+
+            input::-webkit-input-placeholder{ color: #737373;}
+            input::-moz-placeholder{  color: #737373;}
+
+        }
+    }
+
+    .my-feedback-container {
+        .page {
+            top: 44px
+        }
+
+
+        .weui-panel {
+            margin-top: 0;
+        }
+        .weui-panel:before {
+            border: none
+        }
+        .weui-panel:after {
+            border: none
+        }
+
+        .weui-panel.login-btn {
+
+            padding-bottom: 40px;
+        }
+        .login-btn a {
+            font-size: 16px;
+            margin-left:8%;
+            width: 84%;
+            padding: 5px 0;
+             border:1px solid #BBBBBB;
+             background-color:white;
+            border-radius: 0;
+            height:35px;
+
+        }
+        .login-btn a[disabled] {
+            color: #737373;;
+               background-color: white;
+        }
+    }
+
+    .memberinfo-container {
+        .page {
+            top: 44px
+        }
+        .weui-tab__panel {
+            .top {
+                position: relative;
+                margin-top: 50px;
+                margin-bottom: 20px;
+                text-align: center;
+
+
+
+                .img {
+
+                    padding: 2px;
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin: auto;
+
+
+                }
+
+
+            }
+        }
+        .weui-panel {
+            margin: -50px 5% 0;
+
+            background-color: transparent;
+
+            //box-shadow: 0 10px 5px -2px #E5E5E5;
+            .infoOne{
+                box-shadow: 0 0 3px 3px #E5E5E5;
+                width: 90%;
+                height: 250px;
+                border-radius:5px ;
+                margin: 30px auto;
+            }
+
+        }
+        .weui-panel:before {
+            border: none
+        }
+        .weui-panel:after {
+            //border-bottom: 1px solid #D9D9D9;
+        }
+        .weui-cells {
+            background-color: transparent;
+        }
+        .weui-cell {
+            display: flex;
+            padding: 20px 0px 0;
+            border-bottom: 1px solid #D9D9D9;
+            margin: 0 5%;
+            width: 90%;
+            height: 40px;
+        }
+        .weui-cell:before {
+            border-top: none;
+        }
+        .weui-cell__hd {
+            width: 100px;
+            color: #737373;
+        }
+        .weui-cell__bd {
+            //left: 30px;
+
+            flex: 1;
+            position: static;
+        }
+        .weui-select {
+            height: 40px;
+            line-height: 40px;
+            padding-top: 10px;
+        }
+    }
+
+    .firstores-container {
+        .page {
+            top: 44px
+        }
+        .weui-tab__panel {
+            .top {
+                position: relative;
+                margin-top: 50px;
+                margin-bottom: 20px;
+                text-align: center;
+
+
+
+                .img {
+
+                    padding: 2px;
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin: auto;
+
+
+                }
+
+
+            }
+        }
+        .weui-flex {
+            text-align: center;
+            margin: 0 30px;
+        }
+        .weui-cells {
+            text-align: left;
+            font-size: 12px;
+        }
+        .weui-cell {
+            padding: 0 15px;
+        }
+        .weui-cell:before {
+            border: none;
+        }
+        .area-name {
+            padding: 0 15px 5px;
+            font-size: 16px;
+        }
+        .shop-name {
+            color: grey
+        }
+    }
+
+    .cheep-container {
+        .page {
+            background-color: #f2f2f2;
+            top: 44px;
+            padding-top: 5px;
+        }
+        .first-line button {
+            background-color: transparent;
+            border: 1px dotted #333333;
+            padding: 4px 4px;
+        }
+        .point-list .item .point .value {
+            color: $font-color;
+        }
+        .point-list .item .point .type {
+            border: 1px dotted #333333;
+            color: $black-bg;
+        }
+    }
+    .conversion-detail-container {
+        //.weui-tab__panel .description {
+        //    border-bottom: 1px dotted #333333;
+        //}
+        //.weui-navbar + .weui-tab__panel {
+        //    padding-top: 44px;
+        //}
+        //.page__bd {
+        //    overflow: hidden;
+        //}
+        //.weui-tab.first {
+        //    height: 100%;
+        //}
+        .weui-tab__panel .middle-content {
+            border-bottom: 1px dotted #333333;
+            .point {
+                .type {
+                    border: 1px dotted #333333;
+                    color: $black-bg
+                }
+            }
+        }
+        .weui-tab__panel .middle-content .point .value {
+            color: $font-color;
+        }
+    }
+    .conversion-record-container {
+        .page {
+            background-color: #f2f2f2;
+        }
+    }
+    .exchange-success-container .weui-navbar__item a img,
+    .confirm-conversion-container .weui-navbar__item a img,
+    .conversion-record-container .weui-navbar__item a img,
+    .conversion-detail-container .weui-navbar__item a img {
+        margin-top: 4px;
+    }
+
+    .conversion-record-container .weui-tab__panel .detail .desc .last .value {
+        color: #737373;
+        font-weight: bold;
+    }
+    .conversion-record-container .weui-tab__panel .detail .desc .last .status.no {
+        color: red
+    }
+    .conversion-record-container .weui-tab__panel .weui-cells > .first,
+    .conversion-record-container .weui-tab__panel .weui-cells > .second,
+    .conversion-record-container .weui-tab__panel .weui-cells > .third {
+        //padding: 0;
+        //margin: 0 15px;
+    }
+    .conversion-record-container .weui-tab__panel .weui-cells > .first {
+        padding-bottom: 10px;
+    }
+    .conversion-record-container .weui-tab__panel .weui-cells > .first,
+    .conversion-record-container .weui-tab__panel .weui-cells > .second {
+        border-bottom: 1px dotted #333333;
+    }
+    .conversion-record-container .first .type {
+        font-size: 12px;
+        padding: 0 5px;
+        color: #9c9b9b;
+        border: 1px dotted #333333;
+    }
+
+    .conversion-detail-container .weui-bottom-bar,
+    .confirm-conversion-container .weui-bottom-bar {
+        //height: 60px;
+    }
+    .confirm-conversion-container .weui-bottom-bar button,
+    .conversion-detail-container .weui-bottom-bar button {
+        //position: fixed;
+        //bottom: 10px;
+        //width: 90%;
+        //right: 5%;
+        background-color: $black-bg;
+        color: $font-white;
+        //border-radius: 20px;
+    }
+    .conversion-detail-container .weui-bottom-bar button.disabled {
+        background-color: #999999;
+    }
+    .confirm-conversion-container .weui-bottom-bar .weui-cell,
+    .conversion-detail-container .weui-bottom-bar .weui-cell {
+        //padding: 0;
+    }
+    .conversion-detail-container .weui-bottom-bar {
+        //border: none;
+    }
+    .confirm-conversion-container {
+        .page {
+            background-color: $white-bg;
+        }
+        .weui-panel:before {
+            border: none
+        }
+        .weui-panel:after {
+            border: none
+        }
+
+        .right-arrow {
+
+        }
+        .weui-tab__panel {
+            .detail.border-bottom {
+                border-bottom: 1px dotted #999999;
+            }
+            .detail .desc .last .value {
+                color: $font-color;
+                font-weight: bold;
+            }
+            .detail .img, .desc {
+                height: 62px;
+            }
+            .detail .img img {
+                width: 60px;
+                height: 60px;
+            }
+            .detail .desc .last {
+                margin-top: 20px;
+            }
+            .other .detail {
+                line-height: 2.18em;
+                height: 62px;
+            }
+            .other .address {
+                color: #737373;
+            }
+            .name {
+                background-color: white;
+                margin-left: 0;
+                padding: 8px 0 8px 15px;
+            }
+        }
+        .star-dialog.stores {
+            .weui-cell:before {
+                border-top: none
+            }
+            .weui-panel:after {
+                border-bottom: none
+            }
+        }
+    }
+    .exchange-success-container .content .icon {
+        background-image: url(../assets/images/black/exchange-success.png);
+        z-index: 99999;
+        width: 80px;
+        height: 80px;
+    }
+    .conversion-record-container .content .icon {
+        background-image: url(../assets/images/black/exchange-record.png);
+        z-index: 99999;
+        width: 80px;
+        height: 80px;
+    }
+
+
+    @media only screen and (min-width: 380px) {
+
+            .my-container-heytea .space-line {
+                //height: 70px;
+            }
+
+    }
+
+    @media only screen and (min-width: 370px) {
+
+            .my-container .fixed-line {
+                height: 30px;
+            }
+
+    }
+
+    @media only screen and (max-width: 380px) {
+
+            .my-container .space-line {
+                //height: 70px;
+            }
+
+        }
+
+
+    @media only screen and (max-width: 350px) {
+
+            .my-container .space-line {
+                height: 50px;
+            }
+
+
+    }
+
+}

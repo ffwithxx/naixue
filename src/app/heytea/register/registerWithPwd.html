@@ -1,0 +1,46 @@
+<div class="login-container-heytea my-change-pwd">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="rep.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">设置密码</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="background-image: none">
+        <div class="login-form">
+            <p style="padding: 5px 0 0;">&nbsp;</p>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">设置密码</div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="password" ng-model="rep.pwd" ng-change="rep.onPwdChange(rep.pwd)" placeholder="请输入6位数字密码密码"/>
+                    </div>
+                </div>
+                <div class="weui-cell last">
+                    <div class="weui-cell__hd">再次确认</div>
+                    <div class="weui-cell__bd pwd">
+                        <input class="weui-input" type="password" ng-model="rep.rePwd" placeholder="请再次输入6位数字密码"/>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    <div class="left" style="text-align: center">
+                        <span ng-show="rep.msg.warning">{{rep.msg.message}}</span>
+                    </div>
+                    <a >&nbsp;</a>
+                </div>
+            </div>
+            <div class="weui-panel login-btn">
+                <a class="weui-btn" ng-click="rep.submit()" ng-disabled="!rep.pwd||!rep.rePwd">确认</a>
+            </div>
+        </div>
+    </div>
+</div>

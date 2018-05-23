@@ -1,0 +1,147 @@
+<div class="memberinfo-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="mic.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">我的信息</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="top" style=" box-shadow: 0 10px 5px -2px #E5E5E5" >
+
+                    <img style="  border:none;border-radius:0;height: 80px;width: 80px" class="img" src="./assets/images/snow/2.png" />
+
+                </div>
+                <!--<div class="top" ng-click="mc.uploadPhoto(picFile)">-->
+                    <!--<input type="file" ngf-select ng-model="picFile"-->
+                           <!--name="file" ngf-accept="'image/*'" class="ph08" />-->
+                    <!--<div class="img"  style="background-image:url({{mc.logo}}) ;"></div>-->
+                    <!--<div class="name" ng-bind="mc.name"></div>-->
+                <!--</div>-->
+
+
+                <!--<div class="top">
+                  <input type="file" ngf-select ng-model="picFile"
+                    name="file" ngf-accept="'image/*'" class="ph08" />
+                    <img src="{{mic.headUrl}}" />
+                </div>-->
+
+                <div class="weui-panel">
+                    <div class="weui-cells" style="margin-top: 0px;">
+                        <div class="no-top-border weui-cell" style="border: none;margin: 0;height: 0px"></div>
+                        <div class="no-top-border weui-cell" style="border: none;margin: 0;height: 0px"></div>
+
+                        <div class="infoOne" style="height: 250px">
+                            <div class="weui-cell" style="height: 60px">
+                                <div class="weui-cell__hd">
+                                    <p>会员姓名</p>
+                                </div>
+                                <div class="weui-cell__bd">
+                                    <!--ng-keypress="mic.onKeyPressUpdateMemberName($event, mic.memberName)"-->
+                                    <input class="weui-input" type="text" ng-model="mic.memberName" ng-blur="mic.noBlurUpdateMemberName(mic.memberName)" >
+                                </div>
+                            </div>
+
+                            <div class="weui-cell" style="height: 60px" ng-if=" mic.memberGender!='' ">
+                                <div class="weui-cell__hd">
+                                    <p>会员性别</p>
+                                </div>
+                                <div class="weui-cell__bd">{{mic.memberGender}}</div>
+                            </div>
+
+                            <div class="weui-cell" style="padding: 0 25px" ng-if="mic.memberGender=='' ">
+                                <div class="weui-cell__hd" style="padding-top: 22px;">
+                                    <p>会员性别</p>
+                                </div>
+                                <div class="weui-cell__bd">
+                                    <select class="weui-select" name="select2" ng-model="mic.updatedGender" ng-change="mic.updateGender(mic.updatedGender)" style="padding-left: 0">
+                                        <option value="0">男</option>
+                                        <option value="1">女</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="weui-cell weui-cell_access " style="height: 60px">
+                                <div class="weui-cell__hd">
+                                    <p>会员生日</p>
+                                </div>
+                                <div class="weui-cell__bd" ng-if="mic.memberBirthday">{{mic.memberBirthday}}</div>
+                                <div class="weui-cell__bd" ng-show="!mic.memberBirthday" style="left:0">
+                                    <input class="weui-input" type="text" ng-model="mic.memberBirthday"  name="USER_AGE" id="USER_AGE" readonly  placeholder="请填写你的出生日期" />
+                                </div>
+                                <!--<div class="weui-cell__ft" ng-if="!mic.memberBirthday"></div>-->
+                            </div>
+
+                            <div class="weui-cell" style="border: none;height: 60px">
+                                <div class="weui-cell__hd">
+                                    <p>手机号码</p>
+                                </div>
+                                <div class="weui-cell__bd">{{mic.otherMobile}}</div>
+
+                            </div>
+                        </div>
+
+                        <div class="infoOne" style="height: 250px" >
+                        <div class="no-top-border weui-cell" style="height: 60px">
+                            <div class="weui-cell__hd">
+                                <p>会员卡号</p>
+                            </div>
+                            <div class="weui-cell__bd">{{mic.mobile}}</div>
+                            <div class="weui-cell__ft vcode" style="height: 100%;border-left: 1px solid white">
+                                <a class="weui-btn"  ng-click="mic.goDetailPage('/heytea-myChangePwd')"  style="font-size: 12px;width: 70px;text-align: right; height: 100%;line-height: 40px;color:#B59E6F ">修改密码</a>
+                            </div>
+
+                        </div>
+
+
+                        <div class="weui-cell weui-cell_access" ng-click="mic.goLevelDeatil()" style="height: 60px">
+                            <div class="weui-cell__hd">
+                                <p>会员等级</p>
+                            </div>
+                            <div class="weui-cell__bd">{{mic.memberLevel || '普通会员'}}</div>
+                            <div class="weui-cell__ft leftbg">&nbsp;</div>
+                            <!--<div class="weui-cell__ft">&nbsp;</div>-->
+                        </div>
+
+
+                        <div class="weui-cell" style="height: 60px">
+                            <div class="weui-cell__hd">
+                                <p>办卡时间</p>
+                            </div>
+                            <div class="weui-cell__bd">{{mic.createdDate}}&nbsp;</div>
+                        </div>
+
+                        <div class="weui-cell" style="border: none;height: 60px">
+                            <div class="weui-cell__hd">
+                                <p>办卡地点</p>
+                            </div>
+                            <div class="weui-cell__bd">{{mic.createdLocation}}</div>
+                        </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="app/datetime/css/normalize3.0.2.min.css">
+<link rel="stylesheet" href="app/datetime/css/style.css">
+<link rel="stylesheet" href="app/datetime/css/mobiscroll.css">
+<link rel="stylesheet" href="app/datetime/css/mobiscroll_date.css">
+<script src="app/datetime/js/jquery.min.js"></script>
+<script src="app/datetime/js/mobiscroll_date.js"></script>
+<script src="app/datetime/js/mobiscroll.js"></script>

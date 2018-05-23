@@ -1,0 +1,101 @@
+<div class="conversion-record-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a class="" ng-click="cr.goBack()">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                            <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                        </a>
+                        <span>购买记录</span>
+                    </div>
+                </div>
+                <div class="weui-tab__panel">
+                    <div class="weui-cells" ng-if="cr.list.length>0" ng-repeat="item in cr.list">
+                        <div class="first">
+                            <div class="detail">
+                                <div class="img">
+                                    <img ng-src="{{item.productPic}}"/>
+                                </div>
+                                <div class="desc" >
+                                    <div class="first" style="display: flex">
+                                        <div style="max-width: calc(100%  - 70px);width: calc(100%  - 70px)">{{item.productName | limitTo:11}}</div>
+                                        <!--<div class="type"style="display: inline;" ng-if="item.getWay==1">已发放</div>-->
+                                        <div class="type" ng-if="item.status==0" style="color:#be9b61;">未发放</div>
+                                        <div class="type" ng-if="item.status==1">已发放</div>
+                                        <div class="type" ng-if="item.status==2">已领取</div>
+                                        <div class="type"  ng-if="item.status==3" style="color:#be9b61;">未发货</div>
+                                        <div class="type" ng-if="item.status==4">已发货</div>
+                                        <div class="type" ng-if="item.status==5">已签收</div>
+                                        <div class="type"  ng-if="item.status==6">已取消</div>
+                                        <div class="type" ng-if="item.status==null">已发放</div>
+                                    </div>
+                                    <div class="last">
+                                        <span class="value">{{cr.getvalue(item)}}</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second" ng-if="item.getWay==1">
+                            <div class="line">
+                                <label>领取方式</label>
+                                <div>自提</div>
+                            </div>
+                            <div class="line">
+                                <label>自提门店</label>
+                                <div>{{item.name}}</div>
+                            </div>
+                            <div class="line">
+                                <label>联系电话</label>
+                                <div>{{item.mobile || '暂无联系电话'}}</div>
+                            </div>
+                            <div class="line">
+                                <label>门店地址</label>
+                                <div>{{item.address || '暂无门店地址'}}</div>
+                            </div>
+                        </div>
+                        <div class="second" ng-if="item.getWay==2">
+                            <div class="line">
+                                <label>领取方式</label>
+                                <div>快递</div>
+                            </div>
+
+                            <div class="line" ng-if="item.payType !=3">
+                                <label>快递费用</label>
+                                <div>{{  cr.getYunValue(item)}}</div>
+                            </div>
+                            <div class="line">
+                                <label>收件人</label>
+                                <div>{{item.name}}</div>
+                            </div>
+                            <div class="line">
+                                <label>联系电话</label>
+                                <div>{{item.mobile || '暂无联系电话'}}</div>
+                            </div>
+                            <div class="line">
+                                <label>联系地址</label>
+                                <div>{{item.address || '暂无地址'}}</div>
+                            </div>
+                        </div>
+                        <div class="third">
+                            <div class="line">
+                                <label>兑换时间</label>
+                                <div>{{item.create}}</div>
+                            </div>
+                        </div>
+                        <div style="border-top: solid 1px #EEEEEE;height: 50px" ng-if="item.payType !=3">
+                            <div  class="" style="  font-size: 18px;font-weight: bold;display: inline-block;height: 50px;line-height: 50px;float: right;padding-left: 10px;margin-right: 15px">{{ "￥"+ (item.price + item.freight)}}</div>
+                            <div style="font-size: 14px;height: 50px;line-height: 50px;display: inline-block;float: right">共一件商品 合计:</div>
+                        </div>
+                    </div>
+                    <div class="content" ng-if="cr.list.length==0">
+                        <div class="icon"></div>
+                        <div class="text">亲！您现在还没有兑换记录哦！</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

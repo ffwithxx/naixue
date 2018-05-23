@@ -1,0 +1,120 @@
+<div class="confirm-conversion-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a class="" ng-click="cc.goBack()">
+                            <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                        </a>
+                        <span>确认信息</span>
+                    </div>
+                </div>
+                <div class="weui-tab__panel">
+                    <div class="name">兑换商品</div>
+                    <div class="detail border-bottom">
+                        <div class="img">
+                            <img ng-src="{{cc.detail.iconUrl}}"/>
+                        </div>
+                        <div class="desc">
+                            <div class="first" style="display: flex">
+                                <div>{{cc.detail.title | limitTo:11}}</div>
+                                <!--<div class="type" ng-if="cc.detail.type==1">-->
+                                    <!--<img ng-if="theme!='black'" src="./assets/images/VK/ziti@2x.png">-->
+                                    <!--<img ng-if="theme=='black'" src="./assets/images/black/ziti.png">-->
+                                <!--</div>-->
+                            </div>
+                            <div class="last">
+                                <span class="value">{{cc.detail.point}}</span>
+                                <span class="label">积分</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other" ng-if="cc.detail.type!=0">
+                        <div class="name">自提门店</div>
+                        <div class="detail weui-cell_access" style="display: flex; padding-top: 0;" ng-click="cc.showStoreListDialog = true">
+                            <div style="width: 95%;">
+                                <div class="store-name">{{cc.store.name}}</div>
+                                <div class="address">{{cc.store.address}}</div>
+                            </div>
+                            <div class="weui-cell__ft">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-panel">
+                    <div class="weui-cell" style="border: 1px dotted #333333; margin: 0 5%;">
+                        <div class="weui-cell__bd">
+                            <textarea style="height: 100px" class="weui-textarea" ng-change="cc.onTextChange()"
+                                      ng-model="cc.remark"
+                                      placeholder="如需快递该礼品，请在这留下你的收件人姓名，联系电话，详细收件地址等信息。" rows="3"></textarea>
+                            <div class="weui-textarea-counter"><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-bottom-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="weui-cell" ng-if="theme!='black'">
+                <div class="current">当前积分{{cc.point}}</div>
+                <button ng-click="cc.confirm()">立即兑换</button>
+            </div>
+            <div class="weui-cell" ng-if="theme=='black'">
+                <button ng-click="cc.confirm()">立即兑换</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--地址列表-->
+    <div class="star-dialog stores" ng-show="cc.showStoreListDialog">
+        <div class="my-address-container">
+            <div class="weui-top-bar" style="z-index: 999">
+                <div class="weui-cells" style="width: 100%;margin-top: 0px">
+                    <div class="header">
+                        <div class="left_icon">
+                            <a ng-click="cc.showStoreListDialog = false">
+                                <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                            </a>
+                        </div>
+                        <div class="label" style="">选择门店</div>
+                        <div class="right_icon">
+                            <!--<a class="weui-vcode-btn weui-btn_danger button-clear" ng-click="malc.onManageClick()" style="color:black">{{malc.manage}}</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page osc-page" style="z-index: 999; background: white;">
+                <div class="page__bd" style="height: 100%;">
+                    <div class="weui-tab__panel">
+
+                        <div class="weui-panel">
+                            <a class="weui-cell" ng-repeat="eachStore in cc.stores" style="padding: 0 10px 0 0px;" ng-click="cc.onStoreClick(eachStore)">
+                                <div class="weui-cell__bd">
+                                    <div class="weui-media-box weui-media-box_text">
+                                        <h4 class="weui-media-box__title">
+                                            <span style="margin-right: 10px">{{eachStore.name}}</span>
+                                        </h4>
+                                        <p class="weui-media-box__desc">{{eachStore.address}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="weui-bottom-bar">-->
+                <!--<div class="weui-panel bottom_button_full">-->
+                    <!--<a class="weui-btn weui-btn_danger bottom-button" ng-click="osc.addAddress()">+ 新建地址</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+
+</div>

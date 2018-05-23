@@ -1,0 +1,59 @@
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=BEGqAqQLbeHn6yucCyEDXHTOL3pqU1A0"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+
+<div class="shopping-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab">
+                <div class="weui-tab__panel" id="allmap">
+                    <div class="weui-panel__bd" style="background-color: white;">
+                        <div class="weui-media-box weui-media-box_appmsg" ng-click="sc.goStoreDetail(each)"
+                           ng-repeat="each in sc.stores">
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" width="70px" height="70px" ng-src="{{each.logo}}">
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title" style="line-height: 1.2em">{{each.name || "没有店名"}}</h4>
+                                <p class="weui-media-box__desc" style="margin-top: 5px;">
+                                    <span style="vertical-align: sub;margin-right: -4px">
+                                        <img width="5%" ng-if="theme!='black'" src="./assets/images/VK/start@2x.png"
+                                             style="margin-right: 5px;"
+                                             ng-repeat="a in each.stars track by $index">
+                                        <img width="5%" ng-if="theme=='black'" src="./assets/images/black/xiaoxingxing-@2x.png"
+                                             style="margin-right: 5px;"
+                                             ng-repeat="a in each.stars track by $index">
+                                    </span>
+                                    <span style="vertical-align: sub;">
+                                        <img width="5%" ng-if="theme!='black'" src="./assets/images/VK/start-disable@2x.png"
+                                             style="margin-right: 5px; "
+                                             ng-repeat="b in each.unstars track by $index">
+                                        <img width="5%" ng-if="theme=='black'" src="./assets/images/black/xiaoxingxing02@2x.png"
+                                             style="margin-right: 5px; "
+                                             ng-repeat="b in each.unstars track by $index">
+                                    </span>
+                                    <span style="margin-left: 5px;">已售出 {{each.monthMake || 0}} 件</span>
+                                </p>
+                                <p class="weui-media-box__desc" style="line-height: 1em">&nbsp;</p>
+                                <p class="weui-media-box__desc" style="margin-top: -5px;">
+                                    <span>{{each.address || "没有地址"}}</span>
+                                    <span class="distance">&le;{{each.distance || 0}}KM</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-include="'app/components/tabbar/tabbar.html'"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div id="toast" ng-show="sc.showToast">-->
+        <!--<div class="weui-mask_transparent"></div>-->
+        <!--<div class="weui-toast">-->
+            <!--<i class="weui-icon-success-no-circle weui-icon_toast"></i>-->
+            <!--<p class="weui-toast__content">{{sc.toastMsg}}</p>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>

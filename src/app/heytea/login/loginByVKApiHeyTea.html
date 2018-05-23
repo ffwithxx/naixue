@@ -1,0 +1,39 @@
+<div class="login-container-heytea">
+    <div class="page">
+        <!--<div class="login-form" style=" background: rgba(0, 0, 0, 0.3)">-->
+        <div class="login-form" >
+            <p>会员登录</p>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd" style="font-size: 14px;">
+                        <input class="weui-input oneinput" type="text"  ng-model="lv.mobile" placeholder="请输入账号(账号在会员卡背面)"/>
+                    </div>
+                </div>
+                <div class="weui-cell last"style="font-size: 14px; border-bottom: 1px solid#D7CCAC" >
+                    <div class="weui-cell__bd pwd">
+                        <input class="weui-input oneinput" type="password" ng-model="lv.pwd" placeholder="请输入密码(初始密码在会员卡背面刮开)"/>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    <!--<div class="tishi">原始密码在会员卡背面</div>-->
+                    <div class="left">
+                        <span ng-show="lv.msg.warning">{{lv.msg.message}}</span>
+                    </div>
+
+                    <a style="font-size: 14px;color: #D7CCAC" ng-click="lv.forgetPwd()">忘记密码</a>
+                    <!--<div class="right">忘记密码</div>-->
+                </div>
+            </div>
+            <div class="weui-panel login-btn">
+                <a class="weui-btn" ng-click="lv.login()" ng-disabled="!lv.mobile|| !lv.pwd">登  录</a>
+            </div>
+
+        </div>
+      <div class="weui-footer weui-footer_fixed-bottom" id="bottomBth" >
+            <a  style="font-size: 17px;background-color: transparent;width: 100px;display: block;margin: 0 auto" ng-click="lv.goBuy()">{{"购买须知"}}</a>
+            <!--<a style="font-size: 17px;margin-left: 10px">|</a>-->
+            <!--<a style="font-size: 17px;margin-left: 10px" ng-click="lv.goRegister()">立即激活</a>-->
+
+        </div>
+    </div>
+</div>

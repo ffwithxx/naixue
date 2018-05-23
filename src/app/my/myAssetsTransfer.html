@@ -1,0 +1,187 @@
+<div class="my-assets-transfer-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="matc.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">资产转移</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:54px">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+
+                <div class="weui-panel" style="display: flex">
+                    <div>
+                        <div>
+                            <div class="assets-from-icon">&nbsp;</div>
+                            <div class="assets-to-icon">&nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="weui-cells" style="width: 100%;">
+                        <div class="weui-cell accounts" style="">
+                            <div class="weui-cell__hd">{{matc.myName}}</div>
+                            <div class="weui-cell__bd" style="position: absolute;left: 105px;top: 13px;">{{matc.myMobile}}</div>
+                            <div class="weui-cell__ft" style="position: absolute;right: 15px;top: 13px;">当前帐户</div>
+                        </div>
+                        <div class="weui-cell accounts" style="">
+                            <div class="weui-cell__hd" ng-click="matc.showDialog = true">
+                                <span style="color: darkgray" ng-if="!matc.hisName">请输入对方帐户</span>
+                                <span ng-if="matc.hisName">{{matc.hisName}}</span>
+                            </div>
+                            <div class="weui-cell__bd" style="position: absolute;left: 105px;top: 13px;">{{matc.hisMobile}}</div>
+                            <div class="weui-cell__ft" style="position: absolute;right: 15px;top: 13px;"><p>对方帐户</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weui-panel">
+                    <div class="weui-cells">
+                        <div class="weui-cell thin-cell card-name" style="">
+                            <div class="weui-cell__bd">
+                                <p><span style="width: 10px;background-color: #fad534" ng-if="theme!='black'">&nbsp;</span> 当前帐户</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell" style="">
+                            <div class="weui-cell__bd"><p>余额</p></div>
+                            <div class="weui-cell__ft" style="color: black">{{matc.myBalance}}元</div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__bd"><p>积分</p></div>
+                            <div class="weui-cell__ft" style="color: black">{{matc.myPoint}}</div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__bd"><p>优惠券</p></div>
+                            <div class="weui-cell__ft" style="color: black">{{matc.myTicketsCount}}张</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weui-panel">
+                    <div class="weui-cells">
+                        <div class="weui-cell thin-cell card-name" style="">
+                            <div class="weui-cell__bd">
+                                <p><span style="width: 10px;background-color: #fad534" ng-if="theme!='black'">&nbsp;</span> 对方帐户</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell" style="">
+                            <div class="weui-cell__bd"><p>余额</p></div>
+                            <div class="weui-cell__ft" style="color: black" ng-if="matc.hisBalance !=undefined">
+                                {{matc.hisBalance}}元
+                            </div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__bd"><p>积分</p></div>
+                            <div class="weui-cell__ft" style="color: black" ng-if="matc.hisPoint !=undefined">{{matc.hisPoint}}
+                            </div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__bd"><p>优惠券</p></div>
+                            <div class="weui-cell__ft" style="color: black" ng-if="matc.hisTicketsCount != undefined">
+                                {{matc.hisTicketsCount}}张
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weui-panel">
+                    <div class="weui-cells">
+                        <div class="weui-cell thin-cell card-name" style="">
+                            <div class="weui-cell__bd">
+                                <p><span style="width: 10px;background-color: #fad534" ng-if="theme!='black'">&nbsp;</span> 预计结果</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell" style="">
+                            <div class="weui-cell__bd"><p>姓名</p></div>
+                            <div class="weui-cell__ft" style="color: black" ng-if="matc.hisName">{{matc.hisName}}</div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__bd"><p>帐户</p></div>
+                            <div class="weui-cell__ft" style="color: black" ng-if="matc.hisMobile">{{matc.hisMobile}}
+                            </div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__bd"><p>余额</p></div>
+                            <div class="weui-cell__ft" style="color: black" ng-if="matc.hisBalanceAfter !=undefined">
+                                {{matc.hisBalanceAfter}}元
+                            </div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__bd"><p>积分</p></div>
+                            <div class="weui-cell__ft" style="color: black" ng-if="matc.hisPointAfter !=undefined">
+                                {{matc.hisPointAfter}}
+                            </div>
+                        </div>
+                        <div class="weui-cell no-cell-border thin-cell">
+                            <div class="weui-cell__bd"><p>优惠券</p></div>
+                            <div class="weui-cell__ft" style="color: black" ng-if="matc.hisTicketsCountAfter !=undefined">
+                                {{matc.hisTicketsCountAfter}}张
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-bottom-bar">
+        <div class="weui-panel bottom_button_full">
+            <a class="weui-btn weui-btn_danger bottom-button" ng-click="matc.doTransfer()">确认转移</a>
+        </div>
+    </div>
+
+
+    <div class="star-dialog" ng-show="matc.showDialog">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog weui-skin_android">
+            <div class="top" ng-if="theme != 'black'">
+                <img src="./assets/images/VK/gantanhao@2x.png"/>
+            </div>
+            <a class=" my-cancel-btn" ng-click="matc.showDialog = false" ng-if="theme == 'black'">×</a>
+
+            <div class="weui-dialog__bd my-bd" style="padding: 20px 0px 10px 0px;">
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd" style="color: black"><label class="weui-label">账号</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="text" ng-model="matc.account" placeholder="请输入对方账号"/>
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd" style="color: black"><label class="weui-label">密码</label></div>
+                        <div class="weui-cell__bd pwd">
+                            <input class="weui-input" type="password" ng-model="matc.accountPwd"
+                                   placeholder="请输入对方账号密码"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-dialog__ft my-ft">
+                <div class="weui-flex">
+                    <div class="weui-flex__item" ng-if="theme != 'black'">
+                        <a class="weui-dialog__btn weui-dialog__btn_default" ng-click="matc.showDialog = false">取消</a>
+                    </div>
+                    <div class="weui-flex__item">
+                        <a class="weui-dialog__btn weui-dialog__btn_primary"
+                           ng-click="matc.loginOtherAccount(matc.account, matc.accountPwd)">确认</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" ng-show="matc.showToast">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">{{matc.toastMsg}}</p>
+        </div>
+    </div>
+</div>

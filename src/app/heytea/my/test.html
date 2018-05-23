@@ -1,0 +1,64 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+  <!--&lt;!&ndash;<script src="angular.js"></script>&ndash;&gt;-->
+   <!--&lt;!&ndash;<script src="ng-img-crop.js"></script>&ndash;&gt;-->
+     <!--&lt;!&ndash;<link rel="stylesheet" type="text/css" href="ng-img-crop.css">&ndash;&gt;-->
+    <!--<title>Title</title>-->
+
+    <style>.cropArea {
+     background: #E4E4E4;
+     overflow: hidden;
+     width:500px;
+     height:350px;
+    }
+  </style>
+    <!--<script>-->
+ <!--angular.module('app', ['ngImgCrop'])-->
+  <!--.controller('Ctrl', function($scope) {-->
+    <!--$scope.myImage='';-->
+    <!--$scope.myCroppedImage='';-->
+    <!--var handleFileSelect=function(evt) {-->
+    <!--var file=evt.currentTarget.files[0];-->
+    <!--var reader = new FileReader();-->
+    <!--reader.onload = function (evt) {-->
+        <!--$scope.$apply(function($scope){-->
+      <!--$scope.myImage=evt.target.result;-->
+     <!--});-->
+  <!--};-->
+   <!--reader.readAsDataURL(file);-->
+<!--};-->
+  <!--angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);-->
+  <!--});-->
+ <!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<div class="test-container">
+<div>Select an image file: <input type="file" id="fileInput" /></div>
+<div style="background-color: yellow" class="cropArea">
+ <img-crop image="tec.myImage" result-image="tec.myCroppedImage"></img-crop>
+ </div>
+ <div>Cropped Image:</div>
+ <div style="background-color: red"><img ng-src="{{tec.myCroppedImage}}" /></div>
+<!--</body>-->
+<!--</html>-->
+</div>
+<!--<script>-->
+    <!--var vm = this;-->
+    <!--vm.myImage='';-->
+    <!--vm.myCroppedImage='';-->
+    <!--alert("f");-->
+    <!--var handleFileSelect=function(evt) {-->
+        <!--var file=evt.currentTarget.files[0];-->
+        <!--var reader = new FileReader();-->
+        <!--reader.onload = function (evt) {-->
+            <!--vm.$apply(function($scope){-->
+                <!--vm.myImage=evt.target.result;-->
+            <!--});-->
+        <!--};-->
+        <!--reader.readAsDataURL(file);-->
+    <!--};-->
+    <!--angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);-->
+
+<!--</script>-->

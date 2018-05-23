@@ -1,0 +1,74 @@
+<div class="conversion-record-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a class="" ng-click="cr.goBack()">
+                            <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                        </a>
+                        <span>兑换记录</span>
+                    </div>
+                </div>
+                <div class="weui-tab__panel">
+                    <div class="weui-cells" ng-if="cr.list.length>0" ng-repeat="item in cr.list">
+                        <div class="first">
+                            <div class="detail">
+                                <div class="img">
+                                    <img ng-src="{{item.iconUrl}}"/>
+                                </div>
+                                <div class="desc">
+                                    <div class="first" style="display: flex">
+                                        <div>{{item.title | limitTo:11}}</div>
+                                        <!--<div class="type">虚拟品</div>-->
+                                        <div class="type" ng-if="item.type==0">虚拟礼品</div>
+                                        <!--<div class="type" ng-if="item.getWay==1">-->
+                                            <!--<img ng-if="theme!='black'" src="./assets/images/VK/ziti@2x.png">-->
+                                            <!--<img ng-if="theme=='black'" src="./assets/images/black/ziti.png">-->
+                                        <!--</div>-->
+                                    </div>
+                                    <div class="last">
+                                        <span class="value">{{item.pointTotal}}</span>
+                                        <span class="label">积分</span>
+                                        <span class="status" ng-if="item.status==1">已发放</span>
+                                        <span class="status" ng-if="item.status==2">已领取</span>
+                                        <span class="status" ng-class="{'no':item.status==3}" ng-if="item.status==3">未发放</span>
+                                        <span class="status" ng-if="item.status==6">取消订单</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second" ng-if="item.getWay==1">
+                            <div class="line">
+                                <label>自提门店</label>
+                                <div>{{item.storeName}}</div>
+                            </div>
+                            <div class="line">
+                                <label>联系电话</label>
+                                <div>{{item.mobile || '暂无联系电话'}}</div>
+                            </div>
+                            <div class="line">
+                                <label>门店地址</label>
+                                <div>{{item.storeAddress || '暂无门店地址'}}</div>
+                            </div>
+                            <div class="line">
+                                <label>备注信息</label>
+                                <div>{{item.remark || '暂无备注'}}</div>
+                            </div>
+                        </div>
+                        <div class="third">
+                            <div class="line">
+                                <label>兑换时间</label>
+                                <div>{{item.created}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content" ng-if="cr.list.length==0">
+                        <div class="icon"></div>
+                        <div class="text">亲！您现在还没有兑换记录哦！</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

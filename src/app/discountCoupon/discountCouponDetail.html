@@ -1,0 +1,30 @@
+<div class="discount-coupon-detail-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;" >
+
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a ng-click="dccd.goBack()">
+                            <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                            <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                        </a>
+                        <span>优惠券详情</span>
+
+                    </div>
+                </div>
+                <div class="weui-tab__panel" style="background-color: white">
+
+                    <div class="description" style="margin: 0px 0px;background-color: white">
+
+                        <div class="desc" style="height: auto;background-color: white;margin: 15px 15px;" ng-bind-html="dccd.detail"></div>
+                    </div>
+                </div>
+                <div ng-if="dccd.ISshare==0" ng-click="dccd.share()" style="bottom: 10px;width: 90%;left: 5%;height: 50px;position: fixed;text-align: center;background: black;color: white;line-height: 50px;border-radius: 30px">立即分享</div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,479 @@
+<div class="order-submit-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin: 0;border-bottom: 1px solid #ece9e9;">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="osc.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">提交订单</div>
+                <!--<div class="right_icon"  ng-if="theme != 'black'">-->
+                <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="maauc.onSaveClick()" style="color:black">保存</a>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-panel" ng-if="osc.orderType == 'takeOut'">
+                    <div class="weui-cells weui-cells_radio">
+                        <label class="weui-cell weui-check__label">
+                            <div class="weui-cell__bd"><p>自提</p></div>
+                            <div class="weui-cell__ft">
+                                <input type="radio" class="weui-check" name="radio0" value="0" ng-model="osc.delivery"
+                                       ng-click="osc.onCheckDelivery(each)">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                        </label>
+                        <label class="weui-cell weui-check__label">
+                            <div class="weui-cell__bd">
+                                <p>外卖配送
+                                </p>
+                            </div>
+                            <div class="weui-cell__ft">
+                                <input type="radio" class="weui-check" name="radio0" value="1" ng-model="osc.delivery"
+                                       ng-click="osc.onCheckDelivery(each)">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="weui-panel" ng-if="osc.orderType == 'takeOut'">
+                    <div class="weui-cells">
+                        <a class="weui-cell weui-cell_access" ng-click="osc.showTimeDialog = true"
+                           ng-if="osc.delivery == 0">
+                            <div class="weui-cell__bd">
+                                <p>选择自提时间</p>
+                            </div>
+                            <div class="weui-cell__ft">{{osc.timeObj[osc.timeIndex]}}</div>
+                        </a>
+                        <a class="weui-cell weui-cell_access" ng-click="osc.showAddressList()"
+                           ng-if="osc.delivery == 1">
+                            <div class="weui-cell__bd">
+                                <p>选择外卖地址</p>
+                            </div>
+                            <div class="weui-cell__ft">{{osc.deliveryAddress | limitTo : 15}}</div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="weui-panel">
+                    <div class="weui-cells weui-cells_radio">
+                        <label class="weui-cell weui-check__label">
+                            <div class="weui-cell__bd"><p>微信支付</p></div>
+                            <div class="weui-cell__ft">
+                                <input type="radio" class="weui-check" name="radio2" value="1" ng-model="osc.payType"
+                                       ng-click="osc.onCheckPayType(each)">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                        </label>
+                        <label class="weui-cell weui-check__label">
+                            <div class="weui-cell__bd"><p>会员卡付</p></div>
+                            <div class="weui-cell__ft">
+                                <input type="radio" class="weui-check" name="radio2" value="2" ng-model="osc.payType"
+                                       ng-click="osc.onCheckPayType(each)">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                        </label>
+                        <!--<label class="weui-cell weui-check__label" ng-if="osc.orderType == 'takeOut'">-->
+                            <!--<div class="weui-cell__bd"><p>货到付款</p></div>-->
+                            <!--<div class="weui-cell__ft">-->
+                                <!--<input type="radio" class="weui-check" name="radio2" value="3" ng-model="osc.payType"-->
+                                       <!--ng-click="osc.onCheckPayType(each)">-->
+                                <!--<i class="weui-icon-checked"></i>-->
+                            <!--</div>-->
+                        <!--</label>-->
+                        <!--<label class="weui-cell weui-check__label" ng-if="false">-->
+                            <!--<div class="weui-cell__bd"><p>支付宝</p></div>-->
+                            <!--<div class="weui-cell__ft">-->
+                                <!--<input type="radio" class="weui-check" name="radio2" value="4" ng-model="osc.payType"-->
+                                       <!--ng-click="osc.onCheckPayType(each)">-->
+                                <!--<i class="weui-icon-checked"></i>-->
+                            <!--</div>-->
+                        <!--</label>-->
+                    </div>
+                </div>
+
+                <div class="weui-panel">
+                    <div class="weui-cells">
+                        <a class="weui-cell weui-cell_access" ng-click="osc.selectTicket()">
+                            <div class="weui-cell__bd">
+                                <p>抵扣券折扣</p>
+                            </div>
+                            <div class="weui-cell__ft">{{osc.ticketCount}}</div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="weui-panel">
+                    <div class="weui-cells">
+                        <div class="weui-cell store-name">
+                            <div class="weui-cell__bd">{{osc.storeName}}</div>
+                        </div>
+                    </div>
+                    <div class="weui-cells has-top-border" ng-repeat="eachItem in osc.orders">
+                        <div class="weui-cell order-item">
+                            <div class="weui-cell__hd">{{eachItem.name}}</div>
+                            <div class="weui-cell__bd">x{{eachItem.total}}</div>
+                            <div class="weui-cell__ft">{{eachItem.total * eachItem.price | currency: '￥'}}</div>
+                        </div>
+                        <div class="no-top-border weui-cell order-item-flavor" style=""
+                             ng-repeat="eachTaste in eachItem.tasteList" ng-if="eachTaste.total>0">
+                            <div class="weui-cell__hd">{{eachTaste.name}}</div>
+                            <div class="weui-cell__bd">x{{eachTaste.total}}</div>
+                            <div class="weui-cell__ft">{{eachTaste.total * eachTaste.price | currency: '￥'}}</div>
+                        </div>
+                    </div>
+                    <!--<div class="weui-cells has-top-border" ng-if="osc.cardLevel">-->
+                    <div class="weui-cells has-top-border" >
+                        <div class="weui-cell member-discount">
+                            <div class="weui-cell__hd">{{osc.levelName || "普通会员"}}</div>
+                            <!--<div class="weui-cell__bd">x1</div>-->
+                            <div class="weui-cell__ft">{{osc.cardLevelDiscount||0 | currency: '-￥'}}</div>
+                        </div>
+                        <div class="weui-cell member-discount" ng-repeat="eachTikect in osc.ticketDiscounts">
+                            <div class="weui-cell__hd">{{eachTikect.name}}</div>
+                            <div class="weui-cell__bd">x1</div>
+                            <div class="weui-cell__ft">{{eachTikect.discount||0 | currency: '-￥'}}</div>
+                        </div>
+                    </div>
+                    <div class="weui-cells has-top-border">
+                        <div class="weui-cell sum-in-total">
+                            <div class="weui-cell__hd">总计: {{osc.shouldPay | currency: '￥'}}</div>
+                            <div class="weui-cell__ft"><span style="color: black">实付:&nbsp;</span><span
+                                style="color: red">{{osc.actualPay | currency: '￥'}}</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weui-panel" ng-if="osc.orderType == 'takeOut'">
+                    <div class="weui-cells">
+                        <a class="weui-cell weui-cell_access" ng-click="osc.showMemoDialog = true">
+                            <div class="weui-cell__bd">
+                                <p>备注</p>
+                            </div>
+                            <div class="weui-cell__ft">{{osc.memoInput | limitTo : 10}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-bottom-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="weui-cell weui-cell_vcode">
+                <div class="weui-cell__hd">
+                    <label class="weui-label" style="width: 100%;">
+                        <span class="should-pay" style="">{{osc.actualPay | currency: '￥'}}</span>
+                        <span class="actual-pay" style="">待支付</span>
+                    </label>
+                </div>
+                <div class="weui-cell__bd">
+
+                </div>
+                <div class="weui-cell__ft">
+                    <a class="weui-vcode-btn weui-btn_danger bottom-button-lable" ng-click="osc.pay()"
+                       style="">提交订单</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--//以下是弹出框//-->
+    <div id="toast" ng-show="osc.showToast">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">{{osc.toastMsg}}</p>
+        </div>
+    </div>
+    <div id="loadingToast" ng-if="osc.msg.warning">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <p class="weui-toast__content">{{osc.msg.message}}</p>
+        </div>
+    </div>
+
+
+    <!--时间选择 弹出框-->
+    <div class="star-dialog time-selector" ng-show="osc.showTimeDialog">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog weui-skin_android">
+            <div class="top" style="left: 48%;" ng-if="theme != 'black'">
+                <img src="./assets/images/VK/zhong@2x.png"/>
+            </div>
+            <a class="my-cancel-btn" ng-click="osc.showTimeDialog=false" ng-if="theme == 'black'">×</a>
+
+            <div class="weui-dialog__bd" style="">
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <a class="weui-btn " ng-class="{'active':osc.timeBtnActive[15] === true}"
+                           ng-click="osc.setTime(15)">{{osc.timeObj[15]}}</a>
+                    </div>
+                    <div class="weui-flex__item">
+                        <a class="weui-btn " ng-class="{'active':osc.timeBtnActive[30] === true}"
+                           ng-click="osc.setTime(30)">{{osc.timeObj[30]}}</a>
+                    </div>
+                    <div class="weui-flex__item">
+                        <a class="weui-btn " ng-class="{'active':osc.timeBtnActive[45] === true}"
+                           ng-click="osc.setTime(45)">{{osc.timeObj[45]}}</a>
+                    </div>
+                </div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item">
+                        <a class="weui-btn " ng-class="{'active':osc.timeBtnActive[60] === true}"
+                           ng-click="osc.setTime(60)">{{osc.timeObj[60]}}</a>
+                    </div>
+                    <div class="weui-flex__item">
+                        <a class="weui-btn " ng-class="{'active':osc.timeBtnActive[90] === true}"
+                           ng-click="osc.setTime(90)">{{osc.timeObj[90]}}</a>
+                    </div>
+                    <div class="weui-flex__item">
+                        <a class="weui-btn " ng-class="{'active':osc.timeBtnActive[120] === true}"
+                           ng-click="osc.setTime(120)">{{osc.timeObj[120]}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--地址列表-->
+    <div class="star-dialog memo" ng-show="osc.showAddressListDialog">
+        <div class="my-address-container">
+            <div class="weui-top-bar">
+                <div class="weui-cells" style="width: 100%;margin-top: 0px">
+                    <div class="header">
+                        <div class="left_icon">
+                            <a ng-click="osc.showAddressListDialog = false">
+                                <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                                <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                            </a>
+                        </div>
+                        <div class="label" style="">地址管理</div>
+                        <div class="right_icon">
+                            <!--<a class="weui-vcode-btn weui-btn_danger button-clear" ng-click="malc.onManageClick()" style="color:black">{{malc.manage}}</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page osc-page">
+                <div class="page__bd" style="height: 100%;">
+                    <div class="weui-tab__panel">
+
+                        <div class="weui-panel">
+                            <a class="weui-cell" ng-repeat="eachAddress in osc.myAddress" style="padding: 0 10px 0 0px;"
+                               ng-click="osc.onAddressClick(eachAddress)">
+                                <div class="weui-cell__bd">
+                                    <div class="weui-media-box weui-media-box_text">
+                                        <h4 class="weui-media-box__title">
+                                            <span style="margin-right: 10px">{{eachAddress.name}}</span>
+                                            <span style="left: 100px; position: absolute;">
+                                                <span style="margin-right: 10px">{{eachAddress.mobile}}</span>
+                                                <span><img width="18px" ng-if="theme!='black' && eachAddress.isDefault==1" src="./assets/images/VK/default.png" ></span>
+                                                <span><img width="18px" ng-if="theme=='black' && eachAddress.isDefault==1" src="./assets/images/black/default.png" ></span>
+                                            </span>
+                                        </h4>
+                                        <p class="weui-media-box__desc">{{eachAddress.address}}</p>
+                                    </div>
+                                </div>
+                                <!--<div class="weui-cell__ft" style="display: flex; width: 100px; margin-top: -20px;" ng-if="malc.manage=='取消'">-->
+                                <!--<img src="./assets/images/VK/bianji1@2x.png" width="20px" height="20px" style="position: absolute; right: 70px;" ng-click="malc.editAddress(eachAddress)">-->
+                                <!--<img src="./assets/images/VK/shanchu@2x.png" width="20px" height="20px" style="position: absolute; right: 20px;" ng-click="malc.clickOnDelete(eachAddress)">-->
+                                <!--</div>-->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-bottom-bar">
+                <div class="weui-panel bottom_button_full">
+                    <a class="weui-btn weui-btn_danger bottom-button" ng-click="osc.addAddress()">+ 新建地址</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--添加地址-->
+    <div class="star-dialog memo" ng-show="osc.showAddAddressDialog">
+        <div class="my-address-add-update-container">
+            <div class="weui-top-bar">
+                <div class="weui-cells" style="width: 100%;margin-top: 0px">
+                    <div class="header">
+                        <div class="left_icon">
+                            <a ng-click="osc.onAddAddrBackClick()">
+                                <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                                <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                            </a>
+                        </div>
+                        <div class="label" style="">添加地址</div>
+                        <div class="right_icon" ng-if="theme != 'black'">
+                            <a class="weui-vcode-btn weui-btn_danger" ng-click="osc.saveAddress()" style="color:black">保存</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page osc-page" style="">
+                <div class="page__bd" style="height: 100%;">
+                    <div class="weui-tab__panel">
+
+                        <div class="weui-panel">
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                                <div class="weui-cell__bd">
+                                    <input class="weui-input" type="text" placeholder="输入收件人姓名" ng-model="osc.name" ng-change="maauc.checkSimbol(osc,'name')">
+                                </div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">电话</label></div>
+                                <div class="weui-cell__bd">
+                                    <input class="weui-input" type="number" oninput="if(value.length>11)value=value.slice(0,11)" pattern="[0-9]*" placeholder="输入收件人电话"
+                                           ng-model="osc.mobile">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weui-panel">
+                            <!--<div class="weui-cell weui-cell_select weui-cell_select-after">-->
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label for class="weui-label">城市</label></div>
+                                <div class="weui-cell__bd">
+                                    <input class="weui-input" type="text" placeholder="输入收件人所在城市" ng-model="osc.city">
+                                </div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">地址</label></div>
+                                <div class="weui-cell__bd">
+                                    <input class="weui-input" type="text" placeholder="输入收件人详细地址"
+                                           ng-model="osc.address">
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="weui-agree">
+                            <input ng-model="osc.default" type="checkbox" class="weui-agree__checkbox">
+                            <span class="weui-agree__text">设置为默认地址</span>
+                        </label>
+
+                        <div class="weui-panel bottom-sm no-bottom-border" ng-if="theme == 'black'">
+                            <a class="weui-btn weui-btn_danger bottom-button" ng-click="osc.saveAddress()">确认</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="weui-bottom-bar">-->
+                <!--<div class="weui-panel bottom_button_full">-->
+                    <!--<a class="weui-btn weui-btn_danger bottom-button" ng-click="malc.addAddress()">+ 新建地址</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+
+    <!--备注-->
+    <div class="star-dialog memo" ng-show="osc.showMemoDialog">
+        <!--<div class="weui-mask"></div>-->
+        <!--<div class="weui-dialog weui-skin_android">-->
+        <div class="my-feedback-container">
+            <div class="weui-top-bar">
+                <div class="weui-cells" style="width: 100%;margin-top: 0px">
+                    <div class="header">
+                        <div class="left_icon">
+                            <!--<a ng-click="osc.goBack()">-->
+                            <a ng-click="osc.showMemoDialog = false">
+                                <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                                <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                            </a>
+                        </div>
+                        <div class="label" style="">备注</div>
+                        <div class="right_icon" ng-if="theme!='black'">
+                            <a class="weui-vcode-btn weui-btn_danger" ng-click="osc.saveMemo()"
+                               style="color:black">保存</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" style="">
+                <div class="page__bd" style="height: 100%;">
+                    <div class="weui-tab__panel">
+                        <div class="weui-panel">
+                            <div class="weui-cell">
+                                <div class="weui-cell__bd">
+                            <textarea class="weui-textarea"  style="height: 120px" ng-change="osc.onTextChange()" ng-model="osc.memoInput"
+                                      placeholder="输入反馈内容,不超过{{osc.memoMaxInput}}个字" rows="3"></textarea>
+                                    <div class="weui-textarea-counter"><span>{{osc.memoInputCount}}</span>/{{osc.memoMaxInput}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-if="theme=='black'" class="weui-panel confirm-sm" style="margin-top: 35px;">
+                            <a class="weui-btn weui-btn_danger bottom-button" ng-click="osc.saveMemo()">提交</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <!--优惠券 弹出层-->
+    <div class="star-dialog tickets" ng-show="osc.showTicketsDialog">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog weui-skin_android">
+            <div class="top" ng-if="theme != 'black'">
+                <img src="./assets/images/VK/youhuiquan01@2x.png"/>
+            </div>
+
+            <a class="my-cancel-btn" ng-click="osc.showTicketsDialog=false" ng-if="theme == 'black'">×</a>
+            <div class="weui-dialog__bd my-bd" style="">
+                <div class="weui-cells" style="height: 29px;background-color: transparent;"></div>
+                <div class="weui-cells weui-cells_checkbox" style="overflow: auto;max-height: 270px">
+                    <label class="weui-cell weui-check__label" style="padding: 0;" ng-repeat="each in osc.tickets">
+                        <div class="weui-cell__bd">
+                            <div class="weui-media-box weui-media-box_text my-text">
+                                <h4 class="weui-media-box__title" style="margin-bottom:0;">
+                                    <span style="font-size: 14px;font-weight: bold;">{{each.name}}</span>
+                                </h4>
+                                <p class="weui-media-box__desc" style="line-height: 2;">
+                                    <span style="font-size: 12px">{{each.sourceRemark || '不能与其他优惠券同时使用'}}</span>
+                                </p>
+                                <p class="weui-media-box__desc" style="line-height: 2;">
+                                    <span style="font-size: 12px">有效期: {{each.beginTime || '0000-00-00'}} 至 {{each.endTime || '2099-12-31'}}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="weui-cell__ft my-check" style="">
+                            <input type="checkbox" class="weui-check" name="checkbox1" ng-model="each.checked"
+                                   ng-click="osc.onTicketSelect(each)">
+                            <i class="weui-icon-checked"></i>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="weui-dialog__ft my-ft">
+                <div class="weui-flex">
+                    <div class="weui-flex__item" ng-if="theme != 'black'">
+                        <a class="weui-dialog__btn weui-dialog__btn_default"
+                           ng-click="osc.cancelTicketSelect()">取消</a>
+                    </div>
+                    <div class="weui-flex__item">
+                        <a class="weui-dialog__btn weui-dialog__btn_primary"
+                           ng-click="osc.confirmTicketSelect()">添加</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

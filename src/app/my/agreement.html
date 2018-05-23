@@ -1,0 +1,31 @@
+<div class="agreement-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="amc.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">用户协议</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+
+            <div class="descrip" style="padding: 50px 15px 0px 15px;width:  calc(100% - 30px);height: 100% ">
+                <div class="desc" style="height: 100%;width: 100%">
+
+                    <iframe style="width: 100%;height: 100%;frameborder:no; border:0;scrolling:no;overflow-x:auto;"  name="show" src="{{amc.detail}}"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

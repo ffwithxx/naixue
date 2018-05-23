@@ -1,0 +1,46 @@
+<div class="privilege-container-heytea">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="hp.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">我的特权</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:44px;">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="top-content">
+                    <div class="img-content">
+                        <img src="./assets/images/snow/10.png"/>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-list">
+                            <span class="tab-item"
+                                  ng-click="hp.setTabActive(tab)"
+                                  ng-class="{'active':tab.id==hp.tabActiveList.id}" ng-repeat="tab in hp.tabList">
+                                <span>{{tab.levelName}}</span>
+                            </span>
+                            <div class="active-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-detail ngIncludeItem" ng-swipe-left="hp.setNextActive()" ng-swipe-right="hp.setPrevActive()"
+                     ng-include="hp.tabActiveList.key" ng-class="{'moveToLeft':hp.moveToLeft}"
+                     ng-click="hp.goPrivilegeDetail()">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+</script>

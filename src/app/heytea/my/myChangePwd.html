@@ -1,0 +1,70 @@
+<div class="login-container-heytea my-change-pwd">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="mcpc.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">修改密码</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="background-image: none">
+        <div class="login-form" style="color: black" >
+            <p style="padding: 0">&nbsp;</p>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell adjust-phone-padding">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label" style="">旧密码
+                            <!--<span class="my_start">*</span>-->
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" style="color: black;" type="password" ng-model="mcpc.oldPassword" placeholder="请输入旧密码"/>
+                    </div>
+
+                </div>
+
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">新密码</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="password" ng-model="mcpc.password" placeholder="请输入6位数字密码"
+                               ng-change="mcpc.onPwdChange(mcpc.password)"/>
+                    </div>
+                </div>
+
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">再确认</label></div>
+                    <div class="weui-cell__bd pwd">
+                        <input class="weui-input" type="password" ng-model="mcpc.rePassword"
+                               placeholder="请再次输入6位数字密码"/>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    <div class="left" style="text-align: center">
+                        <span ng-show="mcpc.msg.warning">{{mcpc.msg.message}}</span>
+                    </div>
+                    <a>&nbsp;</a>
+                </div>
+
+
+            </div>
+            <div class="weui-panel login-btn">
+                <a class="weui-btn" ng-click="mcpc.submit()" style="background-color: white;color:#737373 " ng-disabled="!mcpc.oldPassword||!mcpc.password||!mcpc.rePassword">确认</a>
+            </div>
+        </div>
+    </div>
+    <div id="toast" ng-show="mcpc.showToast">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">{{mcpc.toastMsg}}</p>
+        </div>
+    </div>
+</div>

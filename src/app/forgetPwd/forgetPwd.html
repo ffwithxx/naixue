@@ -1,0 +1,100 @@
+<div class="my-forget-password-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="fp.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">重置密码</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:54px">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-panel">
+                    <div class="weui-panel__bd1">
+                        <div class="weui-cells weui-cells_form sm-form">
+                            <div class="weui-cell weui-cell_vcode">
+                                <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
+                                <div class="weui-cell__bd">
+                                    <input class="weui-input" type="text" pattern="[0-9]*" ng-model="fp.mobile"
+                                           placeholder="请输入手机号"/>
+                                </div>
+                                <div class="weui-cell__ft">
+                                    <a class="weui-btn weui-btn_danger vcode" ng-class="fp.vcodeCss"
+                                       ng-bind="fp.vcodeTitle"
+                                       ng-click="fp.getVcode()" style="font-size: 12px;margin-right: 10px;">获取验证码</a>
+                                </div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
+                                <div class="weui-cell__bd pwd">
+                                    <input class="weui-input" type="text" ng-model="fp.vcode" placeholder="请输入验证码"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 此段必须要引入 -->
+                <div id="_umfp" style="display:inline;width:1px;height:1px;overflow:hidden;"></div>
+                <div class="weui-panel middle-sm">
+                    <div class="weui-panel__bd1">
+                        <div class="weui-cells weui-cells_form">
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">新密码</label></div>
+                                <div class="weui-cell__bd">
+                                    <input class="weui-input" type="password" ng-model="fp.pwd" placeholder="请输入新密码"  ng-change="fp.onPwdChange(fp.pwd)"/>
+                                </div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">再确认</label></div>
+                                <div class="weui-cell__bd pwd">
+                                    <input class="weui-input" type="password" ng-model="fp.rePwd"
+                                           placeholder="请再次输入新密码"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ln" style=" padding: 10px 0;;width: 300px;margin: 0 auto">
+                    <div id="dom_id" style="background-color: #0d0d0d;background-color: #3cc51f"></div>
+                </div>
+
+                <input type='hidden' id='csessionid' name='csessionid'/>
+                <input type='hidden' id='sig' name='sig'/>
+                <input type='hidden' id='token' name='token'/>
+                <input type='hidden' id='scene' name='scene'/>
+                <div style="color: #78787d;margin-left: 10px ">*滑动获取验证码</div>
+                <div class="weui-panel bottom-sm">
+                    <a class="weui-btn weui-btn_danger bottom-button" ng-click="fp.submit()">确认</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="toast" ng-show="fp.showToast">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">{{fp.toastMsg}}</p>
+        </div>
+    </div>
+</div>
+<div id="loadingToast" ng-if="fp.msg.warning">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <p class="weui-toast__content">{{fp.msg.message}}</p>
+    </div>
+</div>

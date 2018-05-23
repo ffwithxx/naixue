@@ -1,0 +1,75 @@
+<div class="my-pay-code-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header" style="background-color: white">
+                <div class="left_icon" style="top:15px">
+                <a ng-click="mpcc.goBack()">
+                    <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                </a>
+            </div>
+
+                <div class="right_icon" style="top:15px">
+                    <a ng-click="mpcc.refresh()">
+                        <img style="height:20px;  padding-right: 15px"
+                             src="./assets/images/snow/9.png">
+                    </a>
+                </div>
+                <div class="label" style="">付款码</div>
+                <!--<div class="right_icon">-->
+                    <!--<a ng-click="mpcc.refresh()">-->
+                        <!--<img ng-if="theme!='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"-->
+                             <!--src="./assets/images/VK/shuaixin@2x.png">-->
+                        <!--<img ng-if="theme=='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"-->
+                             <!--src="./assets/images/black/shuaixin@2x.png">-->
+                    <!--</a>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="page__bd" style="height: 100%;background-color: white">
+            <div class="weui-tab__panel">
+                <article class="weui-article" style="width: 100%">
+                    <section style="width: 100%">
+                        <!--<section class="barcode" style="border: 0;background-color: white;margin-bottom: 0">&nbsp;-->
+                        <!--</section>-->
+                        <section class="barcode qr-code">
+                            <qrcode version="3" error-correction-level="L" size="170"
+                                    data="{{mpcc.qrcode}}"></qrcode>
+                        </section>
+
+                        </section>
+                        <section style="margin-top: 0;margin-bottom: 0;box-shadow: 0 5px 10px -5px #999999;width: 100%">
+
+                            <div class="barcode heytea-bar-code" ng-click="mpcc.getBig()">
+                                <p><img id="barcode"/></p>
+
+                            </div>
+
+
+
+                        </section>
+                        <section style="margin-top:40px;margin-bottom: 0;">
+                            <div class="barcode"
+                                 style="border: 0;margin-top: 0;color: #a0a0a0;font-size: 14px">
+                               支付码每三分钟自动刷新一次
+                            </div>
+                        </section>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="star-dialog" id="star-dialog" style="display: none;overflow: hidden"  >
+    <div class="weui-mask" style="background-color: white;overflow: hidden" ng-click="mpcc.goBarcode()" >
+        <div style="width: 100%;max-width: 100%;height:100%;top: 0px;padding-top: 0px;position: fixed; " >
+            <img id="barcode1" style="height:130px;width: 500px;position: relative;top: calc((100% - 130px)/2);left: calc((100% - 500px)/2); -moz-transform: rotate(90deg);-webkit-transform: rotate(90deg);  -o-transform: rotate(90deg);transform:  rotate(90deg);  ">
+    </div>
+
+
+
+
+    </div>
+</div>

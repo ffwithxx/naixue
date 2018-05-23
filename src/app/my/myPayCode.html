@@ -1,0 +1,55 @@
+<div class="my-pay-code-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="mpcc.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="" ng-bind="mpcc.fukuanma"></div>
+                <div class="right_icon">
+                    <a ng-click="mpcc.refresh()">
+                        <img ng-if="theme!='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"
+                             src="./assets/images/VK/shuaixin@2x.png">
+                        <img ng-if="theme=='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"
+                             src="./assets/images/black/shuaixin@2x.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:44px;background-size: cover;background-image: url('./assets/images/VK/bg@2x.png')">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <article class="weui-article" style="">
+                    <section>
+                        <section class="barcode" style="border: 0;background-color: white;margin-bottom: 0">&nbsp;
+                        </section>
+                        <section class="barcode"
+                                 style="border: 0;background-color: white;margin-bottom: 0;margin-top: 0;padding-bottom: 20px;">
+                            <qrcode version="3" error-correction-level="L" size="200"
+                                    data="{{mpcc.qrcode}}"></qrcode>
+                        </section>
+                        <section class="barcode middle">
+                        </section>
+                        <section style="margin-top: 0;margin-bottom: 0">
+                            <div class="barcode"
+                                 style="border: 0;background-color: white;margin-top: 0;margin-bottom: 0">
+                                <img id="barcode2"/>
+                            </div>
+                        </section>
+                        <section style="margin-top: 0;margin-bottom: 0">
+                            <div class="barcode"
+                                 style="border: 0;background-color: white;margin-top: 0;color: #a0a0a0;font-size: 14px">
+                                支付码每三分钟刷新一次
+                            </div>
+                        </section>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>

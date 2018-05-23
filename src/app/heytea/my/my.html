@@ -1,0 +1,196 @@
+<div class="my-container-heytea" style="">
+    <div class="page" id="page" style="">
+        <div class="welcome" ng-show="!mc.showSplash">
+            <!--<div class="middle">-->
+                <!--<div class="img"></div>-->
+            <!--</div>-->
+            <!--<div class="text"></div>-->
+        </div>
+
+        <div class="page__bd" id="page__bd" style="height: 100%; " ng-show="!mc.showSplash" >
+          <!--ng-click="mc.uploadPhoto(picFile)"-->
+
+
+
+            <div class="weui-cells weui-cells-no-margin-top" >
+                <div class="weui-cell top-content" style="height: 220px" >
+                    <div id="top-bottom" class="top-bottom" vk-back-img="{{mc.imgUrl}}">
+                        <div class="top" style="position: absolute;background-color: transparent">
+                            <div class="topIco" style="float: left" ng-click="mc.uploadPhoto(picFile)">
+                                <input type="file" ngf-select ng-model="picFile"
+                                       name="file" ngf-accept="'image/*'" class="ph08" />
+                                <div class="img"  style="background-image:url({{mc.logo}}) ;"></div>
+
+                            </div>
+                            <div style="float: left;color: #B59E6F" >
+                                <div class="name" ng-bind="mc.name"></div>
+                                <div style="float: left;margin-top: 10px">{{mc.levelName}}  </div>
+                                <div style="float: left;margin-top: 10px;width: 5px" class="sg">
+                                </div>
+                                <div style="float: left;margin-top: 10px">|</div>
+                                <div style="float: left;margin-top: 10px;width: 5px" class="sg">
+                                </div>
+                                <div style="float: left;margin-top: 10px;">{{mc.mobile}}</div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="juchi" ng-if="theme!='black'" ></div>
+                <div id="space-line" class="space-line"></div>
+                <div id="fixed-line" class="fixed-line"></div>
+                <div id="space-bottom" class="space-bottom" ng-if="theme=='heytea'"></div>
+            </div>
+
+            <div class="weui-grids" style="margin-top: 20px">
+                <!-- first line -->
+                <!--<a class="weui-grid first-line no-active-bg" ng-click="mc.goDetailPage('/heytea-myExperience')">-->
+                    <!--<p class="weui-grid__label m y-grey" style="margin-bottom: 10px;font-size: 15px">{{mc.levelName}}</p>-->
+                    <!--<p class="weui-grid__label my-grey" style="font-size: 15px">{{mc.experience}}</p>-->
+                <!--</a>-->
+                <!--<div class="weui-grid first-line no-active-bg">-->
+                    <!--<p class="weui-grid__label my-grey" style="margin-bottom: 10px;font-size: 15px">积分</p>-->
+                    <!--<p class="weui-grid__label my-grey" style="font-size: 15px">{{mc.point}}</p>-->
+                <!--</div>-->
+                <!--<a class="weui-grid first-line" ng-click="mc.goDetailPage('/heytea-discount')">-->
+                    <!--<p class="weui-grid__label my-grey" style="margin-bottom: 10px;font-size: 15px">优惠券</p>-->
+                    <!--<p class="weui-grid__label my-grey" style="font-size: 15px">{{mc.ticketsCount}}</p>-->
+                <!--</a>-->
+
+
+                <a class="weui-grid" >
+                    <div class="weui-grid__icon" style="width: 100%;text-align: center;color: #B59E6F;line-height:35px;">
+                        {{mc.point}}
+                    </div>
+                    <p class="weui-grid__label my-grey">积分</p>
+                </a>
+
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea-discount')">
+                    <div class="weui-grid__icon" style="width: 100%;text-align: center;line-height:35px;color: #B59E6F">
+                        {{mc.ticketsCount}}
+                    </div>
+                    <p class="weui-grid__label my-grey">我的券</p>
+                </a>
+
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea-myPayCode')">
+                    <div class="weui-grid__icon">
+                        <img src="./assets/images/snow/shouye2.png">
+                    </div>
+                    <p class="weui-grid__label my-grey">付款码</p>
+                </a>
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea-privilege')">
+                    <div class="weui-grid__icon">
+                        <img src="./assets/images/snow/shouye3.png">
+                    </div>
+                    <p class="weui-grid__label my-grey">我的特权</p>
+                </a>
+
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea-memberInfo')">
+                    <div class="weui-grid__icon">
+                        <img src="./assets/images/snow/shouye4.png">
+                    </div>
+                    <p class="weui-grid__label my-grey">我的信息</p>
+                </a>
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea-myTradeRecords')">
+                    <div class="weui-grid__icon">
+                        <img src="./assets/images/snow/shouye5.png">
+                    </div>
+                    <p class="weui-grid__label my-grey">消费记录</p>
+                </a>
+
+
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea-fitStores')">
+                    <div class="weui-grid__icon">
+                        <img src="./assets/images/snow/shouye6.png">
+                    </div>
+                    <p class="weui-grid__label my-grey">适用门店</p>
+                </a>
+
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea_recharge')">
+                    <div class="weui-grid__icon">
+                        <img src="./assets/images/snow/shouye7.png">
+                    </div>
+                    <p class="weui-grid__label my-grey">微信充值</p>
+                </a>
+
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea-myExperience')">
+                    <div class="weui-grid__icon">
+                        <img src="./assets/images/snow/shouye8.png">
+                    </div>
+                    <p class="weui-grid__label my-grey">成长历程</p>
+                </a>
+
+                <a class="weui-grid" ng-click="mc.goShop()">
+
+                    <div class="weui-grid__icon" >
+
+                            <img src="./assets/images/snow/shouye9.png">
+
+
+
+                    </div>
+                    <p class="weui-grid__label my-grey">微商城</p>
+                </a>
+
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea-pointShop')">
+                    <div class="weui-grid__icon">
+                        <img src="./assets/images/snow/shouye10.png">
+                    </div>
+                    <p class="weui-grid__label my-grey">积分商城</p>
+                </a>
+
+
+                <!--<a class="weui-grid" ng-click="mc.goDetailPage('/heytea-myPoints')">-->
+                    <!--<div class="weui-grid__icon">-->
+                        <!--<img src="./assets/images/heytea/point.png">-->
+                    <!--</div>-->
+                    <!--<p class="weui-grid__label my-grey">积分记录</p>-->
+                <!--</a>-->
+
+
+
+
+
+                <a class="weui-grid" ng-click="mc.goDetailPage('/heytea-myFeedback')">
+                    <div class="weui-grid__icon">
+                        <img src="./assets/images/snow/shouye11.png">
+                    </div>
+                    <p class="weui-grid__label my-grey">反馈意见</p>
+                </a>
+
+                <!--<a class="weui-grid" ng-click="mc.goDetailPage('/heytea-rules')">-->
+                    <!--<div class="weui-grid__icon">-->
+                        <!--<img src="./assets/images/heytea/suggestion.png">-->
+                    <!--</div>-->
+                    <!--<p class="weui-grid__label my-grey">会员说明</p>-->
+                <!--</a>-->
+
+            </div>
+        </div>
+    </div>
+
+           <!--<div class="register-dialog-sex" id="sex" >-->
+
+               <!--<div class="dialog-sex-box"  >-->
+                   <!--<div class="dialog-sex-son" >-->
+                       <!--<iframe style="width: 100%;height: 100% ;frameborder:no; border:0;scrolling:no;overflow-x:auto;"  name="show" src="{{mc.detail}}"></iframe>-->
+                   <!--</div>-->
+
+               <!--</div>-->
+               <!--<div class="dialog-sex-agree" style="background-color: white;height: 62px;width: 100%;position: fixed;bottom: 0px" >-->
+                   <!--<a class="weui-btn weui-btn_danger bottom-button" style=" background-color: black;margin-top:6px;color: white;margin-left: 10px;margin-right: 10px;border-radius: 5px;height: 50px;line-height: 50px;" ng-click="mc.agreement()">已经阅读并同意本协议</a>-->
+               <!--</div>-->
+        <!--</div>-->
+    <!--<div class="dialog-sex-agree" style="bottom: 0;position: fixed;background-color: red;height: 200px;width: 100%"> <button></button></div>-->
+    </div>
+
+<div id="loadingToast" ng-if="mc.msg.warning">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <p class="weui-toast__content">{{mc.msg.message}}</p>
+    </div>
+</div>
+
+

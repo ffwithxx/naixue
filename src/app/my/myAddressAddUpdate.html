@@ -1,0 +1,75 @@
+<div class="my-address-add-update-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="maauc.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">{{maauc.title}}</div>
+                <div class="right_icon"  ng-if="theme != 'black'">
+                    <a class="weui-vcode-btn weui-btn_danger" ng-click="maauc.onSaveClick()" style="color:black">保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+
+                <div class="weui-panel">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="text" placeholder="输入收件人姓名" ng-model="maauc.name" ng-change="maauc.checkSimbol(maauc,'name')">
+                        </div>
+                    </div>
+                    <div class="weui-cell no-top-border">
+                        <div class="weui-cell__hd"><label class="weui-label">电话</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" oninput="if(value.length>11)value=value.slice(0,11)" pattern="[0-9]*" placeholder="输入收件人电话" ng-model="maauc.mobile">
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-panel no-bottom-border">
+                    <!--<div class="weui-cell weui-cell_select weui-cell_select-after">-->
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label for class="weui-label">城市</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="text" placeholder="输入收件人所在城市" ng-model="maauc.city">
+                        </div>
+                    </div>
+                    <div class="weui-cell no-top-border">
+                        <div class="weui-cell__hd"><label class="weui-label">地址</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="text" placeholder="输入收件人详细地址" ng-model="maauc.address">
+                        </div>
+                    </div>
+                </div>
+
+                <label class="weui-agree">
+                    <input ng-model="maauc.default" type="checkbox" class="weui-agree__checkbox">
+                    <span class="weui-agree__text">设置为默认地址</span>
+                </label>
+
+
+                <div class="weui-panel bottom-sm no-bottom-border" ng-if="theme == 'black'">
+                    <a class="weui-btn weui-btn_danger bottom-button" ng-click="maauc.onSaveClick()">确认</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="toast" ng-show="maauc.showToast">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">{{maauc.toastMsg}}</p>
+        </div>
+    </div>
+
+</div>

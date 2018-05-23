@@ -1,0 +1,76 @@
+<div class="integral-heytea">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon" style="top:15px">
+                    <a ng-click="hig.goBack()">
+                        <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                    </a>
+                </div>
+                <div class="label" style="">积分历程</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:44px;">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="top" style=" box-shadow: 0 10px 5px -2px #E5E5E5" >
+                    <!--<div style="height: 100px;width: 80px;margin-top: 20px;border:none;border-radius:0;"></div>-->
+                    <img class="img" style="border:none;border-radius:0;height: 80px;width: 80px;margin-top: 20px" src="./assets/images/snow/baise.png">
+
+                </div>
+                <div class="middle-line" ng-if="hig.list.length>0">
+                    <img src="./assets/images/snow/shu1.png" style="width: 80px;height: 100%">
+                </div>
+                <div class="list" style="font-size: 13px">
+                    <div class="item" ng-repeat="t in hig.list" style="border-bottom:1px solid  #D8CDB2">
+                        <div class="left">
+                            <!--<div class="position">-->
+                                <!--<img style="float: left" class="img" src="./assets/images/snow/14.png">-->
+                                <!--<div style="float: left ;margin-left: 10px"  class="name">{{t.storeName}}</div>-->
+                            <!--</div>-->
+                            <div class="position">
+                                <img style="float: left" class="img" src="./assets/images/snow/15.png">
+                                <div style="float: left ;margin-left: 10px;width: calc(100% - 35px);text-align: left"  class="name">{{t.created}}</div>
+                            </div>
+                            <!--<div class="position">-->
+                                <!--<img style="float: left" class="img" src="./assets/images/snow/16.png">-->
+                                <!--<div style="float: left ;margin-left: 10px"  class="name">{{t.date}}<span style="margin-left: 10px">{{t.time}}</span></div>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="right">
+                            <div class="position">
+                            <img style="float: left" class="img" src="./assets/images/snow/16.png">
+                            <div style="float: left ;margin-left: 10px"  class="name">积分：{{t.point}}</div>
+                            </div>
+                            <!--<div class="content">-->
+                                <!--<div class="total" style="height: 25px; margin-top: 5px;">消费金额：{{t.total}}</div>-->
+                                <!--<div class="detail" style="height: 25px; margin-top: 5px;">-->
+                                    <!--<div class="type">消费方式：</div>-->
+                                    <!--<div class="detail-list">-->
+                                        <!--<div ng-if="t.alipayAmount!=0">支付宝{{t.alipayAmount}}</div>-->
+                                        <!--<div ng-if="t.amount!=0">会员卡{{t.amount}}</div>-->
+                                        <!--<div ng-if="t.cashAmount!=0">现金{{t.cashAmount}}</div>-->
+                                        <!--<div ng-if="t.creditAmount!=0">银联卡{{t.creditAmount}}</div>-->
+                                        <!--<div ng-if="t.qqpayAmount!=0">QQ支付{{t.qqpayAmount}}</div>-->
+                                        <!--<div ng-if="t.weixinAmount!=0">微信{{t.weixinAmount}}</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="detail-last" style=" margin-top: 5px;" >-->
+                                    <!--<div class="type-d">消费详情：</div>-->
+                                    <!--<div class="d-list">-->
+                                        <!--<div ng-repeat="gift in t.gifts">-->
+                                            <!--<span>{{gift}}</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

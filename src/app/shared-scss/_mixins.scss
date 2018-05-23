@@ -1,0 +1,178 @@
+// Set every border radius or just a single side without worrying about all those prefixes.
+// src: http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin opacity($opacity) {
+    // http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Set box-sizing property without worrying about vendor prefixes
+@mixin box-sizing($box-model) { // http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+    -webkit-box-sizing: $box-model; // Safari <= 5
+    -moz-box-sizing: $box-model; // Firefox <= 19
+    box-sizing: $box-model;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+    -webkit-box-shadow:$top $left $blur $color #{$inset};
+    -moz-box-shadow:$top $left $blur $color #{$inset};
+    box-shadow:$top $left $blur $color #{$inset};
+}
+
+@mixin box-shadow-full($values) {
+    -webkit-box-shadow: $values;
+    -moz-box-shadow: $values;
+    box-shadow: $values;
+}
+
+@mixin position($position: static, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+// Absolutely position an element using shorthand syntax
+// Src: http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+@mixin absolute-pos($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    @include position(absolute, $top, $right, $bottom, $left);
+}
+
+// Relatively position an element using shorthand syntax
+@mixin relative-pos($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    @include position(relative, $top, $right, $bottom, $left);
+}
+
+// Set a fixed position on an element by using shorthand syntax
+@mixin fixed-pos($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    @include position(fixed, $top, $right, $bottom, $left);
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin transition-timing-function($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin animate($animation...) {
+    animation:          $animation;
+    -moz-animation:     $animation;
+    -ms-animation:      $animation;
+    -webkit-animation:  $animation;
+}
+
+@mixin background-gradient($gradient...) {
+    background-image: linear-gradient($gradient);
+    background-image: -moz-linear-gradient($gradient);
+    background-image: -ms-linear-gradient($gradient);
+    background-image: -webkit-linear-gradient($gradient);
+}
+
+@mixin background-size($size-x, $size-y) {
+    background-size: $size-x $size-y;
+    -moz-background-size: $size-x $size-y;
+    -ms-background-size: $size-x $size-y;
+    -webkit-background-size: $size-x $size-y;
+}
+
+@mixin transform($transformValues) {
+    transform: $transformValues;
+    -moz-transform: $transformValues;
+    -ms-transform: $transformValues;
+    -webkit-transform: $transformValues;
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+}
+
+/* Create a background for a modal and place modal content inside*/
+@mixin modal-background($r: 0, $g: 0, $b: 0, $opacity: 0.8, $z-index: 999) {
+    @include fixed-pos(0, 0);
+    height: 100%;
+    width:  100%;
+    background-color: rgba($r, $g, $b,$opacity);
+    z-index: $z-index;
+}
+
+
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin align-items($orientation) {
+    -webkit-align-items: $orientation;
+    align-items: $orientation;
+}
+
+
+@mixin justify-content($orientation) {
+    -webkit-justify-content: $orientation;
+    justify-content: $orientation;
+}
+
+@mixin transition-delay($time) {
+    transition-delay: $time;
+    -webkit-transition-delay: $time;
+}

@@ -1,0 +1,95 @@
+<div class="my-address-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="malc.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">地址管理</div>
+                <div class="right_icon">
+                    <a class="weui-vcode-btn weui-btn_danger button-clear" ng-click="malc.onManageClick()"
+                       style="color:black">{{malc.manage}}</a>
+                    <!--<a ng-click="mpcc.refresh()">-->
+                    <!--<img ng-if="theme!='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"-->
+                    <!--src="./assets/images/VK/shuaixin@2x.png">-->
+                    <!--<img ng-if="theme=='black'" width="20px" style="padding-top: 14px;padding-right: 10px;"-->
+                    <!--src="./assets/images/black/shuaixin@2x.png">-->
+                    <!--</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+
+                <div class="weui-panel">
+                    <div class="weui-cell" ng-repeat="eachAddress in malc.myAddress" style="padding: 0;">
+                        <div class="weui-cell__bd">
+                            <div class="weui-media-box weui-media-box_text">
+                                <h4 class="weui-media-box__title">
+                                    <span>{{eachAddress.name}}</span>
+                                    <span style="left: 100px; position: absolute;">
+                                        <span style="margin-right: 10px">{{eachAddress.mobile}}</span>
+                                        <span><img width="18px" ng-if="theme!='black' && eachAddress.isDefault==1" src="./assets/images/VK/default.png" ></span>
+                                        <span><img width="18px" ng-if="theme=='black' && eachAddress.isDefault==1" src="./assets/images/black/default.png" ></span>
+                                    </span>
+
+                                </h4>
+                                <p class="weui-media-box__desc">{{eachAddress.address}}</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell__ft" style="display: flex; width: 100px; margin-top: -20px;"
+                             ng-if="malc.manage=='取消'">
+                            <img src="./assets/images/VK/bianji1@2x.png" width="20px" height="20px"
+                                 style="position: absolute; right: 70px;" ng-click="malc.editAddress(eachAddress)">
+                            <img src="./assets/images/VK/shanchu@2x.png" width="20px" height="20px"
+                                 style="position: absolute; right: 20px;" ng-click="malc.clickOnDelete(eachAddress)">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="weui-bottom-bar">
+        <div class="weui-panel bottom_button_full">
+            <a class="weui-btn weui-btn_danger bottom-button" ng-click="malc.addAddress()">+ 新建地址</a>
+        </div>
+    </div>
+
+
+    <div class="star-dialog" ng-show="malc.showDialog">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog weui-skin_android">
+            <div class="top" ng-if="theme != 'black'">
+                <img ng-if="theme!='black'" src="./assets/images/VK/gantanhao@2x.png">
+                <img ng-if="theme=='black'" src="./assets/images/black/gantanhao@2x.png">
+            </div>
+
+            <a class="my-cancel-btn" ng-click="malc.closeDialog()" ng-if="theme == 'black'">×</a>
+            <div class="weui-dialog__bd my-bd" style="padding: 30px 10px 10px 20px;text-align: left">
+                <div class="label">{{malc.nameOnDialog}}&nbsp;&nbsp;{{malc.mobileOnDialog}}</div>
+                <div class="label">{{malc.addressOnDialog}}</div>
+            </div>
+            <div class="weui-dialog__ft my-ft">
+                <div class="weui-flex">
+                    <div class="weui-flex__item" ng-if="theme != 'black'">
+                        <a class="weui-dialog__btn weui-dialog__btn_default" ng-click="malc.closeDialog()">取消</a>
+                    </div>
+                    <div class="weui-flex__item">
+                        <a class="weui-dialog__btn weui-dialog__btn_primary my-dialog-btn" ng-click="malc.postDelete(malc.addressId)">删除该地址</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

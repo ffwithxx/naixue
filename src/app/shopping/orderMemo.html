@@ -1,0 +1,33 @@
+<div class="my-feedback-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="weui-cell weui-cell_vcode header">
+                <div class="left_icon">
+                    <img src="./assets/images/VK/fanhui.png" width="12px" ng-click="omc.goBack()">
+                </div>
+                <div class="label" style="">备注</div>
+                <div class="right_icon">
+                    <a class="weui-vcode-btn weui-btn_danger" ng-click="omc.onSubmit()" style="color:black">保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="top:54px">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab__panel">
+                <div class="weui-panel">
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <textarea class="weui-textarea" ng-change="omc.onTextChange()" ng-model="omc.feedback"
+                                      placeholder="输入反馈内容,不超过{{omc.memoMaxInput}}个字" rows="3"></textarea>
+                            <div class="weui-textarea-counter"><span>{{omc.memoInputCount}}</span>/{{omc.memoMaxInput}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

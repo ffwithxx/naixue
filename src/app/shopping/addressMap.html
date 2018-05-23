@@ -1,0 +1,89 @@
+
+<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+<style type="text/css">
+    #allmap {height: 100vh;width:100%;overflow: hidden;}
+    #result {width:100%;font-size:12px;}
+</style>
+<div class="shopping-map-container" style="height: 100vh">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <a ng-click="map.goBack()">
+                        <img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">
+                        <img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">
+                    </a>
+                </div>
+                <div class="label" style="">门店位置</div>
+                <div class="right_icon">
+                    <!--<a class="weui-vcode-btn weui-btn_danger" ng-click="mrc.pay()" style="color:black">支付</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="bottom-bar">-->
+        <div id="allmap"  >
+        </div>
+    <div id="result" style="width: 100%;font-size: 12px">
+    </div>
+<div class="bottom-bar">
+    <div class="content">
+        <div class="name" id = "name" ></div>
+        <div class="address" id="address"></div>
+        <!--<button  class="black-nav" ng-click="map.getNav()">导航</button>-->
+
+        <!--<div class="nav" ng-click="map.getNav()">-->
+            <!--<div class="nav-img"></div>-->
+        <!--</div>-->
+
+    </div>
+    </div>
+    </div>
+    <!--<script type="text/javascript">-->
+        <!--// 百度地图API功能-->
+
+        <!--var   map = new BMap.Map("allmap");-->
+        <!--map.centerAndZoom(new BMap.Point(116.417854,39.921988), 15);-->
+        <!--var data_info = [[116.417854,39.921988,"地址：北京市东城区王府井大街88号乐天银泰百货八层"],-->
+            <!--[116.406605,39.921585,"地址：北京市东城区东华门大街"],-->
+            <!--[116.412222,39.912345,"地址：北京市东城区正义路甲5号"]-->
+        <!--];-->
+        <!--//    var searchInfoWindow = null;-->
+
+        <!--for(var i=0;i<data_info.length;i++){-->
+            <!--var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注-->
+            <!--var content = data_info[i][2];-->
+            <!--map.addOverlay(marker);               // 将标注添加到地图中-->
+            <!--addClickHandler(content,marker);-->
+        <!--}-->
+        <!--function addClickHandler(content,marker){-->
+            <!--marker.addEventListener("click",function(e){-->
+                <!--openInfo(content,e,marker)}-->
+            <!--);-->
+        <!--}-->
+        <!--function openInfo(content,e,marker){-->
+            <!--var p = e.target;-->
+            <!--var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);-->
+<!--//        var infoWindow = new BMap.InfoWindow(content,searchInfoWindow);  // 创建信息窗口对象-->
+            <!--var searchInfoWindow = null;-->
+            <!--vm.address = content;-->
+            <!--searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {-->
+                <!--title  : "百度大厦",      //标题-->
+                <!--//高度-->
+                <!--panel  : "panel",         //检索结果面板-->
+                <!--enableAutoPan : true,     //自动平移-->
+                <!--searchTypes   :[-->
+
+                    <!--BMAPLIB_TAB_TO_HERE,  //到这里去-->
+                    <!--BMAPLIB_TAB_FROM_HERE //从这里出发-->
+                <!--]-->
+            <!--});-->
+            <!--searchInfoWindow.open(marker); //开启信息窗口-->
+        <!--}-->
+
+
+
+    <!--</script>-->
+
+

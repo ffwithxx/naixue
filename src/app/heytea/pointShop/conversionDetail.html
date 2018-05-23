@@ -1,0 +1,48 @@
+<div class="conversion-detail-container">
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab first">
+                <div class="weui-navbar">
+                    <div class="weui-navbar__item">
+                        <a class="" ng-click="cd.goBack()">
+                            <img src="./assets/images/snow/5.png" width="23px" height="20px">
+                        </a>
+                        <span>商品详情</span>
+                    </div>
+                </div>
+                <div class="weui-tab__panel">
+                    <div class="top-img">
+                        <img ng-src="{{cd.detail.iconUrl}}"/>
+                    </div>
+                    <div class="middle-content">
+                        <div class="name">{{cd.detail.title}}</div>
+                        <div class="point">
+                            <span class="value">{{cd.detail.point}}</span>
+                            <span class="label">积分</span>
+                            <span class="type" ng-if="cd.detail.type==0">虚拟礼品</span>
+                        </div>
+                    </div>
+                    <div class="description" style="padding: 0px 15px 80px 15px;">
+                        <div class="label">商品简介</div>
+                        <div class="desc" style=" overflow: hidden;" ng-bind-html="cd.detail.desc"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-bottom-bar"  >
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="weui-cell">
+                <div class="current" ng-if="cd.detail.point<=cd.point">当前积分{{cd.point}}</div>
+                <div class="left" ng-if="cd.detail.point>cd.point">还差{{cd.detail.point-cd.point}}积分</div>
+                <button ng-class="{'disabled': cd.detail.point>cd.point}" ng-disabled="cd.detail.point>cd.point" ng-click="cd.goConversionFirst(cd.detail)">立即兑换</button>
+            </div>
+            <!--<div class="weui-cell" ng-if="theme=='black'">-->
+                <!--<button ng-class="{'disabled': cd.detail.point>cd.point}" ng-disabled="cd.detail.point>cd.point" ng-click="cd.goConversionFirst(cd.detail)">-->
+                    <!--<span ng-if="cd.detail.point<=cd.point">立即兑换</span>-->
+                    <!--<span ng-if="cd.detail.point>cd.point">还差{{cd.detail.point-cd.point}}积分</span>-->
+                <!--</button>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="cheep-container">
+    <div class="weui-top-bar">
+        <div class="weui-cells" style="width: 100%;margin-top: 0px">
+            <div class="header">
+                <div class="left_icon">
+                    <!--<a ng-click="ps.goBack()">-->
+                        <!--<img ng-if="theme!='black'" src="./assets/images/VK/fanhui.png" width="12px">-->
+                        <!--<img ng-if="theme=='black'" src="./assets/images/black/fanhui.png" width="9px">-->
+                    <!--</a>-->
+                </div>
+                <div class="label" style="font-size: 15px">在线商城</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" style="">
+        <div class="page__bd" style="height: 100%;">
+            <div class="first-line">
+                <div class="point">我的积分:{{ps.point}}</div>
+                <div class="btn-content">
+                    <button ng-click="ps.goConversionRecord()">购买记录</button>
+                </div>
+            </div>
+            <div class="weui-tab__panel">
+                <div class="point-list">
+                    <div class="item" ng-repeat="item in ps.list" ng-click="ps.goItemDetail(item.id)">
+                        <div class="img" >
+                            <img ng-src="{{item.productPic}}"/>
+                            <div class="residueone" ng-if="item.label == 2">
+                                <div class="imgbg"></div>
+                            </div>
+                            <div class="residue">
+                                <div>剩余{{item.inventory}}</div>
+                            </div>
+                        </div>
+                        <div class="title"> <div class="new" ng-if="item.label == 1">新品</div> <div class="jifen" ng-if=" item.label !=1 &&item.payType == 0">[积分]</div>{{item.productName | limitTo:15}}</div>
+                        <div class="point">
+                            <span class="value">{{ps.getvalue(item)}}</span>
+                            <span ng-if="ps.showModle(item.payType)" class="label" id="value1">&nbsp;积分</span>
+                            <span style="text-decoration: line-through" ng-if="item.payType && item.originalPrice !=0 &&item.originalPrice " class="label" id="value2">&nbsp;{{"￥" + item.originalPrice}}</span>
+                            <!--<span class="type" ng-if="item.type==0">虚拟品</span>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-include="'app/components/tabbar/tabbar.html'"></div>
+        </div>
+    </div>
+</div>
